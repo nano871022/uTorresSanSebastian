@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_information">
+
+    <fragment
+        android:id="@+id/nav_information"
+        android:name="co.japl.android.torressansebastian.ui.information.InformationFragment"
+        android:label="@string/menu_information"
+        tools:layout="@layout/fragment_contact_us" />
+
+    <fragment
+        android:id="@+id/nav_location"
+        android:name="co.japl.android.torressansebastian.ui.location.LocationFragment"
+        android:label="@string/menu_location"
+        tools:layout="@layout/fragment_information" />
+
+    <fragment
+        android:id="@+id/nav_contact_us"
+        android:name="co.japl.android.torressansebastian.ui.ContactUs.ContactUsFragment"
+        android:label="@string/menu_contact_us"
+        tools:layout="@layout/fragment_location" />
+
+    <fragment
+        android:id="@+id/nav_suggestion"
+        android:name="co.japl.android.torressansebastian.ui.suggestion.SuggestionFragment"
+        android:label="@string/menu_suggestion"
+        tools:layout="@layout/fragment_suggestion" />
+
+    <fragment
+        android:id="@+id/nav_complaints"
+        android:name="co.japl.android.torressansebastian.ui.complaints.ComplaintsFragment"
+        android:label="@string/menu_complaints"
+        tools:layout="@layout/fragment_complaints" />
+
+</navigation>

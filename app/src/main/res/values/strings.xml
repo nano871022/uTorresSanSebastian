@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Torres de San Sebastian </string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Torres de San Sebastian</string>
+    <string name="nav_header_subtitle">Unidad Residencial - Medellin</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="suggestion">Sugerencias</string>
+    <string name="complaints">Denuncias</string>
+
+    <string name="menu_information">Información</string>
+    <string name="menu_location">Ubicación</string>
+    <string name="menu_suggestion">Sugerencias</string>
+    <string name="menu_complaints">Denuncias</string>
+    <string name="menu_contact_us">Horarios Atención y Contactos</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    <string name="unitName">Torres de San Sebastian</string>
+    <string name="neighborhood">Barrio Colon</string>
+    <string name="city">Medellín - Antioquia</string>
+    <string name="direction">Carrera 46 # 41 - 16</string>
+    <string name="title_schedule_assistant">Horarios de Atención Administración</string>
+    <string name="monday_assistant">00:00AM - 00:00AM </string>
+    <string name="tuesday_assistant">00:00AM - 00:00AM </string>
+    <string name="wednesday_assistant">00:00AM - 00:00AM </string>
+    <string name="thursday_assistant">00:00AM - 00:00AM </string>
+    <string name="friday_assistant">00:00AM - 00:00AM </string>
+    <string name="saturday_assistant">00:00AM\n00:00AM </string>
+    <string name="title_contact_number">Numeros de Contactos</string>
+    <string name="admin_number">Número de Administración:</string>
+    <string name="administration_number">305 333 13 94</string>
+    <string name="entrance_nbr">Número de Porteria:</string>
+    <string name="entrance_number">310 581 55 57</string>
+    <string name="title_contact_email">Correos Electrónicos</string>
+    <string name="admin_email">Administrador:</string>
+    <string name="administration_email">direcciontorressansebastian@gmail.com</string>
+    <string name="aux_email">Auxiliar:</string>
+    <string name="auxiliar_email">auxiliarurtss@gmail.com</string>
+    <string name="condejo_email">Consejo:</string>
+    <string name="consejo_email">concejoorressansebastian@gmail.com</string>
+    <string name="country_whatsapp">+57</string>
+    <string name="monday">Lunes</string>
+    <string name="tuesday">Martes</string>
+    <string name="wednesday">Miercoles</string>
+    <string name="thursday">Jueves</string>
+    <string name="friday">Viernes</string>
+    <string name="saturday">Sabado</string>
+    <string name="hour">Hora</string>
+</resources>
