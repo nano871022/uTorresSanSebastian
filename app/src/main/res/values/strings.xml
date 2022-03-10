@@ -2,7 +2,8 @@
     <string name="app_name">Torres de San Sebastian </string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Torres de San Sebastian</string>
+    <string name="nav_header_title2">San Sebastián</string>
+    <string name="nav_header_title1">Torres de</string>
     <string name="nav_header_subtitle">Unidad Residencial - Medellin</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>

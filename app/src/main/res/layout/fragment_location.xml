@@ -38,13 +38,32 @@
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/textDirection"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/direction"
-                android:textAlignment="center"
-                android:textSize="20sp" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btnMaps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+
+                    android:layout_weight="7"
+                    android:background="@color/blue_principal"
+                    android:src="@drawable/ic_baseline_location_on_24"
+                    android:tint="#D10F0F" />
+
+                <TextView
+                    android:id="@+id/textDirection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="@string/direction"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/textNeighborhood"
@@ -53,14 +72,6 @@
                 android:text="@string/neighborhood"
                 android:textAlignment="center"
                 android:textSize="20sp" />
-
-            <ImageButton
-                android:id="@+id/btnMaps"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_location_on_24"
-
-                />
 
         </LinearLayout>
     </ScrollView>

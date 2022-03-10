@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.support.v4.app.Fragment
 import android.arch.lifecycle.ViewModelProvider
+import android.webkit.WebView
+import co.japl.android.torressansebastian.R
 import co.japl.android.torressansebastian.databinding.FragmentInformationBinding
 
 class InformationFragment : Fragment() {
@@ -16,7 +18,7 @@ class InformationFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-
+    lateinit var webView: WebView
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -31,10 +33,13 @@ class InformationFragment : Fragment() {
         _binding = FragmentInformationBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textGallery
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+        webView = root.findViewById(R.id.webViewInfo)
+        webView.settings.javaScriptEnabled = true
+        webView.isVerticalScrollBarEnabled = true
+        webView.loadUrl("https://direcciontorressan.wixsite.com/my-site")
+
+
+
         return root
     }
 
