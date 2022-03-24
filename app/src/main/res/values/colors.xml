@@ -13,4 +13,6 @@
     <color name="blue_principal">#456097</color>
     <color name="blue_second">#7c94c8</color>
     <color name="blue_light">#9fb1d9</color>
+    <color name="head_menu_lateral_start">#FFD9DBF3</color>
+    <color name="head_menu_lateral_end">#FFC6C8DC</color>
 </resources>

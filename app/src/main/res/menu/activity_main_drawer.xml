@@ -17,13 +17,22 @@
             android:icon="@drawable/ic_baseline_assistant_ind_24"
             android:title="@string/menu_contact_us" />
         <item
-            android:id="@+id/nav_suggestion"
-            android:icon="@drawable/ic_baseline_suggest"
-            android:title="@string/menu_suggestion" />
+            android:id="@+id/nav_parking"
+            android:icon="@drawable/ic_baseline_local_parking_24"
+            android:title="@string/menu_parking" />
+
+        <item
+            android:id="@+id/nav_admin_pay"
+            android:icon="@drawable/ic_baseline_attach_money_24"
+            android:title="@string/menu_admin_pay" />
         <item
             android:id="@+id/nav_complaints"
             android:icon="@drawable/ic_baseline_complains"
             android:title="@string/menu_complaints" />
+        <item
+            android:id="@+id/nav_suggestion"
+            android:icon="@drawable/ic_baseline_suggest"
+            android:title="@string/menu_suggestion" />
 
     </group>
 </menu>
