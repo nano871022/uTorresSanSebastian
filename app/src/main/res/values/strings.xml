@@ -17,6 +17,11 @@
     <string name="menu_contact_us">Horarios Atención y Contactos</string>
     <string name="menu_parking">Parqueadero Información</string>
     <string name="menu_admin_pay">Formas de Pago Administración</string>
+    <string name="menu_pet_ownership">Tenencia de Mascotas</string>
+    <string name="menu_repair">Reparaciones Locativas</string>
+    <string name="menu_garbage">Disposición de la Basura</string>
+    <string name="menu_playground">Zona de Juegos</string>
+    <string name="menu_noise">Normatividad Ruido</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -75,4 +80,22 @@
     <string name="num_account_number">514 158 047</string>
     <string name="speed_parking">Velocidad vehiculos en Parqueadero</string>
     <string name="number_speed_parking">10 km/h</string>
+    <string name="pet_ownership">Tenencia de Mascotas</string>
+    <string name="law_pet_ownership">
+        LEY 746 DE 2002\n\n
+        CAPITULO XIII NUEVO\n\n
+        De las contravenciones especiales con respecto a la tenencia de ejemplares caninos\n\n
+        Artículo 108-A. La tenencia de ejemplares caninos en las viviendas urbanas y rurales requiere que las circunstancias de su alojamiento en el aspecto higiénico y sanitario, de alimentos y custodia, sean las adecuadas, y que no se produzca ninguna situación de peligro o incomodidad para los vecinos u otras personas en general, o para el propio animal.
+        \n\nArtículo 108-B. Se permitirá la presencia de ejemplares caninos en los ascensores de edificios públicos y privados que, como guías acompañen a su propietario o tenedor. Para los demás ejemplares, será deber de la copropiedad reglamentar su permisibilidad. En las zonas comunes de propiedades horizontales o conjuntos residenciales, los ejemplares caninos deberán ir sujetos por medio de traílla, y provistos de bozal si es el caso específico de perros potencialmente peligrosos según las definiciones dadas por la presente ley.
+        \n\nArtículo 108-D. Queda prohibido dejar las deposiciones fecales de los ejemplares caninos en las vías, parques o lugares públicos. Los propietarios o tenedores de los ejemplares caninos son responsables de recoger convenientemente los excrementos y depositarlos en bolsas de basura domiciliaria, o bien en aquellos lugares que para tal efecto destine la autoridad municipal.
+        \n\nArtículo 108-E. Dado su alto nivel de peligrosidad, se prohíbe la importación de ejemplares caninos de las razas Staffordshire terrier, American Staffordshire terrier, Pit Bull Terrier, American Pit Bull Terrier, o de caninos producto de cruces o híbridos de estas razas, así como el establecimiento de centros de crianza de esta clase de ejemplares caninos en el territorio nacional.
+        \n\nArtículo 108-F. Ejemplares caninos potencialmente peligrosos. Se considerarán perros potencialmente peligrosos aquellos que presenten una o más de las siguientes características:
+\na) Perros que han tenido episodios de agresiones a personas u otros perros;
+\nb) Perros que han sido adiestrados para el ataque y la defensa;
+\nc) Perros que pertenecen a una de las siguientes razas o a sus cruces o híbridos: American Staffordshire Terrier, Bullmastiff, Dóberman, Dogo Argentino, Dogo de Burdeos, Fila Brasileiro, Mastín Napolitano, Pit Bull Terrier, American Pit Bull Terrier, De presa canario, Rottweiler, Staffordshire Terrier, Tosa Japonés.
+\n\nEl propietario de un perro potencialmente peligroso asume la posición de garante de los riesgos que se puedan ocasionar por la sola tenencia de estos animales y por los perjuicios y las molestias que ocasione a las personas, a las cosas, a las vías y espacios públicos y al medio natural en general.
+\n\nArtículo 108-L. Si un perro potencialmente peligroso ataca a otra mascota, su propietario será sancionado por la autoridad municipal competente con multa hasta de dos (2) salarios mínimos mensuales y estará obligado a pagar por todos los daños causados a la mascota. Si el perro es reincidente se procederá al decomiso y sacrificio eutanásico del animal por parte de las autoridades que las alcaldías municipales designen para tal fin.
+    </string>
+    <string name="normativity">Normatividad</string>
+    <string name="inform_us">Informanos</string>
 </resources>

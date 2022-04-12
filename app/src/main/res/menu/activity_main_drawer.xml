@@ -16,15 +16,56 @@
             android:id="@+id/nav_contact_us"
             android:icon="@drawable/ic_baseline_assistant_ind_24"
             android:title="@string/menu_contact_us" />
+
+        <item
+            android:id="@+id/nav_admin_pay"
+            android:icon="@drawable/ic_baseline_attach_money_24"
+            android:title="@string/menu_admin_pay" />
+
+    </group>
+
+    <item android:title="@string/normativity">
+        <menu>
+    <group android:checkableBehavior="single">
+
         <item
             android:id="@+id/nav_parking"
             android:icon="@drawable/ic_baseline_local_parking_24"
             android:title="@string/menu_parking" />
 
         <item
-            android:id="@+id/nav_admin_pay"
-            android:icon="@drawable/ic_baseline_attach_money_24"
-            android:title="@string/menu_admin_pay" />
+            android:id="@+id/nav_pet_ownership"
+            android:icon="@drawable/ic_baseline_pets_24"
+            android:title="@string/menu_pet_ownership" />
+
+        <item
+            android:id="@+id/nav_playground"
+            android:icon="@drawable/ic_baseline_sports_soccer_24"
+            android:title="@string/menu_playground" />
+
+        <item
+            android:id="@+id/nav_repair"
+            android:icon="@drawable/ic_baseline_home_repair_service_24"
+            android:title="@string/menu_repair" />
+
+        <item
+            android:id="@+id/nav_noise"
+            android:icon="@drawable/ic_baseline_do_not_disturb_on_total_silence_24"
+            android:title="@string/menu_noise" />
+
+        <item
+            android:id="@+id/nav_garbage"
+            android:icon="@drawable/ic_baseline_restore_from_trash_24"
+            android:title="@string/menu_garbage" />
+
+    </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/inform_us">
+        <menu>
+    <group android:checkableBehavior="single">
+
         <item
             android:id="@+id/nav_complaints"
             android:icon="@drawable/ic_baseline_complains"
@@ -33,6 +74,7 @@
             android:id="@+id/nav_suggestion"
             android:icon="@drawable/ic_baseline_suggest"
             android:title="@string/menu_suggestion" />
-
     </group>
+        </menu>
+    </item>
 </menu>

@@ -15,37 +15,111 @@
         android:id="@+id/nav_location"
         android:name="co.japl.android.torressansebastian.ui.location.LocationFragment"
         android:label="@string/menu_location"
-        tools:layout="@layout/fragment_information" />
+        tools:layout="@layout/fragment_information" >
+        <action
+            android:id="@+id/action_nav_location_to_nav_information"
+            app:destination="@id/nav_information" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_contact_us"
         android:name="co.japl.android.torressansebastian.ui.ContactUs.ContactUsFragment"
         android:label="@string/menu_contact_us"
-        tools:layout="@layout/fragment_location" />
+        tools:layout="@layout/fragment_location" >
+        <action
+            android:id="@+id/action_nav_contact_us_to_nav_information"
+            app:destination="@id/nav_information" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_suggestion"
         android:name="co.japl.android.torressansebastian.ui.suggestion.SuggestionFragment"
         android:label="@string/menu_suggestion"
-        tools:layout="@layout/fragment_suggestion" />
+        tools:layout="@layout/fragment_suggestion" >
+        <action
+            android:id="@+id/action_nav_suggestion_to_nav_information"
+            app:destination="@id/nav_information" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_complaints"
         android:name="co.japl.android.torressansebastian.ui.complaints.ComplaintsFragment"
         android:label="@string/menu_complaints"
-        tools:layout="@layout/fragment_complaints" />
+        tools:layout="@layout/fragment_complaints" >
+        <action
+            android:id="@+id/action_nav_complaints_to_nav_information"
+            app:destination="@id/nav_information" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_parking"
         android:name="co.japl.android.torressansebastian.ui.parking.ParkingFragment"
         android:label="@string/menu_parking"
-        tools:layout="@layout/fragment_parking" />
+        tools:layout="@layout/fragment_parking" >
+        <action
+            android:id="@+id/action_nav_parking_to_nav_information"
+            app:destination="@id/nav_information" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_admin_pay"
         android:name="co.japl.android.torressansebastian.ui.admin_pay.AdministrationPay"
         android:label="@string/menu_admin_pay"
-        tools:layout="@layout/fragment_administration_pay" />
+        tools:layout="@layout/fragment_administration_pay" >
+        <action
+            android:id="@+id/action_nav_admin_pay_to_nav_information"
+            app:destination="@id/nav_information" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_pet_ownership"
+        android:name="co.japl.android.torressansebastian.ui.pets_ownership.PetsFragment"
+        android:label="@string/menu_pet_ownership"
+        tools:layout="@layout/pet_ownership" >
+        <action
+            android:id="@+id/action_nav_pet_ownership_to_nav_information"
+            app:destination="@id/nav_information" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_garbage"
+        android:name="co.japl.android.torressansebastian.ui.garbage.GarbageFragment"
+        android:label="@string/menu_garbage"
+        tools:layout="@layout/fragment_garbage" >
+        <action
+            android:id="@+id/action_nav_garbage_to_nav_information"
+            app:destination="@id/nav_information" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_noise"
+        android:name="co.japl.android.torressansebastian.ui.noise.NoiseFragment"
+        android:label="@string/menu_noise"
+        tools:layout="@layout/fragment_noise" >
+        <action
+            android:id="@+id/action_nav_noise_to_nav_information"
+            app:destination="@id/nav_information" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_playground"
+        android:name="co.japl.android.torressansebastian.ui.playground.PlaygroundFragment"
+        android:label="@string/menu_playground"
+        tools:layout="@layout/fragment_playground" >
+        <action
+            android:id="@+id/action_nav_playground_to_nav_information"
+            app:destination="@id/nav_information" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_repair"
+        android:name="co.japl.android.torressansebastian.ui.repair.RepairFragment"
+        android:label="@string/menu_repair"
+        tools:layout="@layout/fragment_repair" >
+        <action
+            android:id="@+id/action_nav_repair_to_nav_information"
+            app:destination="@id/nav_information" />
+    </fragment>
 
 
 </navigation>

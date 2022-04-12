@@ -10,8 +10,8 @@ android {
         applicationId "co.japl.android.torressansebastian"
         minSdk 19
         targetSdk 31
-        versionCode 4
-        versionName "1.2.1-Asamblea-Parqueadero-pagos"
+        versionCode 5
+        versionName "1.2.5"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
