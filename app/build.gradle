@@ -10,8 +10,8 @@ android {
         applicationId "co.japl.android.torressansebastian"
         minSdk 19
         targetSdk 31
-        versionCode 5
-        versionName "1.2.5"
+        versionCode 6
+        versionName "Normas Propiedad Horizontal V1"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
