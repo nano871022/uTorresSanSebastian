@@ -22,6 +22,7 @@
             android:drawableLeft="@drawable/ic_baseline_attach_money_24"
             android:text="@string/administration_pay"
             android:textAlignment="center"
+            android:textColor="@color/blue_principal"
             android:textSize="20sp"
             android:textStyle="bold" />
 

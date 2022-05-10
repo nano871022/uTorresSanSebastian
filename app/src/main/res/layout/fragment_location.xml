@@ -29,6 +29,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/unitName"
                 android:textAlignment="center"
+                android:textColor="@color/blue_principal"
                 android:textSize="34sp" />
 
             <TextView

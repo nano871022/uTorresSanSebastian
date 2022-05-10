@@ -22,7 +22,8 @@
             android:drawableLeft="@drawable/ic_baseline_do_not_disturb_on_total_silence_24"
             android:text="@string/title_noise"
             android:textAlignment="center"
-            android:textSize="16sp"
+            android:textColor="@color/blue_principal"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <View

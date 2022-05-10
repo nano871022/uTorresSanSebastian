@@ -22,7 +22,8 @@
             android:drawableLeft="@drawable/ic_baseline_home_repair_service_24"
             android:text="@string/title_local_repair"
             android:textAlignment="center"
-            android:textSize="16sp"
+            android:textColor="@color/blue_principal"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <View

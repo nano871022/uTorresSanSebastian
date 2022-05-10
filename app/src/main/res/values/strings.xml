@@ -22,6 +22,7 @@
     <string name="menu_garbage">Disposición de la Basura</string>
     <string name="menu_playground">Zona de Juegos</string>
     <string name="menu_noise">Normatividad Ruido</string>
+    <string name="menu_box_suggestion">Caja de Sugerencias</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -213,4 +214,5 @@ permisos respectivos.
         Esta expresamente prohibido consumir, almacenar o distribuir productos alucinógenos dentro de los apartamentos, cuyo humo y olor afecte a los transeúntes del área comunes o a otros residentes.\n
         Se debe evitar hacer ruido sobre los pisos con acciones como el taconeo, saltos, descargas o deslizamientos de objetos, recordando que "el piso de mi apartamento, es el techo de mi vecino". Asi mismo, se debe evitar los escandalos, gritos, televisores o radios en alto volumen, especialmente en la madrugada o altas horas de la noche.
     </string>
+    <string name="box_suggeston">Caja de Sugerencias</string>
 </resources>

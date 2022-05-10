@@ -27,7 +27,8 @@
                 android:drawableLeft="@drawable/ic_baseline_pets_24"
                 android:text="@string/pet_ownership"
                 android:textAlignment="center"
-                android:textSize="24sp"
+                android:textColor="@color/blue_principal"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <View
