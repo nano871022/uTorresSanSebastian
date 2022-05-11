@@ -215,4 +215,14 @@ permisos respectivos.
         Se debe evitar hacer ruido sobre los pisos con acciones como el taconeo, saltos, descargas o deslizamientos de objetos, recordando que "el piso de mi apartamento, es el techo de mi vecino". Asi mismo, se debe evitar los escandalos, gritos, televisores o radios en alto volumen, especialmente en la madrugada o altas horas de la noche.
     </string>
     <string name="box_suggeston">Caja de Sugerencias</string>
+    <string name="resume_asamble_2022">Resumen Asamblea 2022</string>
+    <string name="info_coeficiente">Coeficiente Participación\n\n¿Que es el coeficiente?\n Corresponde al área privada de cada bien de dominio particular, estos son calculados por el grupo constructor y plasmado en el REGLAMENTO DE PROPIEDAD HORIZONTAL.\n\n ¿Cual es el deber ser?\n Se debe facturar según la última reforma de REGLAMENTO DE PROPIEDAD HORIZONTAL - ESCRITURA 3018 DEL 30 DICIEMBRE DE 2003</string>
+    <string name="info_presupuesto">Presupuesto 2022\n\nAprobado el presupuesto para el año 2022 con un incremento del 10.07%, retroactivo a enero de 2022.\n\nEste aplicará del siguiente modo:\nComo en enero de 2022 se ajusto el presupuesto con el IPC solo se factura la diferencia, es decir, 10.07 - 5.62 = 4.45% este sería el ajuste retroactivo a enero de 2022\nEl retroactivo se facturará en el mes de abril, mayo y junio 2022.</string>
+    <string name="info_cuota_extraordinaria">Cuota Extraordinaria\n\nAprobada cuota extraordinaria por un valor de $333\'759.536, diferido a 6 cuotas según el coeficiente de partifipación de cada bien privado, para la puesta a punto y reforma de ascensores buscando la certificacion de transporte vertical NTC 5926-1\n\nEl monto aprobado es dividido por los 780 bienes privados según el coeficiente de participación.\nSerá diferido a 6 cuotas que se cobran entre el mes de abril y septiembre del año 2022.</string>
+    <string name="info_concejo_2022">Consejo de Administración\n\nPrincipal: Maria Cano - Suplente: María Gomez\nPrincipal: Rebeca Roa - Suplente: Silvia Ruíz\nPrincipal: Julieth Gomez - Suplente: Margarita Quiroz\nPrincipal: Yanneth Correa - Suplente: Elianan Acosta\nPrincipal: Guillermo Londoño - Suplente: Claudia Ramirez</string>
+    <string name="info_comite_convivencia">Comite de Convivencia\n\nMaria Amparo\nElla será apoyada y complementada por el concejo de administración.</string>
+    <string name="representante_legal">Representante Legal: Julio Cesar Loaiza</string>
+    <string name="contadora_publica">Contadora Pública: Carmen Noreña</string>
+    <string name="revisor_fiscal">Revisor Fiscal: Claudia Martha Niño</string>
+    <string name="team">Equipo de Trabajo 2022</string>
 </resources>
