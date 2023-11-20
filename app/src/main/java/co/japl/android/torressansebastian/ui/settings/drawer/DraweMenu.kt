@@ -13,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.LocalContext
@@ -20,11 +21,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import co.japl.android.torressansebastian.R
 import co.japl.android.torressansebastian.impl.MenuService
 import co.japl.android.torressansebastian.interfaces.IMenuService
-import co.japl.android.torressansebastian.model.MenuItem
-import co.japl.android.torressansebastian.ui.settings.NavigationEnum
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -61,10 +59,12 @@ private fun DefaultItemMenu(painter: Painter,name:String, description:String,onC
         modifier= Modifier
             .padding(15.dp)
             .clickable { onClick.invoke() }
+        , verticalAlignment = Alignment.CenterVertically
     ){
 
         Icon(painter = painter
-            , contentDescription = description)
+            , contentDescription = description
+            , modifier = Modifier.padding(end = 15.dp))
 
         Text(text = name)
     }
@@ -74,25 +74,12 @@ private fun DefaultItemMenu(painter: Painter,name:String, description:String,onC
 }
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-@Preview(showBackground = true, showSystemUi = true)
+@Preview(showBackground = true, showSystemUi = false)
 fun PreviewDrawer(){
     val menuSvc = MenuService()
     val state = rememberDrawerState(DrawerValue.Closed)
     val scope = rememberCoroutineScope()
-    menuSvc.addMenu(
-        MenuItem(1
-            ,"Home"
-            , R.drawable.baseline_home_24
-            ,""
-            , NavigationEnum.Home.name
-        )
-    )
-    menuSvc.addMenu(MenuItem(id=2
-        ,name="Pets"
-        ,icon= R.drawable.ic_baseline_pets_24
-        ,description="Pets"
-        ,route= NavigationEnum.PetsOwnerShip.name
-    ))
+
     DrawerMenu(NavController(LocalContext.current)
         , menuSvc
         ,scope

@@ -15,11 +15,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import co.japl.android.torressansebastian.R
 import co.japl.android.torressansebastian.impl.MenuService
 import co.japl.android.torressansebastian.interfaces.IMenuService
-import co.japl.android.torressansebastian.model.MenuItem
-import co.japl.android.torressansebastian.ui.settings.NavigationEnum
 import kotlinx.coroutines.CoroutineScope
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -30,7 +27,7 @@ fun DrawerMain(navController: NavController
                 , state: DrawerState
 ){
     ModalDrawerSheet(
-        modifier = Modifier.width(200.dp)
+        modifier = Modifier.width(300.dp)
     ) {
 
         DrawerHeader()
@@ -54,19 +51,6 @@ fun Preview(){
     val state = rememberDrawerState(DrawerValue.Closed)
     val scope = rememberCoroutineScope()
     val menuSvc = MenuService()
-    menuSvc.addMenu(
-        MenuItem(1
-            ,"Home"
-            , R.drawable.baseline_home_24
-            ,"Home"
-            , NavigationEnum.Home.name
-        ))
-    menuSvc.addMenu(MenuItem(id=2
-            ,name="Pets"
-            ,icon= R.drawable.ic_baseline_pets_24
-            ,description="Pets"
-            ,route= NavigationEnum.PetsOwnerShip.name
-        ))
 
     val navController = NavController(context)
     DrawerMain(navController,menuSvc,scope,state)

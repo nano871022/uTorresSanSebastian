@@ -26,7 +26,8 @@ fun DrawerHeader(){
             ,modifier = Modifier.fillMaxWidth()
         ){
             Image(painter = painterResource(id = R.drawable.logotorressansebastian)
-                , contentDescription = stringResource(id = R.string.app_name))
+                , contentDescription = stringResource(id = R.string.app_name)
+                , modifier = Modifier.padding(end=10.dp),)
             Column {
                 Text(text = stringResource(id = R.string.app_name))
                 Text(text = stringResource(id = R.string.direction))

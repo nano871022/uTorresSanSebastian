@@ -56,7 +56,7 @@ fun MainView(menuSvc: IMenuService){
 }
 @RequiresApi(Build.VERSION_CODES.R)
 @Composable
-@Preview(showBackground = true, showSystemUi = true)
+@Preview(showBackground = true, showSystemUi = false)
 fun Preview(){
     val menuSvc = MenuService()
     menuSvc.addMenu(
