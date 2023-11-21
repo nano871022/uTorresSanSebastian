@@ -23,7 +23,7 @@ import co.japl.android.torressansebastian.R
 fun Location(){
     Column(modifier= Modifier.fillMaxSize()
         , horizontalAlignment = Alignment.CenterHorizontally) {
-        Image(painter = painterResource(id = R.drawable.torres_san_sebastian)
+        Image(painter = painterResource(id = R.drawable.torres_san_sebastian2)
             , contentDescription = stringResource(id = R.string.app_name)
         , contentScale = ContentScale.FillHeight
             , modifier = Modifier.height(220.dp)

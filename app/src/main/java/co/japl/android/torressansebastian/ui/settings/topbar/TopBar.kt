@@ -7,15 +7,18 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
+import co.com.jap.ui.theme.MaterialThemeComposeUI
 import co.japl.android.torressansebastian.R
 import co.japl.android.torressansebastian.ui.settings.NavigationEnum
 import kotlinx.coroutines.launch
@@ -29,8 +32,10 @@ fun TopBar(navController: NavController,drawerState: DrawerState){
                append(stringResource(id = R.string.app_name))
             },onClick={
                 navController.navigate(NavigationEnum.Home.name)
-            })
+            }, style = TextStyle( color = MaterialTheme.colorScheme.onSecondary))
         }
+        , backgroundColor = MaterialTheme.colorScheme.secondary
+        , contentColor = MaterialTheme.colorScheme.onSecondary
         , navigationIcon = {
             MenuDrawable(drawerState = drawerState)
         }
@@ -86,9 +91,10 @@ private fun DefaultIconUp(icon:Painter,description:String,onClick:()->Unit){
 @Composable
 @Preview(showSystemUi = false, showBackground = true)
 fun Preview(){
-    TopBar(NavController(LocalContext.current)
-        , DrawerState(DrawerValue.Closed){
+    MaterialThemeComposeUI {
+        TopBar(NavController(LocalContext.current), DrawerState(DrawerValue.Closed) {
             false
         }
-    )
+        )
+    }
 }

@@ -1,5 +1,6 @@
 package co.japl.android.torressansebastian.ui.view
 
+import android.content.res.Configuration
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.padding
@@ -14,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
+import co.com.jap.ui.theme.MaterialThemeComposeUI
 import co.japl.android.torressansebastian.R
 import co.japl.android.torressansebastian.impl.MenuService
 import co.japl.android.torressansebastian.interfaces.IMenuService
@@ -56,7 +58,7 @@ fun MainView(menuSvc: IMenuService){
 }
 @RequiresApi(Build.VERSION_CODES.R)
 @Composable
-@Preview(showBackground = true, showSystemUi = false)
+@Preview(showBackground = true, showSystemUi = false, uiMode = Configuration.UI_MODE_NIGHT_NO)
 fun Preview(){
     val menuSvc = MenuService()
     menuSvc.addMenu(
@@ -75,6 +77,8 @@ fun Preview(){
         ,route= NavigationEnum.PetsOwnerShip.name
     )
     )
+    MaterialThemeComposeUI {
+        MainView(menuSvc)
+    }
 
-    MainView(menuSvc)
 }

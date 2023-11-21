@@ -2,14 +2,15 @@ package co.japl.android.torressansebastian
 
 import android.os.Build
 import android.os.Bundle
+import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
+import co.com.jap.ui.theme.MaterialThemeComposeUI
 import co.japl.android.torressansebastian.impl.MenuService
 import co.japl.android.torressansebastian.interfaces.IMenuService
 import co.japl.android.torressansebastian.ui.view.MainView
 
-class Main : AppCompatActivity() {
+class Main : ComponentActivity() {
 
     private val menuSvc: IMenuService = MenuService()
 
@@ -17,9 +18,10 @@ class Main : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.actionBar?.hide()
-
         setContent{
-            MainView(menuSvc)
+            MaterialThemeComposeUI {
+                MainView(menuSvc)
+            }
         }
     }
 

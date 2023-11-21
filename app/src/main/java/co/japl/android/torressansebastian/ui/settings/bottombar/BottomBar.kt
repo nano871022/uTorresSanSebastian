@@ -7,6 +7,7 @@ import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.LocalContext
@@ -14,6 +15,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
+import co.com.jap.ui.theme.MaterialThemeComposeUI
 import co.japl.android.torressansebastian.R
 import co.japl.android.torressansebastian.ui.settings.NavigationEnum
 
@@ -21,7 +23,10 @@ import co.japl.android.torressansebastian.ui.settings.NavigationEnum
 @Composable
 fun BottomBar(navController: NavController){
     val currentRoute = navController.currentDestination?.route
-    BottomNavigation {
+    BottomNavigation(
+         backgroundColor = MaterialTheme.colorScheme.secondary
+        , contentColor = MaterialTheme.colorScheme.onSecondary
+    ) {
         Home(navController,currentRoute,this)
 
         Call(currentRoute, rowScope = this)
@@ -125,7 +130,9 @@ private fun DefaultButton(row: RowScope, name:String, icon: Painter, currentRout
 
 
 @Composable
-@Preview(showBackground = true, showSystemUi = true)
+@Preview(showBackground = true, showSystemUi = false)
 fun Preview(){
-    BottomBar(NavController(LocalContext.current))
+    MaterialThemeComposeUI {
+        BottomBar(NavController(LocalContext.current))
+    }
 }
