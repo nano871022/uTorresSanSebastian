@@ -42,6 +42,8 @@ fun TopBar(navController: NavController,drawerState: DrawerState){
     , actions = {
             Payment(navController)
 
+            ContactUs(navController = navController)
+
             Schedule(navController)
         })
 }
@@ -63,6 +65,16 @@ private fun Payment(navController: NavController){
     DefaultIconUp(icon = painterResource(id = R.drawable.ic_baseline_attach_money_24)
         , description = stringResource(id = R.string.administration_pay)) {
         navController.navigate(NavigationEnum.AdministationPayment.name)
+    }
+}
+
+@Composable
+private fun ContactUs(navController: NavController) {
+    DefaultIconUp(
+        icon = painterResource(id = R.drawable.ic_baseline_complains),
+        description = stringResource(id = R.string.title_contact_us)
+    ) {
+        navController.navigate(NavigationEnum.ContactUs.name)
     }
 }
 

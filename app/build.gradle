@@ -54,6 +54,7 @@ android {
 dependencies {
 
     implementation project(":UI")
+    implementation(project(":ScheduleModule"))
 
     implementation 'androidx.core:core-ktx:1.12.0'
     implementation 'androidx.compose.foundation:foundation:1.5.4'

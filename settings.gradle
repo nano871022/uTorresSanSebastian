@@ -17,3 +17,4 @@ rootProject.name = "TorresSanSebastian"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include ':app'
 include ':UI'
+include ':ScheduleModule'

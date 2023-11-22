@@ -12,7 +12,8 @@ enum class NavigationEnum(private val id:Int, private val icon:Int,private val i
     PlayGround(4,R.drawable.ic_baseline_sports_soccer_24,true),
     Repair(8,R.drawable.ic_baseline_home_repair_service_24,true),
     Schedule(10,R.drawable.ic_baseline_calendar_month_24)
-    ,Home(1,R.drawable.baseline_home_24,true);
+    ,Home(1,R.drawable.baseline_home_24,true)
+    ,ContactUs(11,R.drawable.ic_baseline_complains,false);
 
     fun isInDrawer():Boolean{
         return inDrawer

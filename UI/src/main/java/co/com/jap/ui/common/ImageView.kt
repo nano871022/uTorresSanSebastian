@@ -1,4 +1,4 @@
-package co.com.alameda181.ui.common
+package co.com.jap.ui.common
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.gestures.detectTransformGestures

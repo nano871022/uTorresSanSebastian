@@ -9,7 +9,7 @@
     <string name="action_settings">Settings</string>
     <string name="suggestion">Sugerencias</string>
     <string name="complaints">Denuncias</string>
-
+    <string name="title_contact_us">Contactanos</string>
     <string name="menu_information">Información</string>
     <string name="menu_location">Ubicación</string>
     <string name="menu_suggestion">Sugerencias</string>
@@ -23,8 +23,10 @@
     <string name="menu_playground">Zona de Juegos</string>
     <string name="menu_noise">Normatividad Ruido</string>
     <string name="menu_box_suggestion">Caja de Sugerencias</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="emails">Correos Electrónicos</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="contact_phones">Telefonos de Contacto</string>
+    <string name="website">Página Web</string>
 
     <string name="unitName">Torres de San Sebastian</string>
     <string name="neighborhood">Barrio Colon</string>
@@ -48,7 +50,7 @@
     <string name="administration_email">direcciontorressansebastian@gmail.com</string>
     <string name="aux_email">Auxiliar:</string>
     <string name="auxiliar_email">auxiliarurtss@gmail.com</string>
-    <string name="condejo_email">Consejo:</string>
+    <string name="consejo_email_label">Consejo:</string>
     <string name="consejo_email">concejotorressansebastian@gmail.com</string>
     <string name="country_whatsapp">+57</string>
     <string name="monday">Lunes</string>
@@ -68,6 +70,8 @@
     <string name="count_parking_moto"># Motos</string>
     <string name="count_parking_car"># Carros</string>
     <string name="note">Nota</string>
+    <string name="whatsap">Whatsapp</string>
+    <string name="email_greeting">Buenos Dias</string>
     <string name="url_website">https://direcciontorressan.wixsite.com/my-site</string>
     <string name="parking_information">
         <![CDATA[
