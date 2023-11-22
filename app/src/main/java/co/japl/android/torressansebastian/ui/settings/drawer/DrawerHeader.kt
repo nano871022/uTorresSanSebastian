@@ -23,7 +23,7 @@ fun DrawerHeader(){
     Column(
         modifier = Modifier
             .background(MaterialTheme.colorScheme.secondary)
-            .padding(20.dp)
+            .padding(top=80.dp)
             .fillMaxWidth()
 
 
@@ -40,14 +40,18 @@ fun DrawerHeader(){
                 Text(text = stringResource(id = R.string.direction))
             }
         }
+        Row( horizontalArrangement = Arrangement.Center
+            , modifier = Modifier.padding(top = 5.dp,end=5.dp,bottom=5.dp).fillMaxWidth()) {
+            Text(text = stringResource(id = R.string.neighborhood))
+        }
         Row( horizontalArrangement = Arrangement.End
-        , modifier = Modifier.fillMaxWidth()) {
+        , modifier = Modifier.padding(top = 50.dp,end=5.dp,bottom=5.dp).fillMaxWidth()) {
             Text(text = stringResource(id = R.string.city))
         }
     }
 }
 @Composable
-@Preview(showSystemUi = true, showBackground = true)
+@Preview(showSystemUi = false, showBackground = true)
 fun PreviewDrawerHeader(){
     MaterialThemeComposeUI {
         DrawerHeader()

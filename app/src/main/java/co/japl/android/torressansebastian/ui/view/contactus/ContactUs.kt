@@ -59,6 +59,16 @@ fun ContactUs(){
                 }
         }
 
+        RowLabelValue(label = R.string.phone_number
+            , text = R.string.phone_numbr
+            , icon = R.drawable.ic_baseline_call_24){
+            Intent(Intent.ACTION_DIAL, Uri.parse("tel:$it"))
+                .apply {
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                context.startActivity(this)
+                }
+        }
+
         RowLabelValue(label = R.string.whatsap, text = R.string.administration_number, icon = R.drawable.whatsap_7272){
             Intent(Intent.ACTION_VIEW, Uri.parse("$urlWatsap$it"))
                 .apply {
@@ -130,7 +140,9 @@ private fun RowLabelValue(@StringRes label:Int, @StringRes text:Int, @DrawableRe
     val settings = LocalConfiguration.current
     val widthWindow = settings.screenWidthDp
     val text = stringResource(id = text)
-    Row(modifier=Modifier.fillMaxWidth().padding(2.dp)
+    Row(modifier= Modifier
+        .fillMaxWidth()
+        .padding(2.dp)
     , verticalAlignment = Alignment.CenterVertically) {
         Text(text = stringResource(id = label)
             ,modifier = Modifier

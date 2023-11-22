@@ -9,6 +9,9 @@ import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.LocalContext
@@ -21,11 +24,12 @@ import androidx.navigation.NavController
 import co.com.jap.ui.theme.MaterialThemeComposeUI
 import co.japl.android.torressansebastian.R
 import co.japl.android.torressansebastian.ui.settings.NavigationEnum
+import co.japl.android.torressansebastian.ui.settings.menuoptions.MenuOptions
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopBar(navController: NavController,drawerState: DrawerState){
+fun TopBar(navController: NavController,drawerState: DrawerState,expanderRemember: MutableState<Boolean> = remember { mutableStateOf(false) }){
     TopAppBar(
         title = {
             ClickableText(text = buildAnnotatedString {
@@ -45,6 +49,18 @@ fun TopBar(navController: NavController,drawerState: DrawerState){
             ContactUs(navController = navController)
 
             Schedule(navController)
+
+            IconButton(onClick = {
+                expanderRemember.value = expanderRemember.value.not()
+            }) {
+                Icon(
+                    painter = painterResource(id = R.drawable.baseline_more_vert_24)
+                    , contentDescription = "more")
+            }
+
+            MenuOptions(expanderRemember){
+                navController.navigate(it)
+            }
         })
 }
 

@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import co.japl.android.torressansebastian.ui.view.about.AboutView
 import co.japl.android.torressansebastian.ui.view.admin_pay.AdministrationPayView
 import co.japl.android.torressansebastian.ui.view.contactus.ContactUs
 import co.japl.android.torressansebastian.ui.view.garbage.Garbage
@@ -57,6 +58,10 @@ fun Navigator(navController: NavHostController, modifier: Modifier, context: Con
 
         composable(NavigationEnum.Schedule.getRoute()) {
             ScheduleView()
+        }
+
+        composable(NavigationEnum.AboutBy.getRoute()) {
+            AboutView()
         }
     }
 }

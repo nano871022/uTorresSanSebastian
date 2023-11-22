@@ -13,7 +13,8 @@ enum class NavigationEnum(private val id:Int, private val icon:Int,private val i
     Repair(8,R.drawable.ic_baseline_home_repair_service_24,true),
     Schedule(10,R.drawable.ic_baseline_calendar_month_24)
     ,Home(1,R.drawable.baseline_home_24,true)
-    ,ContactUs(11,R.drawable.ic_baseline_complains,false);
+    ,ContactUs(11,R.drawable.ic_baseline_complains,false)
+    ,AboutBy(12,R.drawable.baseline_person_24,false);
 
     fun isInDrawer():Boolean{
         return inDrawer

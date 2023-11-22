@@ -32,17 +32,12 @@
     <string name="neighborhood">Barrio Colon</string>
     <string name="city">Medellín - Antioquia</string>
     <string name="direction">Carrera 46 # 41 - 16</string>
-    <string name="title_schedule_assistant">Horarios de Atención Administración</string>
-    <string name="monday_assistant">00:00AM - 00:00AM </string>
-    <string name="tuesday_assistant">00:00AM - 00:00AM </string>
-    <string name="wednesday_assistant">00:00AM - 00:00AM </string>
-    <string name="thursday_assistant">00:00AM - 00:00AM </string>
-    <string name="friday_assistant">00:00AM - 00:00AM </string>
-    <string name="saturday_assistant">00:00AM\n00:00AM </string>
     <string name="title_contact_number">Numeros de Contactos</string>
     <string name="admin_number">Número de Administración:</string>
     <string name="administration_number">305 333 13 94</string>
     <string name="url_whatsap">https://wa.me/+57</string>
+    <string name="phone_number">Teléfono</string>
+    <string name="phone_numbr">604 261 12 79</string>
     <string name="entrance_nbr">Número de Porteria:</string>
     <string name="entrance_number">310 581 55 57</string>
     <string name="title_contact_email">Correos Electrónicos</string>
@@ -53,13 +48,10 @@
     <string name="consejo_email_label">Consejo:</string>
     <string name="consejo_email">concejotorressansebastian@gmail.com</string>
     <string name="country_whatsapp">+57</string>
-    <string name="monday">Lunes</string>
-    <string name="tuesday">Martes</string>
-    <string name="wednesday">Miercoles</string>
-    <string name="thursday">Jueves</string>
-    <string name="friday">Viernes</string>
-    <string name="saturday">Sabado</string>
-    <string name="hour">Hora</string>
+    <string name="attention_schedule">Horario Atención</string>
+    <string name="schedule_time">Martes Y Jueves \n De 9:00 am a 1:00 pm</string>
+    <string name="note1_admin_attention">NOTA: En case que no pueda asistir en ese horario de igual forma cominicarse con la administración y se cordinara horario diferente</string>
+    <string name="note2_assistant_attention">El horario por parte de asistente de administración : No cambia</string>
     <string name="schedule">Horario</string>
     <string name="parking">Parqueadero</string>
     <string name="schedule_parking">Lunes a Domingo de 7 A.M. a 10 P.M. </string>
@@ -104,6 +96,7 @@
     <string name="speed_parking">Velocidad vehiculos en Parqueadero</string>
     <string name="number_speed_parking">10 km/h</string>
     <string name="pet_ownership">Tenencia de Mascotas</string>
+    <string name="about_by">Acerca de</string>
     <string name="law_pet_ownership">
         <![CDATA[
         <h3>LEY 746 DE 2002
