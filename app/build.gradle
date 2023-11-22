@@ -14,8 +14,8 @@ android {
         applicationId "co.japl.android.torressansebastian"
         minSdk 26
         targetSdk 33
-        versionCode 1_00_07
-        versionName "V1.0.7 Normas Propiedad Horizontal V1"
+        versionCode 1_00_08
+        versionName "V1.00.08 Cambio de interface grafica"
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         vectorDrawables{
