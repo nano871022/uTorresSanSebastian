@@ -14,8 +14,8 @@ android {
         applicationId "co.japl.android.torressansebastian"
         minSdk 26
         targetSdk 33
-        versionCode 1_00_10
-        versionName "V1.00.10 Se arregla botones de email en contactos ya que no funcionaban"
+        versionCode 1_00_12
+        versionName "V1.00.12 Se arregla problema con las imagenes de la pagina principal"
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         vectorDrawables{

@@ -4,10 +4,14 @@ import android.content.res.Configuration
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.interaction.collectIsDraggedAsState
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.PagerState
@@ -16,7 +20,6 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
@@ -30,17 +33,17 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import co.com.jap.ui.common.ImageView
 import co.com.jap.ui.theme.MaterialThemeComposeUI
 import kotlinx.coroutines.delay
+
+val DELAY_CAROUSEL_MILLSEG = 10_000L
+
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable
 fun HomeView(){
         val model = HomeState()
-        Text(text = "This  device does not support carousel", modifier=Modifier.padding(30.dp))
-
         MoveCarousel(model = model)
 
         Carousel(model = model)
@@ -50,31 +53,36 @@ fun HomeView(){
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun MoveCarousel(model: HomeModel){
-    with(model.state){
-        var currentPage by  remember { mutableIntStateOf(0) }
-        LaunchedEffect(key1 = currentPage ){
-            delay(10000)
-            val nextPage = if(pageCount > 0) currentPage + 1 % pageCount else 0
-            animateScrollToPage(nextPage)
-            currentPage = nextPage
+    val isDragger by model.state.interactionSource.collectIsDraggedAsState()
+    if(isDragger.not()) {
+        with(model.state) {
+            var currentPage by remember { mutableIntStateOf(0) }
+            LaunchedEffect(key1 = currentPage) {
+                delay(DELAY_CAROUSEL_MILLSEG)
+                val nextPage = if (pageCount > 0) currentPage + 1 % pageCount else 0
+                animateScrollToPage(nextPage)
+                currentPage = nextPage
+            }
         }
     }
-    Text(text = "This  device does not support carousel", modifier=Modifier.padding(30.dp))
 }
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable
 private fun Carousel(model: HomeModel){
-    Column{
+    Column(
+        modifier = Modifier.fillMaxSize()
+            .padding(5.dp)
+        , verticalArrangement = Arrangement.Center
+        , horizontalAlignment = Alignment.CenterHorizontally
+    ){
         Box {
             HorizontalPager(
                 state = model.state,
                 pageSpacing = 5.dp,
                 contentPadding = PaddingValues(horizontal = 5.dp),
             ) {
-                model.viewModel.list[it]?.let {
-                    CardImage(model = model, it = it)
-                }
+                CardImage(model = model, it = model.viewModel.list[it])
             }
             DotImages(pageCount = model.viewModel.list.size, pagerState = model.state, modifier = Modifier.align(
                 Alignment.BottomCenter
@@ -82,21 +90,22 @@ private fun Carousel(model: HomeModel){
 
             ImageView(name = model.openStateName.value, imageSrcInt = model.openStateSrc.value, openDialog = model.openState as MutableState<Boolean>)
         }
-        Text(text = "Click on Image to see on dialog", modifier=Modifier.padding(30.dp), fontSize = 10.sp)
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun CardImage(model: HomeModel,it:Int){
-    Card(modifier = Modifier.padding(10.dp),
+    Card(modifier = Modifier.padding(10.dp).fillMaxWidth(),
         elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
         onClick={
             model.openStateName.value = "Image $it"
             model.openStateSrc.value = it
             model.openState.value = true
         }) {
-        Image(painter = painterResource(id = it), contentDescription = "tt")
+        Image(painter = painterResource(id = it)
+            , contentDescription = "$it"
+            , modifier = Modifier.fillMaxWidth())
     }
 }
 

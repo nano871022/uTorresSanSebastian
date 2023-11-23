@@ -1,7 +1,6 @@
 package co.japl.android.torressansebastian.ui.view.home
 
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.pager.PagerState
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
@@ -17,6 +16,7 @@ fun HomeState(
     openName: MutableState<String> = remember { mutableStateOf("") },
     openSrc: MutableState<Int> = remember { mutableIntStateOf(0) },
     viewModel:HomeViewModel = HomeViewModel(LocalContext.current)
-    , state : PagerState = rememberPagerState{viewModel.list.size}) :HomeModel{
+     ) :HomeModel{
+    val state = rememberPagerState( pageCount = {viewModel.list.size})
     return HomeModel(state,viewModel,openDialog,openName,openSrc)
 }
