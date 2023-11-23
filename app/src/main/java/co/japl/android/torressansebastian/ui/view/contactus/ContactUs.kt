@@ -1,4 +1,5 @@
 package co.japl.android.torressansebastian.ui.view.contactus
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.annotation.DrawableRes
@@ -84,28 +85,19 @@ fun ContactUs(){
         RowLabelValue(label = R.string.admin_email
             , text = R.string.administration_email
             , icon = R.drawable.ic_baseline_email_24){
-            Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:$it")).apply {
-                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                putExtra(Intent.EXTRA_EMAIL,greeting)
-            }
+            choseAppSentEmail(it,greeting,"Asunto",context)
         }
 
         RowLabelValue(label = R.string.consejo_email_label
             , text = R.string.consejo_email
             , icon = R.drawable.ic_baseline_email_24){
-            Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:$it")).apply {
-                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                putExtra(Intent.EXTRA_EMAIL,greeting)
-            }
+            choseAppSentEmail(it,greeting,"Asunto",context)
         }
 
         RowLabelValue(label = R.string.aux_email
             , text = R.string.auxiliar_email
             , icon = R.drawable.ic_baseline_email_24){
-            Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:$it")).apply {
-                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                putExtra(Intent.EXTRA_EMAIL,greeting)
-            }
+            choseAppSentEmail(it,greeting,"Asunto",context)
         }
 
         RowLabelValue(label = R.string.website, text = R.string.url_website, icon = R.drawable.ic_action_www){
@@ -117,6 +109,8 @@ fun ContactUs(){
         }
     }
 }
+
+
 
 @Composable
 private fun TitleSection(@DrawableRes icon: Int,@StringRes name:Int,@StringRes description:Int){
@@ -169,6 +163,17 @@ private fun RowLabelValue(@StringRes label:Int, @StringRes text:Int, @DrawableRe
 private fun getDpByPercent(percentage: Double, maxSize: Int):Dp{
     return (percentage * maxSize).toInt().dp
     }
+
+private fun choseAppSentEmail(email:String,title:String,subject:String,context: Context) {
+    Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:$email")).apply {
+        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        putExtra(Intent.EXTRA_EMAIL, title)
+        putExtra(Intent.EXTRA_CC, email)
+        putExtra(Intent.EXTRA_SUBJECT, subject)
+        val intentEnd = Intent.createChooser(this, "Send Email Using:")
+        context.startActivity(intentEnd)
+    }
+}
 
 @RequiresApi(34)
 @Composable

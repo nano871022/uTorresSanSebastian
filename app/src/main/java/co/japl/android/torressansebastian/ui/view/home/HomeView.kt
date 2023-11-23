@@ -16,6 +16,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
@@ -29,6 +30,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import co.com.jap.ui.common.ImageView
 import co.com.jap.ui.theme.MaterialThemeComposeUI
 import kotlinx.coroutines.delay
@@ -36,11 +38,12 @@ import kotlinx.coroutines.delay
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable
 fun HomeView(){
-    val model = HomeState()
+        val model = HomeState()
+        Text(text = "This  device does not support carousel", modifier=Modifier.padding(30.dp))
 
-    MoveCarousel(model = model)
+        MoveCarousel(model = model)
 
-    Carousel(model = model)
+        Carousel(model = model)
 
 }
 
@@ -56,6 +59,7 @@ private fun MoveCarousel(model: HomeModel){
             currentPage = nextPage
         }
     }
+    Text(text = "This  device does not support carousel", modifier=Modifier.padding(30.dp))
 }
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
@@ -75,9 +79,10 @@ private fun Carousel(model: HomeModel){
             DotImages(pageCount = model.viewModel.list.size, pagerState = model.state, modifier = Modifier.align(
                 Alignment.BottomCenter
             ))
+
             ImageView(name = model.openStateName.value, imageSrcInt = model.openStateSrc.value, openDialog = model.openState as MutableState<Boolean>)
         }
-
+        Text(text = "Click on Image to see on dialog", modifier=Modifier.padding(30.dp), fontSize = 10.sp)
     }
 }
 
