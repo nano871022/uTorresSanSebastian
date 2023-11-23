@@ -60,7 +60,7 @@ fun MainView(menuSvc: IMenuService){
 @Composable
 @Preview(showBackground = true, showSystemUi = false, uiMode = Configuration.UI_MODE_NIGHT_NO)
 fun Preview(){
-    val menuSvc = MenuService()
+    val menuSvc = MenuService(LocalContext.current)
     menuSvc.addMenu(
         MenuItem(1
             ,"Home"

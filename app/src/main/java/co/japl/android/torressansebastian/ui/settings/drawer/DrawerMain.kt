@@ -50,7 +50,7 @@ fun Preview(){
     val context = LocalContext.current
     val state = rememberDrawerState(DrawerValue.Closed)
     val scope = rememberCoroutineScope()
-    val menuSvc = MenuService()
+    val menuSvc = MenuService(LocalContext.current)
 
     val navController = NavController(context)
     DrawerMain(navController,menuSvc,scope,state)

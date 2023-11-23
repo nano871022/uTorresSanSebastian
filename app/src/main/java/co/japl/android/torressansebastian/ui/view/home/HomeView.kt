@@ -1,5 +1,6 @@
 package co.japl.android.torressansebastian.ui.view.home
 
+import android.content.res.Configuration
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -37,6 +38,15 @@ import kotlinx.coroutines.delay
 fun HomeView(){
     val model = HomeState()
 
+    MoveCarousel(model = model)
+
+    Carousel(model = model)
+
+}
+
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+private fun MoveCarousel(model: HomeModel){
     with(model.state){
         var currentPage by  remember { mutableIntStateOf(0) }
         LaunchedEffect(key1 = currentPage ){
@@ -46,36 +56,43 @@ fun HomeView(){
             currentPage = nextPage
         }
     }
+}
 
+@OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
+@Composable
+private fun Carousel(model: HomeModel){
     Column{
-Box {
-    HorizontalPager(
-        state = model.state,
-        pageSpacing = 5.dp,
-        contentPadding = PaddingValues(horizontal = 5.dp),
-    ) {
-        model.viewModel.list[it]?.let {
-
-            Card(modifier = Modifier.padding(10.dp),
-                elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
-                onClick={
-                    model.openStateName.value = "Image $it"
-                    model.openStateSrc.value = it
-                    model.openState.value = true
-                }) {
-                Image(painter = painterResource(id = it), contentDescription = "tt")
+        Box {
+            HorizontalPager(
+                state = model.state,
+                pageSpacing = 5.dp,
+                contentPadding = PaddingValues(horizontal = 5.dp),
+            ) {
+                model.viewModel.list[it]?.let {
+                    CardImage(model = model, it = it)
+                }
             }
+            DotImages(pageCount = model.viewModel.list.size, pagerState = model.state, modifier = Modifier.align(
+                Alignment.BottomCenter
+            ))
+            ImageView(name = model.openStateName.value, imageSrcInt = model.openStateSrc.value, openDialog = model.openState as MutableState<Boolean>)
         }
 
     }
-    DotImages(pageCount = model.viewModel.list.size, pagerState = model.state, modifier = Modifier.align(
-        Alignment.BottomCenter
-    ))
-    ImageView(name = model.openStateName.value, imageSrcInt = model.openStateSrc.value, openDialog = model.openState as MutableState<Boolean>)
 }
 
-}
-
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun CardImage(model: HomeModel,it:Int){
+    Card(modifier = Modifier.padding(10.dp),
+        elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
+        onClick={
+            model.openStateName.value = "Image $it"
+            model.openStateSrc.value = it
+            model.openState.value = true
+        }) {
+        Image(painter = painterResource(id = it), contentDescription = "tt")
+    }
 }
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -101,7 +118,7 @@ fun DotImages(pageCount:Int, pagerState:PagerState,modifier:Modifier){
 
 
 @Composable
-@Preview(showSystemUi = true, showBackground = true)
+@Preview(showSystemUi = true, showBackground = true, apiLevel = 31, uiMode = Configuration.UI_MODE_NIGHT_YES)
 fun PreviewHomeView(){
     MaterialThemeComposeUI {
         HomeView()

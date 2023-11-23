@@ -1,11 +1,12 @@
 package co.japl.android.torressansebastian.impl
 
+import android.content.Context
 import co.japl.android.torressansebastian.interfaces.IMenuService
 import co.japl.android.torressansebastian.model.MenuItem
 import co.japl.android.torressansebastian.ui.settings.NavigationEnum
 
 
-class MenuService : IMenuService {
+class MenuService (val context: Context): IMenuService {
     private val items = mutableListOf<MenuItem>()
 
     init{
@@ -26,7 +27,7 @@ class MenuService : IMenuService {
             addMenu(
                 MenuItem(
                     it.getId()
-                    ,it.name
+                    ,context.resources.getString(it.getName())
                     , it.getIcon()
                     ,it.name
                     ,it.getRoute()

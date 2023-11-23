@@ -12,12 +12,13 @@ import co.japl.android.torressansebastian.ui.view.MainView
 
 class Main : ComponentActivity() {
 
-    private val menuSvc: IMenuService = MenuService()
+    private lateinit var menuSvc: IMenuService
 
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.actionBar?.hide()
+        menuSvc = MenuService(context = this)
         setContent{
             MaterialThemeComposeUI {
                 MainView(menuSvc)

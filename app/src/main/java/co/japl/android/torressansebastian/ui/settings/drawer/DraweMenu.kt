@@ -3,6 +3,7 @@ package co.japl.android.torressansebastian.ui.settings.drawer
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Divider
 import androidx.compose.material3.DrawerState
@@ -57,6 +58,7 @@ fun DrawerMenu(navController: NavController
 private fun DefaultItemMenu(painter: Painter,name:String, description:String,onClick:()->Unit){
     Row(
         modifier= Modifier
+            .fillMaxWidth()
             .padding(15.dp)
             .clickable { onClick.invoke() }
         , verticalAlignment = Alignment.CenterVertically
@@ -66,7 +68,7 @@ private fun DefaultItemMenu(painter: Painter,name:String, description:String,onC
             , contentDescription = description
             , modifier = Modifier.padding(end = 15.dp))
 
-        Text(text = name)
+        Text(text = name, modifier = Modifier.fillMaxWidth())
     }
 
     Divider()
@@ -76,7 +78,7 @@ private fun DefaultItemMenu(painter: Painter,name:String, description:String,onC
 @Composable
 @Preview(showBackground = true, showSystemUi = false)
 fun PreviewDrawer(){
-    val menuSvc = MenuService()
+    val menuSvc = MenuService(LocalContext.current)
     val state = rememberDrawerState(DrawerValue.Closed)
     val scope = rememberCoroutineScope()
 
