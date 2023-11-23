@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/UI" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/japl-android-about-module" />
+            <option value="$PROJECT_DIR$/urtss-android-core" />
           </set>
         </option>
       </GradleProjectSettings>

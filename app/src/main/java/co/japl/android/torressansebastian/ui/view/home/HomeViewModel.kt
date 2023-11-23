@@ -1,32 +1,24 @@
 package co.japl.android.torressansebastian.ui.view.home
 
-import android.content.Context
-import android.util.Log
-import androidx.core.text.isDigitsOnly
-import androidx.lifecycle.ViewModel
-import co.japl.android.torressansebastian.R
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
+import co.japl.android.torressansebastian.module.EntryPointModule
+import co.urtss.core.adapters.inbound.CarouselPort
+import co.urtss.core.model.Carousel
+import dagger.hilt.EntryPoints
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class HomeViewModel(context:Context) : ViewModel() {
-    private lateinit var  _listDefaultDrawable : List<Int>
-    val list:List<Int> get() = _listDefaultDrawable
+@HiltViewModel
+class HomeViewModel @Inject constructor(private val application:Application) : AndroidViewModel(application) {
+    private lateinit var  _listDefaultDrawable : List<Carousel>
+    private val _carousel:CarouselPort ?= EntryPoints.get(application,EntryPointModule::class.java).getCarouselPort()
+    val list:List<Carousel> get() = _listDefaultDrawable
+
 
     init{
-        Log.d("HomeViewModel","init")
-        val resources = context.resources
-        _listDefaultDrawable = R.drawable::class.java.fields
-            .filter { it.name.contains("whatsapp") }
-            .sortedBy {
-                val lastNmbr = it.name.substring(it.name.length-2)
-                if(lastNmbr.isNotBlank() && lastNmbr.isDigitsOnly()){
-                    return@sortedBy lastNmbr
-                }else{
-                    return@sortedBy it.name
-                }
-            }
-            .mapNotNull {
-                resources.getIdentifier(it.name, "drawable", context.packageName)
-            }
-        Log.d("HomeViewModel","ImgSize: ${_listDefaultDrawable.size}")
+        _carousel?.getList()?.let{
+             _listDefaultDrawable = it
+        }
     }
-
 }

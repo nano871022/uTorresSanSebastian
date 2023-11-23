@@ -29,7 +29,7 @@ fun Title(title:String,icon:Painter,into:@Composable() (() -> Unit)){
         , verticalAlignment = Alignment.CenterVertically) {
 
             Icon(painter = icon , title
-                , tint = MaterialTheme.colorScheme.inversePrimary)
+                , tint = MaterialTheme.colorScheme.tertiary)
 
             Text(text= title
                 , fontSize = 20.sp

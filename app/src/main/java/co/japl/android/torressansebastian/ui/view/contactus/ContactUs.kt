@@ -140,7 +140,7 @@ private fun RowLabelValue(@StringRes label:Int, @StringRes text:Int, @DrawableRe
     , verticalAlignment = Alignment.CenterVertically) {
         Text(text = stringResource(id = label)
             ,modifier = Modifier
-                .width(getDpByPercent(0.48, widthWindow))
+                .width(getDpByPercent(0.43, widthWindow))
                 .padding(end = 10.dp))
 
         Text(text =  text

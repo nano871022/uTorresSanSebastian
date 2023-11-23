@@ -20,6 +20,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
@@ -35,6 +36,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import co.com.jap.ui.common.ImageView
 import co.com.jap.ui.theme.MaterialThemeComposeUI
+import co.japl.android.torressansebastian.R
+import co.urtss.core.model.Carousel
 import kotlinx.coroutines.delay
 
 val DELAY_CAROUSEL_MILLSEG = 10_000L
@@ -71,11 +74,18 @@ private fun MoveCarousel(model: HomeModel){
 @Composable
 private fun Carousel(model: HomeModel){
     Column(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
             .padding(5.dp)
         , verticalArrangement = Arrangement.Center
         , horizontalAlignment = Alignment.CenterHorizontally
     ){
+        if(model.viewModel.list.isEmpty()){
+            Text(text="Carousel was not able to load images")
+            Image(painter = painterResource(id = R.drawable.torres_san_sebastian2)
+                , contentDescription = "WhatsApp"
+                , modifier = Modifier.fillMaxWidth())
+        }
         Box {
             HorizontalPager(
                 state = model.state,
@@ -95,16 +105,18 @@ private fun Carousel(model: HomeModel){
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun CardImage(model: HomeModel,it:Int){
-    Card(modifier = Modifier.padding(10.dp).fillMaxWidth(),
+private fun CardImage(model: HomeModel,it:Carousel){
+    Card(modifier = Modifier
+        .padding(10.dp)
+        .fillMaxWidth(),
         elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
         onClick={
-            model.openStateName.value = "Image $it"
-            model.openStateSrc.value = it
+            model.openStateName.value = "Image ${it.name}"
+            model.openStateSrc.value = it.image
             model.openState.value = true
         }) {
-        Image(painter = painterResource(id = it)
-            , contentDescription = "$it"
+        Image(painter = painterResource(id = it.image)
+            , contentDescription = "${it.name}"
             , modifier = Modifier.fillMaxWidth())
     }
 }

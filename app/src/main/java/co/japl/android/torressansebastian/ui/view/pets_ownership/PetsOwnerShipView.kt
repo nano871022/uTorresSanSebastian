@@ -23,18 +23,21 @@ import co.japl.android.torressansebastian.ui.settings.common.Title
 fun PetsOwnerShip(){
     val tabIndex= remember { mutableIntStateOf(0) }
     val list = arrayListOf("Normas Unidad Residencial","Normas Código Nacional")
-    Title(title = stringResource(id = R.string.pet_ownership), icon = painterResource(id = R.drawable.ic_baseline_pets_24)) {
+    Title(title = stringResource(id = R.string.pet_ownership)
+        , icon = painterResource(id = R.drawable.ic_baseline_pets_24)) {
         TabRow(selectedTabIndex = tabIndex.intValue
-        ,modifier=Modifier.padding(2.dp)) {
+            , backgroundColor = androidx.compose.material3.MaterialTheme.colorScheme.primary
+            ,modifier=Modifier.padding(2.dp)) {
             list.forEachIndexed { index, title->
                 Tab(
                     onClick = {
                         tabIndex.intValue = index
                     },
                     selected = false,
-                    modifier=Modifier.padding(7.dp)
+                    modifier=Modifier.padding(start=7.dp,end=7.dp,top=10.dp,bottom=10.dp),
                 ) {
-                    Text(text = title, textAlign = TextAlign.Center)
+                    Text(text = title
+                        , textAlign = TextAlign.Center)
                 }
 
             }

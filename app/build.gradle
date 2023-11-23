@@ -14,8 +14,8 @@ android {
         applicationId "co.japl.android.torressansebastian"
         minSdk 26
         targetSdk 33
-        versionCode 1_00_12
-        versionName "V1.00.12 Se arregla problema con las imagenes de la pagina principal"
+        versionCode 1_00_19
+        versionName "V1.00.19 Se agrega link directo a la tarjeta de información de la aplicación en google play"
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         vectorDrawables{
@@ -25,7 +25,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -58,6 +58,7 @@ dependencies {
     implementation project(":UI")
     implementation(project(":ScheduleModule"))
     implementation(project(":japl-android-about-module"))
+    implementation(project(":urtss-android-core"))
 
     implementation 'androidx.core:core-ktx:1.12.0'
     implementation 'androidx.compose.foundation:foundation:1.5.4'

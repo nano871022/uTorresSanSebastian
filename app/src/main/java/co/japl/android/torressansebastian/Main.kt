@@ -9,7 +9,10 @@ import co.com.jap.ui.theme.MaterialThemeComposeUI
 import co.japl.android.torressansebastian.impl.MenuService
 import co.japl.android.torressansebastian.interfaces.IMenuService
 import co.japl.android.torressansebastian.ui.view.MainView
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class Main : ComponentActivity() {
 
     private lateinit var menuSvc: IMenuService

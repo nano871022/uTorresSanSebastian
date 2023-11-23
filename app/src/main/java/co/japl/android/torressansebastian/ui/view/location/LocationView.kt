@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
@@ -60,7 +61,7 @@ fun Location(){
             Icon(painter = painterResource(id = R.drawable.ic_baseline_location_on_24)
             , contentDescription = stringResource(id = R.string.app_name)
             ,tint= Color.Red
-        , modifier = Modifier.fillMaxWidth())
+        , modifier = Modifier.width(48.dp).height(48.dp))
         }
 
         GoogleMap (

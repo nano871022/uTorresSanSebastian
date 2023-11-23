@@ -55,7 +55,14 @@ private val DarkColorSchema = darkColorScheme(
     surface = color_theme_dark_surface,
     onSurface = color_theme_dark_on_surface,
     error = color_theme_dark_error,
-    onError = color_theme_dark_on_error
+    onError = color_theme_dark_on_error,
+    primaryContainer = color_theme_dark_primary_container,
+    onPrimaryContainer = color_theme_dark_on_primary_container,
+    secondaryContainer = color_theme_dark_secondary_container,
+    onSecondaryContainer = color_theme_dark_on_secondary_container,
+    tertiaryContainer = color_theme_dark_tertiary_container,
+    onTertiaryContainer = color_theme_dark_on_tertiary_container,
+    inversePrimary = color_theme_dark_primary
 )
 
 @RequiresApi(Build.VERSION_CODES.O)
