@@ -7,6 +7,7 @@
 > -  TorresSanSebastian/connect-gdrive/ -> japl-android-google-connect-module/
 > -  TorresSanSebastian/japl-android-about-module -> japl-android-about-module/
 > -  TorresSanSebastian/ScheduleModule -> japl-android-schedule-module/
+> -  TorresSanSebastian/UI/src/main/java/co/com/japl/ui/utils/ -> finanzas/ui/src/main/java/co/com/japl/ui/utils/
 
 ## Latest Version
 
