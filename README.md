@@ -8,7 +8,7 @@
 > -  TorresSanSebastian/japl-android-about-module -> japl-android-about-module/
 > -  TorresSanSebastian/ScheduleModule -> japl-android-schedule-module/
 > -  TorresSanSebastian/UI/src/main/java/co/com/japl/ui/utils/ -> finanzas/ui/src/main/java/co/com/japl/ui/utils/
-> -  > -  TorresSanSebastian/UI/src/main/java/co/com/japl/ui/enums/ -> finanzas/ui/src/main/java/co/com/japl/ui/enums/
+> -  TorresSanSebastian/UI/src/main/java/co/com/japl/ui/enums/ -> finanzas/ui/src/main/java/co/com/japl/ui/enums/
 
 ## Latest Version
 
