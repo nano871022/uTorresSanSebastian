@@ -31,13 +31,19 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.ColorPainter
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import co.com.jap.ui.common.ImageView
-import co.com.jap.ui.theme.MaterialThemeComposeUI
+import co.com.japl.ui.theme.MaterialThemeComposeUI
 import co.japl.android.torressansebastian.R
 import co.urtss.core.model.Carousel
+import coil.compose.AsyncImage
+import coil.memory.MemoryCache
+import coil.request.ImageRequest
 import kotlinx.coroutines.delay
 
 val DELAY_CAROUSEL_MILLSEG = 10_000L
@@ -92,13 +98,19 @@ private fun Carousel(model: HomeModel){
                 pageSpacing = 5.dp,
                 contentPadding = PaddingValues(horizontal = 5.dp),
             ) {
-                CardImage(model = model, it = model.viewModel.list[it])
+                val image = model.viewModel.list[it]
+                if(image.url.isNotBlank()) {
+                    CarouselItemWeb(model = model, it = image)
+                }else {
+                    CardImage(model = model, it = image)
+                }
             }
             DotImages(pageCount = model.viewModel.list.size, pagerState = model.state, modifier = Modifier.align(
                 Alignment.BottomCenter
             ))
 
             ImageView(name = model.openStateName.value, imageSrcInt = model.openStateSrc.value, openDialog = model.openState as MutableState<Boolean>)
+            ImageView(name = model.openStateName.value, imageUrl = model.openStateUrl.value, openDialog = model.openState as MutableState<Boolean>)
         }
     }
 }
@@ -118,6 +130,29 @@ private fun CardImage(model: HomeModel,it:Carousel){
         Image(painter = painterResource(id = it.image)
             , contentDescription = "${it.name}"
             , modifier = Modifier.fillMaxWidth())
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun CarouselItemWeb(model: HomeModel,it:Carousel){
+    var placeholder: MemoryCache.Key? = null
+    Card(
+        modifier = Modifier
+            .padding(30.dp)
+            .fillMaxWidth()
+        , onClick = {
+            model.openStateName.value = "Image ${it.name}"
+            model.openStateUrl.value = it.url
+            model.openState.value = true
+        }   ) {
+        AsyncImage(
+            model = ImageRequest.Builder(LocalContext.current).data(it.url).crossfade(true).build(),
+            error = ColorPainter(Color.Red),
+            onSuccess = { placeholder = it.result.memoryCacheKey },
+            contentDescription = it.name
+            , modifier = Modifier.fillMaxWidth()
+        )
     }
 }
 

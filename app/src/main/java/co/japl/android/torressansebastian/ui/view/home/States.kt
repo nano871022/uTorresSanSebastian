@@ -15,8 +15,9 @@ fun HomeState(
     openDialog : MutableState<Boolean> = remember { mutableStateOf(false) },
     openName: MutableState<String> = remember { mutableStateOf("") },
     openSrc: MutableState<Int> = remember { mutableIntStateOf(0) },
+    openUrl: MutableState<String> = remember { mutableStateOf("") },
     viewModel:HomeViewModel = viewModel()
      ) :HomeModel{
     val state = rememberPagerState( pageCount = {viewModel.list.size})
-    return HomeModel(state,viewModel,openDialog,openName,openSrc)
+    return HomeModel(state,viewModel,openDialog,openName,openSrc,openUrl)
 }

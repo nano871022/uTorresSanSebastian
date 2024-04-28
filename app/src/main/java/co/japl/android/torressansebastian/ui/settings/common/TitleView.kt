@@ -13,11 +13,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import co.com.jap.ui.theme.MaterialThemeComposeUI
+import co.com.japl.ui.theme.MaterialThemeComposeUI
 import co.japl.android.torressansebastian.R
 
 @Composable
@@ -35,6 +36,29 @@ fun Title(title:String,icon:Painter,into:@Composable() (() -> Unit)){
                 , fontSize = 20.sp
                 , color = MaterialTheme.colorScheme.onPrimary
             , modifier= Modifier.padding(start = 10.dp))
+        }
+
+        Divider(modifier=Modifier.padding(bottom = 15.dp))
+
+        into.invoke()
+    }
+}
+
+@Composable
+fun Title(title:String,icon:ImageVector,into:@Composable() (() -> Unit)){
+    Column(modifier= Modifier
+        .fillMaxSize()
+        .padding(top = 15.dp, start = 10.dp, end = 10.dp, bottom = 10.dp)){
+        Row(modifier= Modifier.fillMaxWidth()
+            , verticalAlignment = Alignment.CenterVertically) {
+
+            Icon(imageVector = icon , title
+                , tint = MaterialTheme.colorScheme.tertiary)
+
+            Text(text= title
+                , fontSize = 20.sp
+                , color = MaterialTheme.colorScheme.onPrimary
+                , modifier= Modifier.padding(start = 10.dp))
         }
 
         Divider(modifier=Modifier.padding(bottom = 15.dp))

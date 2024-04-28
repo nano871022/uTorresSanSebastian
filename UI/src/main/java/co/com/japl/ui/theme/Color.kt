@@ -1,4 +1,4 @@
-package co.com.jap.ui.theme
+package co.com.japl.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

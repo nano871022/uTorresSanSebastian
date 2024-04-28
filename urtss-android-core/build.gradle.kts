@@ -7,13 +7,15 @@ plugins {
 
 android {
     namespace = "co.urtss.core"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 26
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+
+        buildConfigField("String", "FOLDER_IMG_ID", project.findProperty("FOLDER_IMG_ID")?.toString() ?: "")
     }
 
     buildFeatures{
@@ -45,6 +47,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":connect-gdrive"))
 
     implementation("com.google.dagger:hilt-android:2.48")
     kapt("com.google.dagger:hilt-android-compiler:2.44")

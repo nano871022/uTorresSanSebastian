@@ -9,9 +9,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.ClickableText
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Divider
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.AlertDialogDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -31,14 +30,15 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
-import co.com.jap.ui.theme.MaterialThemeComposeUI
+import co.com.japl.ui.R
+import co.com.japl.ui.theme.MaterialThemeComposeUI
 import coil.compose.AsyncImage
 import coil.memory.MemoryCache
 
 @Composable
 @ExperimentalMaterial3Api
 fun ImageView(name:String,imageSrcInt:Int,openDialog: MutableState<Boolean>){
-    if(openDialog.value){
+    if(openDialog.value && imageSrcInt > 0){
         Dialog(name,openDialog,imageSrcInt)
     }
 }
@@ -46,25 +46,34 @@ fun ImageView(name:String,imageSrcInt:Int,openDialog: MutableState<Boolean>){
 @Composable
 @ExperimentalMaterial3Api
 fun ImageView(name:String,imageUrl:String,openDialog: MutableState<Boolean>){
-    if(openDialog.value){
+    if(openDialog.value && imageUrl.isNotBlank()){
         Dialog(name,openDialog, urlImage = imageUrl)
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun Dialog(name:String,openDialog: MutableState<Boolean>,imageSrcInt:Int?=null,urlImage:String?=null){
     val rotationState = remember { mutableFloatStateOf(1f) }
     val scale = remember { mutableFloatStateOf(1f) }
     val offset = remember { mutableStateOf(Offset(0f,0f)) }
     var placeholder: MemoryCache.Key? = null
-    Card(modifier = Modifier
-        .padding(10.dp)
-        .fillMaxSize()
-        , colors = CardDefaults.cardColors(containerColor = Color.Black, contentColor = Color.White),
-    ) {
-        Column(modifier = Modifier.fillMaxSize()) {
+
+
+    AlertDialog(
+         onDismissRequest = {
+            openDialog.value = false
+        }, confirmButton = {
+
+        }, title = {
             TitleCard(name,openDialog)
-            Divider()
+        },modifier = Modifier
+            .fillMaxSize()
+        , containerColor = Color.Black
+
+        , shape = AlertDialogDefaults.shape
+    ,text={
+        Column(modifier = Modifier.fillMaxSize()) {
             Column (modifier= Modifier
                 .fillMaxSize()
                 .pointerInput(Unit) {
@@ -109,12 +118,15 @@ private fun Dialog(name:String,openDialog: MutableState<Boolean>,imageSrcInt:Int
             }
         }
     }
+    )
 }
 
 @Composable
 private fun TitleCard(name:String,openDialog: MutableState<Boolean>){
     Row (
-        modifier=Modifier.fillMaxWidth().zIndex(1f)
+        modifier= Modifier
+            .fillMaxWidth()
+            .zIndex(1f)
     ) {
         Text(text = name, modifier = Modifier
             .padding(10.dp)
@@ -136,6 +148,8 @@ private fun TitleCard(name:String,openDialog: MutableState<Boolean>){
 fun ImageViewPreview(){
     val openDialog = remember { mutableStateOf(true) }
     MaterialThemeComposeUI {
-
+        ImageView(name = "Test"
+            , imageSrcInt = R.drawable.googleplay
+            , openDialog = openDialog)
     }
 }

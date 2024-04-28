@@ -4,20 +4,21 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="testRunner" value="GRADLE" />
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="jbr-17" />
+        <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/ScheduleModule" />
             <option value="$PROJECT_DIR$/UI" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/connect-gdrive" />
             <option value="$PROJECT_DIR$/japl-android-about-module" />
+            <option value="$PROJECT_DIR$/japl-android-graphs" />
             <option value="$PROJECT_DIR$/urtss-android-core" />
           </set>
         </option>
+        <option name="resolveExternalAnnotations" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
