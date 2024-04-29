@@ -5,11 +5,11 @@ import javax.inject.Inject
 
 class PqrsPort @Inject constructor(private val pqrsSvc:IPqrs){
 
-     fun getUrlBilling():String?{
+     suspend fun getUrlBilling():String?{
     return pqrsSvc.getUrlBilling()
     }
 
-     fun getUrlGeneral():String?{
+     suspend fun getUrlGeneral():String?{
     return pqrsSvc.getUrlGeneral()
     }
 

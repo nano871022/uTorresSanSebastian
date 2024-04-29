@@ -5,7 +5,7 @@ import java.io.File
 
 interface IDocument {
 
-    fun getFiles():List<Document>
+    suspend fun getFiles():List<Document>
 
     fun getFile(idFile:String):File?
 }

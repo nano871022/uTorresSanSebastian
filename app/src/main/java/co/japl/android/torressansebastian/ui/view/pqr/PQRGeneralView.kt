@@ -32,6 +32,7 @@ fun PQRGeneral(
     val progressState = remember { viewModel.progress }
     val loaderState = remember { viewModel.loader }
     val urlState = remember { viewModel.url }
+    if (NetworkUtils.isNetworkAvailable(LocalContext.current)) {
     LaunchedEffect(key1 = Unit) {
         viewModel.main()
     }
@@ -40,7 +41,7 @@ fun PQRGeneral(
         LinearProgressIndicator(progressState, modifier = Modifier.fillMaxWidth())
     } else {
         Title(title = stringResource(id = R.string.pqrs_general), icon = Icons.Rounded.UploadFile) {
-            if (NetworkUtils.isNetworkAvailable(LocalContext.current)) {
+
                 AndroidView(factory = {
                     WebView(it).apply {
                         settings.javaScriptEnabled = true
@@ -52,13 +53,19 @@ fun PQRGeneral(
                 }, update = {
                     it.loadUrl(urlState.value)
                 }, modifier = Modifier.fillMaxWidth().fillMaxHeight())
-            }else{
-                Text(text = stringResource(id = R.string.no_network_connection)
-                    , textAlign = TextAlign.Center
-                    , color = MaterialTheme.colorScheme.onBackground
-                    , modifier = Modifier.fillMaxWidth())
-            }
 
+
+        }
+    }
+    }else {
+        Title(title = stringResource(id = R.string.pqrs_general), icon = Icons.Rounded.UploadFile) {
+
+            Text(
+                text = stringResource(id = R.string.no_network_connection),
+                textAlign = TextAlign.Center,
+                color = MaterialTheme.colorScheme.onBackground,
+                modifier = Modifier.fillMaxWidth()
+            )
         }
     }
 }

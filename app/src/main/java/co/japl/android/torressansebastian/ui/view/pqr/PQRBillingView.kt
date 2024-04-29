@@ -3,6 +3,7 @@ package co.japl.android.torressansebastian.ui.view.pqr
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.UploadFile
@@ -31,6 +32,7 @@ fun PQRBilling(
     val progressState = remember { viewModel.progress }
     val loaderState = remember { viewModel.loader }
     val urlState = remember {viewModel.url}
+    if(NetworkUtils.isNetworkAvailable(LocalContext.current)) {
     LaunchedEffect( key1 = Unit) {
             viewModel.main()
     }
@@ -39,25 +41,39 @@ fun PQRBilling(
         LinearProgressIndicator(progressState,modifier = Modifier.fillMaxWidth())
     }else {
         Column(modifier = Modifier.fillMaxWidth()) {
-            Title(title = stringResource(id = R.string.pqrs_billing), icon = Icons.Rounded.UploadFile ) {
-                if(NetworkUtils.isNetworkAvailable(LocalContext.current)) {
-                    AndroidView(factory = {
-                        WebView(it).apply {
-                            settings.javaScriptEnabled = true
-                            this.webViewClient = webViewClient
-                            settings.loadWithOverviewMode = true
-                            settings.useWideViewPort = true
-                            settings.setSupportZoom(true)
-                        }
-                    }, update = {
-                        it.loadUrl(urlState.value)
-                    })
-                }else{
-                    Text(text = stringResource(id = R.string.no_network_connection), modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center)
-                }
+            Title(
+                title = stringResource(id = R.string.pqrs_billing),
+                icon = Icons.Rounded.UploadFile
+            ) {
+
+                AndroidView(factory = {
+                    WebView(it).apply {
+                        settings.javaScriptEnabled = true
+                        this.webViewClient = webViewClient
+                        settings.loadWithOverviewMode = true
+                        settings.useWideViewPort = true
+                        settings.setSupportZoom(true)
+                    }
+                }, update = {
+                    it.loadUrl(urlState.value)
+                }, modifier = Modifier.fillMaxWidth().fillMaxHeight())
+
             }
         }
     }
+    }else{
+        Title(
+            title = stringResource(id = R.string.pqrs_billing),
+            icon = Icons.Rounded.UploadFile
+        ) {
+            Text(
+                text = stringResource(id = R.string.no_network_connection),
+                modifier = Modifier.fillMaxWidth(),
+                textAlign = TextAlign.Center
+            )
+        }
+        }
+
 }
 
 

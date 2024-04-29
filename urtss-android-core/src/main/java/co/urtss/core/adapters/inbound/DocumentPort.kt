@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class DocumentPort @Inject constructor(private val gdriveSvc: IDocument) {
 
-    fun getDocuments(): List<Document> {
+    suspend fun getDocuments(): List<Document> {
         return gdriveSvc.getFiles()
     }
 

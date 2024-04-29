@@ -22,13 +22,11 @@ class Main : ComponentActivity() {
         super.onCreate(savedInstanceState)
         this.actionBar?.hide()
         menuSvc = MenuService(context = this)
+
         setContent{
             MaterialThemeComposeUI {
                 MainView(menuSvc)
             }
         }
     }
-
-
-
 }

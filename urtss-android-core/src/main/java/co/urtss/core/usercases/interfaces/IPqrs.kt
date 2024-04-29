@@ -2,7 +2,7 @@ package co.urtss.core.usercases.interfaces
 
 interface IPqrs {
 
-    fun getUrlBilling(): String?
+    suspend fun getUrlBilling(): String?
 
-    fun getUrlGeneral(): String?
+    suspend fun getUrlGeneral(): String?
 }

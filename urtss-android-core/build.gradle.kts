@@ -16,6 +16,7 @@ android {
         consumerProguardFiles("consumer-rules.pro")
 
         buildConfigField("String", "FOLDER_IMG_ID", project.findProperty("FOLDER_IMG_ID")?.toString() ?: "")
+        buildConfigField("String", "FOLDER_ID", project.findProperty("FOLDER_ID")?.toString() ?: "")
     }
 
     buildFeatures{

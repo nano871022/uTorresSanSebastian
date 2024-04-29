@@ -16,8 +16,8 @@ android {
         applicationId "co.japl.android.torressansebastian"
         minSdk 26
         targetSdk 33
-        versionCode 1_01_1_21
-        versionName "V1.01.1 build 21 Se agrega pantallas para pqrs y visualizador de archivos"
+        versionCode 1_01_9_30
+        versionName "V1.01.9 build 30 Se agrega pantallas para pqrs y visualizador de archivos"
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         vectorDrawables{
@@ -28,7 +28,13 @@ android {
     buildTypes {
         release {
             minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            shrinkResources true
+            minifyEnabled true
+           proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
@@ -106,6 +112,7 @@ dependencies {
     implementation("com.google.firebase:firebase-crashlytics-ktx")
     implementation("com.google.firebase:firebase-analytics-ktx")
     implementation("com.google.firebase:firebase-database-ktx")
+
 
     implementation("io.coil-kt:coil-compose:2.5.0")
 
