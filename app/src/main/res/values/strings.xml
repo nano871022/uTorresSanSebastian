@@ -9,7 +9,7 @@
     <string name="action_settings">Settings</string>
     <string name="suggestion">Sugerencias</string>
     <string name="complaints">Denuncias</string>
-
+    <string name="title_contact_us">Contactanos</string>
     <string name="menu_information">Información</string>
     <string name="menu_location">Ubicación</string>
     <string name="menu_suggestion">Sugerencias</string>
@@ -23,23 +23,23 @@
     <string name="menu_playground">Zona de Juegos</string>
     <string name="menu_noise">Normatividad Ruido</string>
     <string name="menu_box_suggestion">Caja de Sugerencias</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="menu_schedule">Horario Atrención</string>
+    <string name="menu_home">Principal</string>
+    <string name="emails">Correos Electrónicos</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="contact_phones">Telefonos de Contacto</string>
+    <string name="website">Página Web</string>
 
     <string name="unitName">Torres de San Sebastian</string>
     <string name="neighborhood">Barrio Colon</string>
     <string name="city">Medellín - Antioquia</string>
     <string name="direction">Carrera 46 # 41 - 16</string>
-    <string name="title_schedule_assistant">Horarios de Atención Administración</string>
-    <string name="monday_assistant">00:00AM - 00:00AM </string>
-    <string name="tuesday_assistant">00:00AM - 00:00AM </string>
-    <string name="wednesday_assistant">00:00AM - 00:00AM </string>
-    <string name="thursday_assistant">00:00AM - 00:00AM </string>
-    <string name="friday_assistant">00:00AM - 00:00AM </string>
-    <string name="saturday_assistant">00:00AM\n00:00AM </string>
     <string name="title_contact_number">Numeros de Contactos</string>
     <string name="admin_number">Número de Administración:</string>
     <string name="administration_number">305 333 13 94</string>
+    <string name="url_whatsap">https://wa.me/+57</string>
+    <string name="phone_number">Teléfono</string>
+    <string name="phone_numbr">604 261 12 79</string>
     <string name="entrance_nbr">Número de Porteria:</string>
     <string name="entrance_number">310 581 55 57</string>
     <string name="title_contact_email">Correos Electrónicos</string>
@@ -47,16 +47,13 @@
     <string name="administration_email">direcciontorressansebastian@gmail.com</string>
     <string name="aux_email">Auxiliar:</string>
     <string name="auxiliar_email">auxiliarurtss@gmail.com</string>
-    <string name="condejo_email">Consejo:</string>
+    <string name="consejo_email_label">Consejo:</string>
     <string name="consejo_email">concejotorressansebastian@gmail.com</string>
     <string name="country_whatsapp">+57</string>
-    <string name="monday">Lunes</string>
-    <string name="tuesday">Martes</string>
-    <string name="wednesday">Miercoles</string>
-    <string name="thursday">Jueves</string>
-    <string name="friday">Viernes</string>
-    <string name="saturday">Sabado</string>
-    <string name="hour">Hora</string>
+    <string name="attention_schedule">Horario Atención</string>
+    <string name="schedule_time">Martes Y Jueves \n De 9:00 am a 1:00 pm</string>
+    <string name="note1_admin_attention">NOTA: En case que no pueda asistir en ese horario de igual forma cominicarse con la administración y se cordinara horario diferente</string>
+    <string name="note2_assistant_attention">El horario por parte de asistente de administración : No cambia</string>
     <string name="schedule">Horario</string>
     <string name="parking">Parqueadero</string>
     <string name="schedule_parking">Lunes a Domingo de 7 A.M. a 10 P.M. </string>
@@ -67,7 +64,41 @@
     <string name="count_parking_moto"># Motos</string>
     <string name="count_parking_car"># Carros</string>
     <string name="note">Nota</string>
-    <string name="parking_information">Antes de cumplir las 2 horas se deberá retirar el vehículo del parqueadero, para volver a ingresar deben haber pasado 2 horas o más para poder utilizar de nuevo el servicio.\n\n Después de las 10 P.M. no debe permanecer ningún vehículo en el parqueadero.\n\n El tiempo es para visitantes, inquilinos y propietarios sin ningún tipo de exclusion.\n\nEste tiempo aplica para carros como motos.\n\n Recuerde cumplir con los limites de velocidad en la unidad, recuerde que hay niños en la zona. \n\nSi incumple el tiempo estimado de permanencia será multado.</string>
+    <string name="whatsap">Whatsapp</string>
+    <string name="email_greeting">Buenos Dias</string>
+    <string name="pqr_general_title">PQR Generales</string>
+    <string name="pqr_billing_title">PQR Facturación</string>
+    <string name="doc_files_title">Documentos</string>
+    <string name="url_website">https://direcciontorressan.wixsite.com/my-site</string>
+    <string name="there_arent_any_documents_to_show">No hay documentos para mostrar</string>
+    <string name="download_file_name">Descargando %s</string>
+    <string name="create_date">Fecha Creación Archivo: </string>
+    <string name="version_file">Versión del Archivo: </string>
+    <string name="file_type">Tipo de Archivo: </string>
+    <string name="name_file">Nombre Archivo: </string>
+    <string name="description_file">Descripción:</string>
+    <string name="description_folder_documents">
+        En este espacion podra encontrar la información relacionadas a los documentos y otros anexos sobre el manejo de la unidad residencial torres de san sebastian
+
+    </string>
+    <string name="no_network_connection">Esta funcionalidad solo funciona con acceso a internet, conectese a una red de WiFi o activa los datos en el mobile</string>
+    <string name="parking_information">
+        <![CDATA[
+        <p>
+        Antes de cumplir las 2 horas se deberá retirar el vehículo del parqueadero, para volver a ingresar deben haber pasado 2 horas o más para poder utilizar de nuevo el servicio.
+        </p><br/><p>
+        <b>Después de las 10 P.M.</b> no debe permanecer ningún vehículo en el parqueadero.
+        </p><p>
+        El tiempo es para visitantes, inquilinos y propietarios sin ningún tipo de exclusion.
+        </p><br/><p>
+        Este tiempo aplica para <b>carros como motos</b>.
+        </p><br/><p>
+        Recuerde cumplir con los limites de velocidad en la unidad, recuerde que hay niños en la zona.
+        </p><br/><p>
+        <b>Si incumple el tiempo estimado de permanencia será multado.</b>
+        </p>
+        ]]>
+    </string>
     <string name="count_ambulance">Ambulancia</string>
     <string name="num_ambulance">1</string>
     <string name="administration_pay">Forma de Pago de Administración</string>
@@ -82,137 +113,184 @@
     <string name="speed_parking">Velocidad vehiculos en Parqueadero</string>
     <string name="number_speed_parking">10 km/h</string>
     <string name="pet_ownership">Tenencia de Mascotas</string>
+    <string name="about_by">Acerca de</string>
     <string name="law_pet_ownership">
-        LEY 746 DE 2002\n\n
-        CAPITULO XIII NUEVO\n\n
-        De las contravenciones especiales con respecto a la tenencia de ejemplares caninos\n\n
-        Artículo 108-A. La tenencia de ejemplares caninos en las viviendas urbanas y rurales requiere que las circunstancias de su alojamiento en el aspecto higiénico y sanitario, de alimentos y custodia, sean las adecuadas, y que no se produzca ninguna situación de peligro o incomodidad para los vecinos u otras personas en general, o para el propio animal.
-        \n\nArtículo 108-B. Se permitirá la presencia de ejemplares caninos en los ascensores de edificios públicos y privados que, como guías acompañen a su propietario o tenedor. Para los demás ejemplares, será deber de la copropiedad reglamentar su permisibilidad. En las zonas comunes de propiedades horizontales o conjuntos residenciales, los ejemplares caninos deberán ir sujetos por medio de traílla, y provistos de bozal si es el caso específico de perros potencialmente peligrosos según las definiciones dadas por la presente ley.
-        \n\nArtículo 108-D. Queda prohibido dejar las deposiciones fecales de los ejemplares caninos en las vías, parques o lugares públicos. Los propietarios o tenedores de los ejemplares caninos son responsables de recoger convenientemente los excrementos y depositarlos en bolsas de basura domiciliaria, o bien en aquellos lugares que para tal efecto destine la autoridad municipal.
-        \n\nArtículo 108-E. Dado su alto nivel de peligrosidad, se prohíbe la importación de ejemplares caninos de las razas Staffordshire terrier, American Staffordshire terrier, Pit Bull Terrier, American Pit Bull Terrier, o de caninos producto de cruces o híbridos de estas razas, así como el establecimiento de centros de crianza de esta clase de ejemplares caninos en el territorio nacional.
-        \n\nArtículo 108-F. Ejemplares caninos potencialmente peligrosos. Se considerarán perros potencialmente peligrosos aquellos que presenten una o más de las siguientes características:
-\na) Perros que han tenido episodios de agresiones a personas u otros perros;
-\nb) Perros que han sido adiestrados para el ataque y la defensa;
-\nc) Perros que pertenecen a una de las siguientes razas o a sus cruces o híbridos: American Staffordshire Terrier, Bullmastiff, Dóberman, Dogo Argentino, Dogo de Burdeos, Fila Brasileiro, Mastín Napolitano, Pit Bull Terrier, American Pit Bull Terrier, De presa canario, Rottweiler, Staffordshire Terrier, Tosa Japonés.
-\n\nEl propietario de un perro potencialmente peligroso asume la posición de garante de los riesgos que se puedan ocasionar por la sola tenencia de estos animales y por los perjuicios y las molestias que ocasione a las personas, a las cosas, a las vías y espacios públicos y al medio natural en general.
-\n\nArtículo 108-L. Si un perro potencialmente peligroso ataca a otra mascota, su propietario será sancionado por la autoridad municipal competente con multa hasta de dos (2) salarios mínimos mensuales y estará obligado a pagar por todos los daños causados a la mascota. Si el perro es reincidente se procederá al decomiso y sacrificio eutanásico del animal por parte de las autoridades que las alcaldías municipales designen para tal fin.
+        <![CDATA[
+        <h3>LEY 746 DE 2002
+        </h3>
+
+        <h4>
+        CAPITULO XIII NUEVO
+        </h4>
+        De las contravenciones especiales con respecto a la tenencia de ejemplares caninos<br/>
+        <p><br/>
+        <b>Artículo 108-A.</b> La tenencia de ejemplares caninos en las viviendas urbanas y rurales requiere que las circunstancias de su alojamiento en el aspecto higiénico y sanitario, de alimentos y custodia, sean las adecuadas, y que no se produzca ninguna situación de peligro o incomodidad para los vecinos u otras personas en general, o para el propio animal.
+        </p><br/>
+        <p>
+        <b>Artículo 108-B.</b> Se permitirá la presencia de ejemplares caninos en los ascensores de edificios públicos y privados que, como guías acompañen a su propietario o tenedor. Para los demás ejemplares, será deber de la copropiedad reglamentar su permisibilidad. En las zonas comunes de propiedades horizontales o conjuntos residenciales, los ejemplares caninos deberán ir sujetos por medio de traílla, y provistos de bozal si es el caso específico de perros potencialmente peligrosos según las definiciones dadas por la presente ley.
+        </p><br/>
+        <p>
+        <b>Artículo 108-D.</b> Queda prohibido dejar las deposiciones fecales de los ejemplares caninos en las vías, parques o lugares públicos. Los propietarios o tenedores de los ejemplares caninos son responsables de recoger convenientemente los excrementos y depositarlos en bolsas de basura domiciliaria, o bien en aquellos lugares que para tal efecto destine la autoridad municipal.
+        </p><br/>
+        <p>
+        <b>Artículo 108-E.</b> Dado su alto nivel de peligrosidad, se prohíbe la importación de ejemplares caninos de las razas Staffordshire terrier, American Staffordshire terrier, Pit Bull Terrier, American Pit Bull Terrier, o de caninos producto de cruces o híbridos de estas razas, así como el establecimiento de centros de crianza de esta clase de ejemplares caninos en el territorio nacional.
+        </p><br/>
+        <p>
+        <b>Artículo 108-F.</b> Ejemplares caninos potencialmente peligrosos. Se considerarán perros potencialmente peligrosos aquellos que presenten una o más de las siguientes características:
+        <ul>
+<li> Perros que han tenido episodios de agresiones a personas u otros perros;
+<li> Perros que han sido adiestrados para el ataque y la defensa;
+<li> Perros que pertenecen a una de las siguientes razas o a sus cruces o híbridos: American Staffordshire Terrier, Bullmastiff, Dóberman, Dogo Argentino, Dogo de Burdeos, Fila Brasileiro, Mastín Napolitano, Pit Bull Terrier, American Pit Bull Terrier, De presa canario, Rottweiler, Staffordshire Terrier, Tosa Japonés.
+        </ul><br/>
+<p>
+El propietario de un perro potencialmente peligroso asume la posición de garante de los riesgos que se puedan ocasionar por la sola tenencia de estos animales y por los perjuicios y las molestias que ocasione a las personas, a las cosas, a las vías y espacios públicos y al medio natural en general.
+</p><br/>
+<p>
+    Artículo 108-L. Si un perro potencialmente peligroso ataca a otra mascota, su propietario será sancionado por la autoridad municipal competente con multa hasta de dos (2) salarios mínimos mensuales y estará obligado a pagar por todos los daños causados a la mascota. Si el perro es reincidente se procederá al decomiso y sacrificio eutanásico del animal por parte de las autoridades que las alcaldías municipales designen para tal fin.
+</p>
+]]>
     </string>
     <string name="normativity">Normatividad</string>
     <string name="inform_us">Informanos</string>
     <string name="pets_UR_manual">
+        <![CDATA[
         Si tenemos mascotas, es importante que éstas no molesten a los vecinos. Recordemos
-algunas normas con respecto a la tenencia de estas:\n\n
-a) No deje a su mascota sola en el apartamento, puede ocasionar ruidos molestos e
-incómodos.\n
-b) Se debe controlar los ruidos exagerados que alteren la tranquilidad de sus vecinos.\n
-c) Queda prohibido la tenencia de especies exóticas o en vía de extinción.\n
-d) Los perros deberán llevar correa y no podrán deambular sueltos por las zonas
-comunes, zonas verdes.\n
-e) El manejo de los excrementos de su mascota es tarea suya. Por favor recójala de
+algunas normas con respecto a la tenencia de estas:<br/><br/>
+<ul type="square">
+<li> No deje a su mascota sola en el apartamento, puede ocasionar ruidos molestos e
+incómodos.<br/>
+<li> Se debe controlar los ruidos exagerados que alteren la tranquilidad de sus vecinos.<br/>
+<li> Queda prohibido la tenencia de especies exóticas o en vía de extinción.<br/>
+<li> <b>Los perros deberán llevar correa y no podrán deambular sueltos por las zonas
+comunes, zonas verdes.</b><br/>
+<li> <b>El manejo de los excrementos de su mascota es tarea suya. Por favor recójala de
 inmediato y limpie el piso con agua y jabón para evitar malos olores y la
-desagradable apariencia que dejan estos residuos. Se recomienda que los perros
-tengan un espacio destinado para este fin en el apartamento donde viven.\n
-f) Si una mascota ataca a una persona, el propietario será plenamente responsable y
+desagradable apariencia que dejan estos residuos.</b> Se recomienda que los perros
+tengan un espacio destinado para este fin en el apartamento donde viven.<br/>
+<li> Si una mascota ataca a una persona, el propietario será plenamente responsable y
 asumirá todas las consecuencias que se deriven de ello, como gastos médicos,
-clínicos, quirúrgicos, etc.\n
-g) Solamente se pueden sacar del apartamento para retirarlas de la Unidad,
-cargadas si son mascotas de razas pequeñas o con cadena, lazo y
+clínicos, quirúrgicos, etc.<br/>
+<li> <b>Solamente se pueden sacar del apartamento para retirarlas de la Unidad,
+cargadas si son mascotas de razas pequeñas o con cadena,</b> lazo y
 preferiblemente con bozal para las razas grandes, y no para circular con ellas por
-las zonas comunes.\n
-h) Está prohibido tener mascotas de razas consideradas peligrosas o de ataque, que
-puedan atentar contra la integridad física de los habitantes de la Unidad.\n
-i) Está prohibido el entrenamiento de mascotas en las zonas comunes de la Unidad.\n\n
+las zonas comunes.<br/>
+<li> <b>Está prohibido tener mascotas de razas consideradas peligrosas o de ataque, que
+puedan atentar contra la integridad física de los habitantes de la Unidad.</b><br/>
+<li> Está prohibido el entrenamiento de mascotas en las zonas comunes de la Unidad.<br/>
+</ul><br/>
 Cualquier infracción a estas normas se sancionará de acuerdo al Reglamento de la
 copropiedad, en su Capitulo XVIII (De las Sanciones Por Incumplimiento De Obligaciones
-No Pecuniarias).</string>
+No Pecuniarias).]]></string>
     <string name="title_garbage">Reglamento Disposición de la Basura</string>
-    <string name="info_manage_gargage">Apoyar campañas ecológicas y programas de manejo adecuado de desechos es el mejor
-regalo que podemos dar a nuestros hijos para que disfruten de un mundo más limpio.\n\n
+    <string name="info_manage_gargage"><![CDATA[
+    Apoyar campañas ecológicas y programas de manejo adecuado de desechos es el mejor
+regalo que podemos dar a nuestros hijos para que disfruten de un mundo más limpio.<br/>
 Las basuras deben arrojarse por el shut ubicado al lado de los ascensores, teniendo en
-cuenta estas recomendaciones de separación, de la basura orgánica y la reciclable\n\n
-a) Toda la basura orgánica: pañales, restos de comida, cáscaras, servilletas, papel
+cuenta estas recomendaciones de separación, de la basura orgánica y la reciclable<br/>
+<ul>
+<li> <b>Toda la basura orgánica:</b> pañales, restos de comida, cáscaras, servilletas, papel
 higiénico; debe ir empacada en bolsas debidamente selladas o amarradas y en el
-tamaño adecuado que no causen daño al ducto\n\n
-b) No se deben arrojar por el shut colillas, brasas ni fósforos encendidos, desechos
-líquidos o inflamables (ni siquiera en bolsas), de este modo evitamos incendios.\n\n
-c) Los desechos reciclables, como: frascos, cajas, empaques, cajas de pizza,
+tamaño adecuado que no causen daño al ducto<br/>
+<li> <b>No se deben arrojar por el shut colillas</b>, brasas ni fósforos encendidos, desechos
+líquidos o inflamables (ni siquiera en bolsas), de este modo evitamos incendios.<br/>
+<li> <b>Los desechos reciclables</b>, como: frascos, cajas, empaques, cajas de pizza,
 cartones, botellas de gaseosa, etc. deben dejarse al lado de este en la noche o en
 la mañana antes de las siete (7 a.m.). Recuerde lavar los envases de vidrio y
 plástico antes de colocarlos junto al shut, para evitar proliferación de plagas y la
-generación de malos olores.\n\n
-d) En ningún caso deben arrojarse basuras, colillas o cualquier otro tipo de objetos
-por las ventanas y balcones a las zonas comunes, terrazas o bienes de los demás
+generación de malos olores.<br/>
+<li> <b>En ningún caso deben arrojarse basuras, colillas o cualquier otro tipo de objetos
+por las ventanas y balcones a las zonas comunes</b>, terrazas o bienes de los demás
 copropietarios o residentes, ni escurrir traperos o regar plantas desde los balcones
 o ventanas.\n Se debe informar de aquellos casos en que se observe esta conducta
-para tomar las acciones correctivas necesarias.\n\n
-e) Los escombros provenientes de reformas locativas de los bienes privados son
+para tomar las acciones correctivas necesarias.<br/>
+<li> <b>Los escombros provenientes de reformas locativas</b> de los bienes privados son
 responsabilidad de cada propietario y a él corresponde su manejo y no podrán
 utilizar zonas comunes y pasillos para almacenar estos escombros, ni depositarlos
 por el shut. \nLos copropietarios que realicen reformas deben realizar el aseo tantas
-veces como sea necesario a las zonas comunes que sean afectadas.\n\n
-f) Los cuartos del Shut están ubicados al lado de los ascensores en los siguientes
-pisos:\n\n
-g) Torre 7 a 10: piso 2, 5, 8, 11, 14, 17, 20.\n\n
-h) Torre 2 a 5: piso 3, 6, 9, 12, 15, 18, 21.\n\n
-i) Torre 1 y 6: Descansos de los pisos 3, 5, 7, 9, 11, 13, 15, 17, 19.\n\n
-j) Las escobas, traperas, cajas de cartón, palos de madera, envases de vidrio, se
+veces como sea necesario a las zonas comunes que sean afectadas.<br/>
+<li> <b>Los cuartos del Shut están ubicados</b> al lado de los ascensores en los siguientes
+pisos:<br/>
+<ul>
+<li> Torre 7 a 10: piso 2, 5, 8, 11, 14, 17, 20.<br/>
+<li> Torre 2 a 5: piso 3, 6, 9, 12, 15, 18, 21.<br/>
+<li> Torre 1 y 6: Descansos de los pisos 3, 5, 7, 9, 11, 13, 15, 17, 19.\n\n
+</ul>
+<li> <b>Las escobas, traperas, cajas de cartón, palos de madera, envases de vidrio,<b/> se
 deben dejar en el Shut para ser recogido por el personal de Oficios Varios.\n\n
-k) Los pañales desechables de niño o adulto, los preservativos, toallas sanitarias, no
-se deben arrojar por las ventanas sino que se empacan bien y se botan con los
+<li> <b>Los pañales desechables de niño o adulto, los preservativos, toallas sanitarias, no
+se deben arrojar por las ventanas</b> sino que se empacan bien y se botan con los
 desechos orgánicos. Tampoco se pueden depositar en el baño, esto contribuye al
-taponamiento de las cajas de aguas negras.\n\n
-l) Por ningún motivo se debe dejar basura en los corredores, escalas, ascensores,
-etc. Este no es el lugar destinados para las basuras.\n\n
-m) El mal uso de este servicio genera daños en los ductos que conllevan costos de
-reparación elevados.\n\n
-n) En las zonas comunes existen canecas para las basuras menores, con el fin de
-mantener limpia la unidad. Demos a estas el uso adecuado.\n\n\n\n\n\n\n\n\n\n</string>
+taponamiento de las cajas de aguas negras.<br/>
+<li> <b>Por ningún motivo se debe dejar basura en los corredores, escalas, ascensores</b>,
+etc. Este no es el lugar destinados para las basuras.<br/>
+<li> El mal uso de este servicio genera daños en los ductos que conllevan costos de
+reparación elevados.<br/>
+<li> <b>En las zonas comunes existen canecas para las basuras menores</b>, con el fin de
+mantener limpia la unidad. Demos a estas el uso adecuado.<br/>
+</ul>
+]]></string>
     <string name="title_playground">Reglamento de la Zona de Juegos</string>
-    <string name="info_playground">Los padres deben orientar a los niños del adecuado uso del parque infantil y son
-responsables por los daños que sus respectivos hijos causen en él.\n\n
-        a) La compañía de un adulto responsable es necesaria para la seguridad  de los niños en el parque. Por favor no los deje solo.\n
-        b) Evite que los niños griten y corran por los pasillos y escaleras perturbando la
-tranquilidad de los habitantes.\n
-c) Los padres deberán responder hasta por el más leve de los daños cometidos por
-sus hijos.\n
-d) El personal de seguridad, y de oficios varios no se pueden hacer cargo de los
-niños, la seguridad de estos es responsabilidad única y exclusiva de los padres.\n
-e) Los niños no pueden montar en bicicleta, patines, patinetas, etc. En los andenes y
-rampas peatonales.\n
-f) No permita que sus hijos jueguen en los ascensores y corredores de los pisos.\n\n\n</string>
+    <string name="info_playground">
+        <![CDATA[
+        Los padres deben orientar a los niños del adecuado uso del parque infantil y son
+responsables por los daños que sus respectivos hijos causen en él.<br/><br/>
+        <ul>
+        <li> La <b>compañía de un adulto responsable</b> es necesaria para la seguridad  de los niños en el parque. Por favor no los deje solo.\n
+        <li> <b>Evite que los niños griten y corran por los pasillos y escaleras</b> perturbando la
+tranquilidad de los habitantes.
+<li> Los <b>padres deberán responder hasta por el más leve de los daños cometidos</b> por
+sus hijos.
+<li> <b>El personal de seguridad, y de oficios varios no se pueden hacer cargo de los
+niños</b>, la seguridad de estos es responsabilidad única y exclusiva de los padres.
+<li> <b>Los niños no pueden montar en bicicleta, patines, patinetas, etc. En los andenes y
+rampas peatonales.</b>
+<li> <b>No permita que sus hijos jueguen en los ascensores y corredores</b> de los pisos.
+</ul>
+]]>
+    </string>
     <string name="title_local_repair">Reparaciones Locativas</string>
     <string name="info_local_repair">
-        En caso de remodelación del apartamento el propietario deb:.\n\n
-1. Si al iniciar trabajos de remodelación o adecuación en los apartamentos el ruido afecta
+        <![CDATA[
+        En caso de remodelación del apartamento el propietario deb:.<br/><br/>
+        <ul>
+<li> Si al iniciar trabajos de remodelación o adecuación en los apartamentos el ruido afecta
 directamente a los vecinos residentes, en especial, a los bebés, adultos mayores o
 personas que se encuentren en estado de enfermedad o recuperación, se deberá llegar
 a un acuerdo que beneficie a las partes disminuyendo el ruido con horarios flexibles y
-además se deberán cumplir las siguientes normas:\n
-El horario establecido para el ingreso y salida de obreros y contratistas es de 8:00 a.m. a
-5:00 p.m. de lunes a viernes, y de 8 a.m. a 12:30 p.m. los sábados. No se permite
-realizar trabajos en días festivos y días domingo.\n
-2. Es deber y responsabilidad de cada propietario observar que el contratista, mantenga
+además se deberán cumplir las siguientes normas:<br/>
+El <b>horario establecido</b> para el ingreso y salida de obreros y contratistas es de <b>8:00 a.m. a
+5:00 p.m. de lunes a viernes, y de 8 a.m. a 12:30 p.m. los sábados.</b> No se permite
+realizar trabajos en días festivos y días domingo.<br/>
+<li> Es deber y responsabilidad de cada propietario observar que el contratista, mantenga
 aseadas las áreas aledañas al apartamento que se reforma, los hall de acceso y demás
-áreas comunes afectadas por las obras.\n
-3. Los desperdicios, residuos y basuras que resulten de la obra, deberán ser evacuados
+áreas comunes afectadas por las obras.<br/>
+<li> Los desperdicios, residuos y basuras que resulten de la obra, deberán ser evacuados
 oportunamente del apartamento por el contratista o responsable de la obra, bajo
 exigencia del propietario contratante sin afectar estructuras privadas o comunes,
 desagües, canaletas, en caso de afectación deberá asumir el monto total por los daños y
-perjuicios ocasionados.\n
-4. Notificación de Riesgo de Daños: Es obligación de los copropietarios comunicar de
+perjuicios ocasionados.<br/>
+<li> <b>Notificación de Riesgo de Daños:</b> Es obligación de los copropietarios comunicar de
 inmediato a la Administración y/o guardas de vigilancia sobre los riesgos existentes, con
 el objeto de prevenir posibles daños de cualquier elemento o área de uso común, tales
-como tuberías, tanques, puertas, y demás zonas comunes.\n\n
+como tuberías, tanques, puertas, y demás zonas comunes.<br/><br/>
+</ul>
+<p>
 Los vigilantes deberán informar de manera inmediata a la Administración el
 ingreso de materiales de construcción y contratistas o maestros de obra. La Administración
 deberá hacer la visita al inmueble para informarse de la obra, y que ésta cumpla con los
 permisos respectivos.
+</p>
+]]>
     </string>
     <string name="title_noise">Normas Ruido en la Unidad Residencial</string>
     <string name="info_noise">
-        Las reuniones en los apartamentos después de las 10pm, cualquier sonido debe ser solo audible al interior del inmueble, para no perturbar la tanquilidad de los vecinos.\n\n
-        Esta expresamente prohibido consumir, almacenar o distribuir productos alucinógenos dentro de los apartamentos, cuyo humo y olor afecte a los transeúntes del área comunes o a otros residentes.\n\n
-        Se debe evitar hacer ruido sobre los pisos con acciones como el taconeo, saltos, descargas o deslizamientos de objetos, recordando que "el piso de mi apartamento, es el techo de mi vecino". Asi mismo, se debe evitar los escandalos, gritos, televisores o radios en alto volumen, especialmente en la madrugada o altas horas de la noche.
+        <![CDATA[
+        <p style="text-align:justify">
+        Las reuniones en los apartamentos después de las 10pm, cualquier sonido debe ser solo audible al interior del inmueble, para no perturbar la tanquilidad de los vecinos.<br/><br/>
+        Esta expresamente prohibido consumir, almacenar o distribuir productos alucinógenos dentro de los apartamentos, cuyo humo y olor afecte a los transeúntes del área comunes o a otros residentes.<br/><br/>
+        Se debe evitar hacer ruido sobre los pisos con acciones como el taconeo, saltos, descargas o deslizamientos de objetos, recordando que <b>"el piso de mi apartamento, es el techo de mi vecino"</b>. Asi mismo, se debe evitar los escandalos, gritos, televisores o radios en alto volumen, especialmente en la madrugada o altas horas de la noche.
+        </p>
+        ]]>
     </string>
     <string name="box_suggeston">Caja de Sugerencias</string>
     <string name="resume_asamble_2022">Resumen Asamblea 2022</string>
@@ -224,5 +302,7 @@ permisos respectivos.
     <string name="representante_legal">Representante Legal: Julio Cesar Loaiza</string>
     <string name="contadora_publica">Contadora Pública: Carmen Noreña</string>
     <string name="revisor_fiscal">Revisor Fiscal: Claudia Martha Niño</string>
-    <string name="team">Equipo de Trabajo 2022</string>
+    <string name="team">Equipo de Trabajo 2024</string>
+    <string name="pqrs_billing">PQRs Facturación</string>
+    <string name="pqrs_general">PQRs Generales</string>
 </resources>
