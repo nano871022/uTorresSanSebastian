@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.RequiresApi
-import co.com.jap.ui.theme.MaterialThemeComposeUI
+import co.com.japl.ui.theme.MaterialThemeComposeUI
 import co.japl.android.torressansebastian.impl.MenuService
 import co.japl.android.torressansebastian.interfaces.IMenuService
 import co.japl.android.torressansebastian.ui.view.MainView
@@ -22,13 +22,11 @@ class Main : ComponentActivity() {
         super.onCreate(savedInstanceState)
         this.actionBar?.hide()
         menuSvc = MenuService(context = this)
+
         setContent{
             MaterialThemeComposeUI {
                 MainView(menuSvc)
             }
         }
     }
-
-
-
 }

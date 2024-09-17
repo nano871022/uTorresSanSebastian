@@ -2,6 +2,11 @@ package co.japl.android.torressansebastian.module
 
 import android.app.Application
 import android.content.Context
+import co.com.japl.connect.gdrive.drive.GetFilesFromFolderShared
+import co.com.japl.connect.gdrive.firebase.realtime.Realtime
+import co.urtss.core.adapters.inbound.PqrsPort
+import co.urtss.core.usercases.interfaces.IPqrs
+import com.google.firebase.database.FirebaseDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,9 +23,30 @@ class ModuleProvide {
         return application as Context
     }
 
+    @Singleton
     @Provides
-    fun provideInboundCarouselPort(context:Context): co.urtss.core.adapters.outbound.CarouselPort{
-        return co.urtss.core.adapters.outbound.CarouselPort(context)
+    fun provideGDrive(context:Context):GetFilesFromFolderShared{
+        return GetFilesFromFolderShared(context)
+    }
+
+    @Singleton
+    @Provides
+    fun provideInboundPqrsPort(svc:IPqrs):PqrsPort{
+        return PqrsPort(svc)
+    }
+    @Provides
+    fun provideOutboundCarouselPort(context:Context,gDrive: GetFilesFromFolderShared,realtime:Realtime): co.urtss.core.adapters.outbound.CarouselPort{
+        return co.urtss.core.adapters.outbound.CarouselPort(context,gDrive,realtime)
+    }
+
+    @Provides
+    fun provideRealtimeFirebase(databaseFirebase:FirebaseDatabase):Realtime{
+        return Realtime(databaseFirebase)
+    }
+
+    @Provides
+    fun provideFirebaseRealtime():FirebaseDatabase{
+        return FirebaseDatabase.getInstance()
     }
 
 }

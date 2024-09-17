@@ -11,6 +11,7 @@ import androidx.navigation.compose.composable
 import co.japl.android.torressansebastian.ui.view.about.AboutView
 import co.japl.android.torressansebastian.ui.view.admin_pay.AdministrationPayView
 import co.japl.android.torressansebastian.ui.view.contactus.ContactUs
+import co.japl.android.torressansebastian.ui.view.docs.DocumentList
 import co.japl.android.torressansebastian.ui.view.garbage.Garbage
 import co.japl.android.torressansebastian.ui.view.home.HomeView
 import co.japl.android.torressansebastian.ui.view.location.Location
@@ -18,6 +19,8 @@ import co.japl.android.torressansebastian.ui.view.noise.Noise
 import co.japl.android.torressansebastian.ui.view.parking.Parking
 import co.japl.android.torressansebastian.ui.view.pets_ownership.PetsOwnerShip
 import co.japl.android.torressansebastian.ui.view.playground.Playground
+import co.japl.android.torressansebastian.ui.view.pqr.PQRBilling
+import co.japl.android.torressansebastian.ui.view.pqr.PQRGeneral
 import co.japl.android.torressansebastian.ui.view.repair.Repair
 import co.japl.android.torressansebastian.ui.view.schedule.ScheduleView
 
@@ -62,6 +65,18 @@ fun Navigator(navController: NavHostController, modifier: Modifier, context: Con
 
         composable(NavigationEnum.AboutBy.getRoute()) {
             AboutView()
+        }
+
+        composable(NavigationEnum.PRQGeneral.getRoute()) {
+            PQRGeneral()
+        }
+
+        composable(NavigationEnum.PRQBilling.getRoute()) {
+            PQRBilling()
+        }
+
+        composable(NavigationEnum.DocFiles.getRoute()) {
+            DocumentList()
         }
     }
 }
