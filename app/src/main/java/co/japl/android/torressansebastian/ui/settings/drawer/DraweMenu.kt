@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Divider
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.DrawerValue
@@ -35,7 +37,7 @@ fun DrawerMenu(navController: NavController
                 ,state:DrawerState
 , drawerMenu: DrawerMenuViewModel = DrawerMenuViewModel(menuSvc)
 ){
-    Column(modifier=Modifier.padding(top=20.dp)){
+    Column(modifier=Modifier.padding(top=20.dp).verticalScroll(rememberScrollState())) {
         drawerMenu.items.sortedBy { it.id }.forEach { item->
             DefaultItemMenu(painter = painterResource(id = item.icon)
                 , description = item.description
@@ -69,6 +71,7 @@ private fun DefaultItemMenu(painter: Painter,name:String, description:String,onC
             , modifier = Modifier.padding(end = 15.dp))
 
         Text(text = name, modifier = Modifier.fillMaxWidth())
+
     }
 
     Divider()

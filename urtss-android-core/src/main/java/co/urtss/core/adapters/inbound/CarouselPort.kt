@@ -6,7 +6,11 @@ import javax.inject.Inject
 
 class CarouselPort @Inject constructor(private val carousel: CarouselImpl) {
 
-    fun getList(): List<Carousel> {
+    suspend fun getList(): List<Carousel> {
         return carousel.getList()
+    }
+
+    suspend fun getFromUrl():List<Carousel>{
+        return carousel.getFromUrl()
     }
 }
