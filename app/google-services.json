@@ -1,0 +1,52 @@
+{
+  "project_info": {
+    "project_number": "1080311338183",
+    "project_id": "torressansebastian",
+    "storage_bucket": "torressansebastian.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1080311338183:android:db62459c5bc0e025f19ae2",
+        "android_client_info": {
+          "package_name": "co.japl.android.torressansebastian"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1080311338183-qepofqtopjhia4923cj556piksq2tlu4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.japl.android.torressansebastian",
+            "certificate_hash": "9a9e7bf253d55313a44481970ec7c33866c99660"
+          }
+        },{
+          "client_id": "1080311338183-koe1u3q1o55juduk1gp36l6jjqve8atk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.japl.android.torressansebastian",
+            "certificate_hash": "0f69b102d0dff406015c785425a44242a8254ac9"
+          }
+        },{
+          "client_id": "1080311338183-3pvpsabq9aqllbiaeegbathrt0eqqgc2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.japl.android.torressansebastian",
+            "certificate_hash": "c863db5704299ada73149260aaa3bdb9175cdd2e"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDb1tPGTzBWGI9a6hz-XR6uM8_qb-sYeRY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
