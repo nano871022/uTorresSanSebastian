@@ -38,7 +38,7 @@ class CarouselPort @Inject constructor(private val context: Context, private val
                         }
                     } ?: FOLDER_ID
                 Log.d("CarouselPort","Folder: $folder")
-                 imagesSvc.execute(R.raw.torressansebastian_bf1036b1e939, folder = folder)
+                 imagesSvc.execute(co.com.japl.connect.gdrive.R.raw.cralameda181_34c486bb5b56, folder = folder)
                     ?.takeIf { it.isNotEmpty() }?.forEach {
                         list.add(Pair(it.name, it.url))
                     }
