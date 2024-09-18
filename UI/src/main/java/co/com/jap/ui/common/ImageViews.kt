@@ -37,7 +37,7 @@ import coil.memory.MemoryCache
 
 @Composable
 @ExperimentalMaterial3Api
-fun ImageView(name:String,imageSrcInt:Int,openDialog: MutableState<Boolean>){
+fun ImageViews(name:String,imageSrcInt:Int,openDialog: MutableState<Boolean>){
     if(openDialog.value){
         Dialog(name,openDialog,imageSrcInt)
     }
@@ -45,7 +45,7 @@ fun ImageView(name:String,imageSrcInt:Int,openDialog: MutableState<Boolean>){
 
 @Composable
 @ExperimentalMaterial3Api
-fun ImageView(name:String,imageUrl:String,openDialog: MutableState<Boolean>){
+fun ImageViews(name:String,imageUrl:String,openDialog: MutableState<Boolean>){
     if(openDialog.value){
         Dialog(name,openDialog, urlImage = imageUrl)
     }
@@ -133,7 +133,7 @@ private fun TitleCard(name:String,openDialog: MutableState<Boolean>){
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 @Preview(showSystemUi = true, showBackground = true)
-fun ImageViewPreview(){
+fun ImageViewPreviews(){
     val openDialog = remember { mutableStateOf(true) }
     MaterialThemeComposeUI {
 

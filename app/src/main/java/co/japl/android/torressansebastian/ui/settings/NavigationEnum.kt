@@ -19,7 +19,8 @@ enum class NavigationEnum(private val id:Int,@StringRes private val nameOf:Int,@
     ,AboutBy(12,R.string.about_by,R.drawable.baseline_person_24,false)
     , PRQGeneral(13,R.string.pqr_general_title, R.drawable.ic_baseline_message_24,true)
     , PRQBilling(14,R.string.pqr_billing_title, R.drawable.ic_baseline_suggest,true)
-    , DocFiles(14,R.string.doc_files_title, R.drawable.baseline_insert_drive_file_24,true);
+    , DocFiles(14,R.string.doc_files_title, R.drawable.baseline_insert_drive_file_24,true)
+    , Messages(15,R.string.messages_title, R.drawable.ic_baseline_message_24,true);
 
     fun isInDrawer():Boolean{
         return inDrawer

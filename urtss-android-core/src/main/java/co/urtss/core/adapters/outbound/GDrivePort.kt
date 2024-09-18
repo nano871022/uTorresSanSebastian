@@ -21,7 +21,7 @@ class GDrivePort @Inject constructor(private val getFilesFromFolderShared:GetFil
                 Log.d("GDrivePort", "==Get Value  $it")
             }
         }
-        val files =  getFilesFromFolderShared.execute(resId = R.raw.torressansebastian_bf1036b1e939, folder)
+        val files =  getFilesFromFolderShared.execute(resId = co.com.japl.connect.gdrive.R.raw.cralameda181_34c486bb5b56, folder)
         return files?.takeIf { it.isNotEmpty() }?.map{
             Document(
                 id=it.id,
@@ -36,7 +36,7 @@ class GDrivePort @Inject constructor(private val getFilesFromFolderShared:GetFil
     }
 
     fun downloadFile(idFile:String): File?{
-        return getFilesFromFolderShared.downloadFile(idFile, R.raw.torressansebastian_bf1036b1e939)
+        return getFilesFromFolderShared.downloadFile(idFile, co.com.japl.connect.gdrive.R.raw.cralameda181_34c486bb5b56)
 
     }
 

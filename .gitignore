@@ -17,3 +17,7 @@ local.properties
 /TorresSanSebastian.zip
 /app/release/app-release.aab
 /ScheduleModule/japl-android-schedule-module/
+/.idea/
+/.idea
+/.idea/*
+/.idea/*.*

@@ -15,7 +15,7 @@ class CarouselImpl @Inject constructor(private val carouselPort:CarouselPort): I
                 it.first,
                 it.second,
                 "",
-                it.first.substring(it.first.length - 2).toInt(),
+                0,
                 true
             )
         }.let(list::addAll)
