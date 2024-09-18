@@ -305,4 +305,7 @@ permisos respectivos.
     <string name="team">Equipo de Trabajo 2024</string>
     <string name="pqrs_billing">PQRs Facturación</string>
     <string name="pqrs_general">PQRs Generales</string>
+    <string name="messages_title">Mensajes</string>
+    <string name="admin_messages">Mensajes Enviado por Administración</string>
+    <string name="empty_message">No hay mensajes</string>
 </resources>

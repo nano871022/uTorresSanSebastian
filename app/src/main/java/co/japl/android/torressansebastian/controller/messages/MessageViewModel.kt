@@ -25,6 +25,7 @@ class MessageViewModel @Inject  constructor(private val svc:MessagePort?) : View
         progress.value = 0.3f
         svc?.getMessage()?.let {
             progress.value = 0.5f
+            listed.clear()
             listed.addAll(it)
             progress.value = 0.7f
         }

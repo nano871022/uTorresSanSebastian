@@ -40,21 +40,21 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             Log.d(this.javaClass.name,"Message data payload: ${message.data}")
         }
         // Check if message contains a notification payload.
-        message.notification?.let {
-            it.body?.let {
+        message.notification?.let { notif->
+            notif.body?.let {
                 Log.d(this.javaClass.name, "Message Notification Body: ${it}")
                 svc.addMessage(it)
-                showNotification(it)
+                showNotification(notif.title?:"Mensaje",it)
             }
         }
 
     }
 
-    private fun showNotification(message:String){
+    private fun showNotification(title:String,message:String){
         createNotificationChannel()
         val notification = NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.logotorressansebastian)
-            .setContentTitle("Mensaje")
+            .setContentTitle(title)
             .setContentText(message)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .build()
@@ -76,12 +76,12 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         notificationManager.notify(1, notification)
     }
 
-    fun sendRegistrationToServer(token:String){
+    private fun sendRegistrationToServer(token:String){
         // TODO: Implement this method to send token to your app server.
         Log.d(this.javaClass.name,"sendRegistrationToServer $token")
     }
 
-    fun createNotificationChannel(){
+    private fun createNotificationChannel(){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = "UnitResidentialName"
             val descriptionText = "This channel is about message send by unit residential"

@@ -4,6 +4,8 @@ import android.content.res.Configuration
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Card
 import androidx.compose.material.LinearProgressIndicator
 import androidx.compose.material.Text
@@ -13,11 +15,13 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import co.com.japl.ui.theme.MaterialThemeComposeUI
 import co.com.japl.ui.theme.values.Dimensions
+import co.japl.android.torressansebastian.R
 import co.japl.android.torressansebastian.controller.messages.MessageViewModel
 import co.urtss.core.model.Message
 import java.time.LocalDateTime
@@ -39,10 +43,11 @@ fun Messages(viewModel:MessageViewModel= hiltViewModel()){
 
 @Composable
 fun ShowMessages(list:List<Message>){
-    Column(modifier = Modifier.fillMaxWidth()) {
-        list.forEach {
+    Column(modifier = Modifier.fillMaxWidth().verticalScroll(rememberScrollState())) {
+        Text(text = stringResource(id = R.string.admin_messages), modifier = Modifier.padding(Dimensions.PADDING_SHORT))
+        list.takeIf { it.isNotEmpty() }?.forEach {
             LoadMessage(message = it)
-        }
+        }?: Text(text = stringResource(id = R.string.empty_message), modifier = Modifier.padding(Dimensions.PADDING_SHORT))
     }
 }
 
@@ -80,6 +85,16 @@ fun Preview(){
 @Preview(showBackground = true, showSystemUi = false, uiMode = Configuration.UI_MODE_NIGHT_YES)
 fun PreviewDark(){
     val viewModel = getViewModel()
+    MaterialThemeComposeUI {
+        Messages(viewModel)
+    }
+}
+
+@Composable
+@Preview(showBackground = true, showSystemUi = false, uiMode = Configuration.UI_MODE_NIGHT_YES)
+fun PreviewDark2(){
+    val viewModel = getViewModel()
+    viewModel.list.clear()
     MaterialThemeComposeUI {
         Messages(viewModel)
     }
