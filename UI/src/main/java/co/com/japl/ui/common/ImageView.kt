@@ -110,7 +110,6 @@ private fun Dialog(name:String,openDialog: MutableState<Boolean>,imageSrcInt:Int
                         },
                         model = urlImage,
                         error = ColorPainter(Color.Red),
-                        onSuccess = { placeholder = it.result.memoryCacheKey },
                         contentDescription = name
                     )
 

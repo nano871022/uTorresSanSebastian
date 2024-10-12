@@ -1,5 +1,7 @@
 package co.japl.android.torressansebastian.ui.settings.drawer
 
+import android.content.res.Configuration
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
@@ -15,6 +17,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import co.com.japl.ui.theme.MaterialThemeComposeUI
 import co.japl.android.torressansebastian.impl.MenuService
 import co.japl.android.torressansebastian.interfaces.IMenuService
 import kotlinx.coroutines.CoroutineScope
@@ -26,6 +29,7 @@ fun DrawerMain(navController: NavController
                 , scope: CoroutineScope
                 , state: DrawerState
 ){
+Column {
     ModalDrawerSheet(
         modifier = Modifier.width(300.dp)
     ) {
@@ -34,24 +38,39 @@ fun DrawerMain(navController: NavController
 
         Spacer(Modifier.height(12.dp))
 
-        DrawerMenu(navController = navController
-            , menuSvc = menuSvc
-            , scope = scope
-            , state = state
+        DrawerMenu(
+            navController = navController, menuSvc = menuSvc, scope = scope, state = state
         )
 
     }
 }
+}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-@Preview
-fun Preview(){
+@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_NO, showSystemUi = true, device="id:5.4in FWVGA" )
+fun preview(){
     val context = LocalContext.current
     val state = rememberDrawerState(DrawerValue.Closed)
     val scope = rememberCoroutineScope()
     val menuSvc = MenuService(LocalContext.current)
 
     val navController = NavController(context)
-    DrawerMain(navController,menuSvc,scope,state)
+    MaterialThemeComposeUI {
+        DrawerMain(navController, menuSvc, scope, state)
+    }
+}
+
+@Composable
+@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES, showSystemUi = true, device="id:5.4in FWVGA" )
+fun previewDark(){
+    val context = LocalContext.current
+    val state = rememberDrawerState(DrawerValue.Closed)
+    val scope = rememberCoroutineScope()
+    val menuSvc = MenuService(LocalContext.current)
+
+    val navController = NavController(context)
+    MaterialThemeComposeUI {
+        DrawerMain(navController, menuSvc, scope, state)
+    }
 }

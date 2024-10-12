@@ -28,6 +28,11 @@ val color_theme_light_background = Color(0xFFFAFAFA)
 val color_theme_light_surface = Color(0xFF546E7A)
 val color_theme_light_on_surface = Color(0xFFFFFFFF)
 
+val color_theme_light_surface_container_highest = Color(0xFF546E7A)
+
+val color_theme_light_surface_variant = Color(0xFF546E7A)
+val color_theme_light_on_surface_variant = Color(0xFFFFFFFF)
+
 
 val color_theme_light_error = Color(0xFFFF44336)
 val color_theme_light_on_error = Color(0xFFFFEBEE)

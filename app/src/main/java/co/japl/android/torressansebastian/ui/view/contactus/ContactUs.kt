@@ -70,7 +70,7 @@ fun ContactUs(){
                 }
         }
 
-        RowLabelValue(label = R.string.whatsap, text = R.string.administration_number, icon = R.drawable.whatsap_7272){
+        RowLabelValue(label = R.string.whatsap, text = R.string.administration_number, icon = R.drawable.ic_action_whatsap){
             Intent(Intent.ACTION_VIEW, Uri.parse("$urlWatsap$it"))
                 .apply {
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)

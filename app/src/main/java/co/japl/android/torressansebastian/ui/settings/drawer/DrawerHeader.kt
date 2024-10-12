@@ -1,5 +1,6 @@
 package co.japl.android.torressansebastian.ui.settings.drawer
 
+import android.content.res.Configuration
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -7,7 +8,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.ModalDrawerSheet
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -23,8 +26,8 @@ fun DrawerHeader(){
     Column(
         modifier = Modifier
             .background(MaterialTheme.colorScheme.secondary)
-            .padding(top=80.dp)
-            .fillMaxWidth()
+            .padding(top = 80.dp)
+            .width(300.dp)
 
 
     ){
@@ -41,19 +44,35 @@ fun DrawerHeader(){
             }
         }
         Row( horizontalArrangement = Arrangement.Center
-            , modifier = Modifier.padding(top = 5.dp,end=5.dp,bottom=5.dp).fillMaxWidth()) {
+            , modifier = Modifier
+                .padding(top = 5.dp, end = 5.dp, bottom = 5.dp)
+                .fillMaxWidth()) {
             Text(text = stringResource(id = R.string.neighborhood))
         }
         Row( horizontalArrangement = Arrangement.End
-        , modifier = Modifier.padding(top = 50.dp,end=5.dp,bottom=5.dp).fillMaxWidth()) {
+        , modifier = Modifier
+                .padding(top = 50.dp, end = 5.dp, bottom = 5.dp)
+                .fillMaxWidth()) {
             Text(text = stringResource(id = R.string.city))
         }
     }
 }
 @Composable
-@Preview(showSystemUi = false, showBackground = true)
+@Preview(showSystemUi = true, showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_NO)
 fun PreviewDrawerHeader(){
     MaterialThemeComposeUI {
-        DrawerHeader()
+        ModalDrawerSheet {
+            DrawerHeader()
+        }
+    }
+}
+
+@Composable
+@Preview(showSystemUi = true, showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+fun PreviewDrawerHeaderDark(){
+    MaterialThemeComposeUI {
+        ModalDrawerSheet {
+            DrawerHeader()
+        }
     }
 }
