@@ -39,7 +39,7 @@
     <string name="administration_number">305 333 13 94</string>
     <string name="url_whatsap">https://wa.me/+57</string>
     <string name="phone_number">Teléfono</string>
-    <string name="phone_numbr">604 261 12 79</string>
+    <string name="phone_numbr">604 594 40 82</string>
     <string name="entrance_nbr">Número de Porteria:</string>
     <string name="entrance_number">310 581 55 57</string>
     <string name="title_contact_email">Correos Electrónicos</string>
@@ -70,6 +70,7 @@
     <string name="pqr_billing_title">PQR Facturación</string>
     <string name="doc_files_title">Documentos</string>
     <string name="url_website">https://direcciontorressan.wixsite.com/my-site</string>
+    <string name="url_app">https://urtss.japl.dev</string>
     <string name="there_arent_any_documents_to_show">No hay documentos para mostrar</string>
     <string name="download_file_name">Descargando %s</string>
     <string name="create_date">Fecha Creación Archivo: </string>
@@ -114,6 +115,8 @@
     <string name="number_speed_parking">10 km/h</string>
     <string name="pet_ownership">Tenencia de Mascotas</string>
     <string name="about_by">Acerca de</string>
+    <string name="web_ur">Página Web de la Unidad</string>
+    <string name="web_app">Página Web de la App</string>
     <string name="law_pet_ownership">
         <![CDATA[
         <h3>LEY 746 DE 2002

@@ -45,7 +45,7 @@ fun Messages(viewModel:MessageViewModel= hiltViewModel()){
 fun ShowMessages(list:List<Message>){
     Column(modifier = Modifier.fillMaxWidth().verticalScroll(rememberScrollState())) {
         Text(text = stringResource(id = R.string.admin_messages), modifier = Modifier.padding(Dimensions.PADDING_SHORT))
-        list.takeIf { it.isNotEmpty() }?.forEach {
+        list.takeIf { it.isNotEmpty() }?.sortedByDescending { it.date }?.forEach {
             LoadMessage(message = it)
         }?: Text(text = stringResource(id = R.string.empty_message), modifier = Modifier.padding(Dimensions.PADDING_SHORT))
     }

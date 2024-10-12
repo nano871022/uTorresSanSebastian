@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="com.google.android.c2m.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 <!--android:name=".Application"-->
     <application
         android:name=".Application"
@@ -22,6 +23,14 @@
         tools:targetApi="34">
 
         <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCXLQfcG77akGYyJGTtGb-alx44VGiFWMQ"/>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="allUsers" />
+
+        <meta-data android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/logotorressansebastian"/>
+        <meta-data android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/blue_light"/>
 
         <activity
             android:name=".Main"
@@ -33,13 +42,23 @@
             </intent-filter>
         </activity>
     
-        <service android:name=".services.MyFirebaseMessagingService"
-            android:exported="false"
-            >
+        <service android:name="co.japl.android.torressansebastian.services.MyFirebaseMessagingService"
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
+        <service android:name="co.japl.android.torressansebastian.services.MyJobIntentService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="true"/>
+        <receiver android:name="co.japl.android.torressansebastian.BroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </receiver>
     </application>
 
     

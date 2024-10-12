@@ -29,10 +29,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.painter.ColorPainter
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -42,7 +41,7 @@ import co.com.japl.ui.theme.MaterialThemeComposeUI
 import co.japl.android.torressansebastian.R
 import co.urtss.core.model.Carousel
 import coil.compose.AsyncImage
-import coil.memory.MemoryCache
+import coil.request.CachePolicy
 import coil.request.ImageRequest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -62,7 +61,10 @@ fun HomeView(model:HomeModel = HomeState()) {
     }
 
     if(load.value) {
-        LinearProgressIndicator(progress.value, modifier = Modifier.fillMaxWidth())
+        LinearProgressIndicator(
+            progress = { progress.value },
+            modifier = Modifier.fillMaxWidth(),
+        )
     }else {
         if(list.isEmpty()){
             Column {
@@ -113,6 +115,9 @@ private fun Carousel(model: HomeModel){
 
         AllImage(model = model)
 
+        DotImages(pageCount = model.viewModel.list.size, pagerState = model.state,
+            modifier = Modifier.align(alignment = Alignment.CenterHorizontally))
+
         ImageView(
             name = model.openStateName.value,
             imageSrcInt = model.openStateSrc.value,
@@ -129,7 +134,9 @@ private fun Carousel(model: HomeModel){
 @Composable
 private fun AllImage(model: HomeModel){
     val list = remember {model.viewModel.list}
-    var placeholder: MemoryCache.Key? = null
+    val placeHolder = R.drawable.torres_san_sebastian2
+    val context = LocalContext.current
+
     LazyVerticalGrid(columns = GridCells.Fixed(6)) {
         items(list.size) {
             if (list[it].url.isBlank()) {
@@ -144,17 +151,28 @@ private fun AllImage(model: HomeModel){
                     }
                 )
             }else{
+                val imageRequest = ImageRequest.Builder(context)
+                    .data(list[it].url)
+                    .diskCacheKey(list[it].url)
+                    .memoryCacheKey(list[it].url)
+                    .crossfade(true)
+                    .memoryCachePolicy(CachePolicy.ENABLED)
+                    .diskCachePolicy(CachePolicy.ENABLED)
+                    .networkCachePolicy(CachePolicy.ENABLED)
+                    .build()
+
+
                 AsyncImage(
-                    model = ImageRequest.Builder(LocalContext.current).data(list[it].url).crossfade(true).build(),
-                    error = ColorPainter(Color.Red),
-                    onSuccess = { placeholder = it.result.memoryCacheKey },
+                    model = imageRequest,
                     contentDescription = list[it].name
-                    , modifier = Modifier.fillMaxWidth().clickable {
-                        model.openStateName.value = "Image ${list[it].name}"
-                        model.openStateSrc.value = -1
-                        model.openStateUrl.value = list[it].url
-                        model.openState.value = true
-                    }
+                    , modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable {
+                            model.openStateName.value = "Image ${list[it].name}"
+                            model.openStateSrc.value = -1
+                            model.openStateUrl.value = list[it].url
+                            model.openState.value = true
+                        }
                 )
             }
         }
@@ -183,7 +201,8 @@ private fun CardImage(model: HomeModel,it:Carousel){
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CarouselItemWeb(model: HomeModel,it:Carousel){
-    var placeholder: MemoryCache.Key? = null
+    val placeHolder = R.drawable.torres_san_sebastian2
+    val context = LocalContext.current
     Card(
         modifier = Modifier
             .padding(30.dp)
@@ -194,12 +213,29 @@ fun CarouselItemWeb(model: HomeModel,it:Carousel){
             model.openStateSrc.value = -1
             model.openState.value = true
         }   ) {
+        val imageRequest = ImageRequest.Builder(context)
+            .data(it.url)
+            .diskCacheKey(it.url)
+            .memoryCacheKey(it.url)
+            .placeholder(placeHolder)
+            .crossfade(true)
+            .memoryCachePolicy(CachePolicy.ENABLED)
+            .diskCachePolicy(CachePolicy.ENABLED)
+            .networkCachePolicy(CachePolicy.ENABLED)
+            .build()
+
+
         AsyncImage(
-            model = ImageRequest.Builder(LocalContext.current).data(it.url).crossfade(true).build(),
-            error = ColorPainter(Color.Red),
-            onSuccess = { placeholder = it.result.memoryCacheKey },
+            model = imageRequest,
             contentDescription = it.name
-            , modifier = Modifier.fillMaxWidth()
+            , modifier = Modifier
+                .fillMaxWidth()
+                .clickable {
+                    model.openStateName.value = "Image ${it.name}"
+                    model.openStateSrc.value = -1
+                    model.openStateUrl.value = it.url
+                    model.openState.value = true
+                }
         )
     }
 }

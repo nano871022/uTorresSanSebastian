@@ -2,6 +2,7 @@ package co.urtss.core.adapters.outbound
 
 import android.content.ContentValues
 import android.provider.BaseColumns
+import android.util.Log
 import co.urtss.core.adapters.outbound.contracts.MessageContract
 import co.urtss.core.adapters.outbound.dbHelper.DbHelper
 import co.urtss.core.model.Message
@@ -54,7 +55,9 @@ class MessageLocalPort  @Inject constructor(private val svc:DbHelper?){
                 put(MessageContract.MessageEntry.COLUMN_MESSAGE, message.message)
                 put(MessageContract.MessageEntry.COLUMN_DATE, message.date?.toInstant(ZoneOffset.UTC)?.toEpochMilli())
             }
-            return db.insert(MessageContract.MessageEntry.TABLE_NAME, null, values) > 0
+            return (db.insert(MessageContract.MessageEntry.TABLE_NAME, null, values) > 0).also {
+                Log.d(this.javaClass.name,"addMessage: added id: $it")
+            }
         }
         return false
     }
