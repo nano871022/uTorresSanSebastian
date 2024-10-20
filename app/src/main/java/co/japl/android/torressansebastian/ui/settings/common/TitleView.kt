@@ -18,18 +18,18 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import co.com.alameda181.unidadresidencialalameda181.R
 import co.com.japl.ui.theme.MaterialThemeComposeUI
-import co.japl.android.torressansebastian.R
 
 @Composable
-fun Title(title:String,icon:Painter,into:@Composable() (() -> Unit)){
+fun Title(title:String,iconPainter:Painter,into:@Composable() (() -> Unit)){
     Column(modifier= Modifier
         .fillMaxSize()
         .padding(top = 15.dp, start = 10.dp, end = 10.dp, bottom = 10.dp)){
         Row(modifier= Modifier.fillMaxWidth()
         , verticalAlignment = Alignment.CenterVertically) {
 
-            Icon(painter = icon , title
+            Icon(painter = iconPainter , title
                 , tint = MaterialTheme.colorScheme.tertiary)
 
             Text(text= title
