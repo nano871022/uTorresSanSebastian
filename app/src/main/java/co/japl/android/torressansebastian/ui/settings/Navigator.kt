@@ -15,6 +15,7 @@ import co.japl.android.torressansebastian.ui.view.docs.DocumentList
 import co.japl.android.torressansebastian.ui.view.garbage.Garbage
 import co.japl.android.torressansebastian.ui.view.home.HomeView
 import co.japl.android.torressansebastian.ui.view.location.Location
+import co.japl.android.torressansebastian.ui.view.messages.Messages
 import co.japl.android.torressansebastian.ui.view.noise.Noise
 import co.japl.android.torressansebastian.ui.view.parking.Parking
 import co.japl.android.torressansebastian.ui.view.pets_ownership.PetsOwnerShip
@@ -77,6 +78,9 @@ fun Navigator(navController: NavHostController, modifier: Modifier, context: Con
 
         composable(NavigationEnum.DocFiles.getRoute()) {
             DocumentList()
+        }
+        composable(NavigationEnum.Messages.getRoute()) {
+            Messages()
         }
     }
 }

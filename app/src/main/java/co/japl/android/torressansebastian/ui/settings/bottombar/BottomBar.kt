@@ -35,24 +35,20 @@ fun BottomBar(navController: NavController){
 
         Email(currentRoute,this)
 
-        WebSite( currentRoute = currentRoute, rowScope = this)
+        Messages( currentRoute = currentRoute, rowScope = this,navController = navController)
     }
 }
 
 @Composable
-private fun WebSite(currentRoute: String?,rowScope: RowScope){
-    val context = LocalContext.current
-    val url = stringResource(id = R.string.url_website)
+private fun Messages(currentRoute: String?,rowScope: RowScope,navController: NavController){
     DefaultButton(row = rowScope
         , name = "WebSite"
-        , icon = painterResource(id = R.drawable.ic_action_www)
+        , icon = painterResource(id = NavigationEnum.Messages.getIcon())
         , currentRoute = currentRoute) {
-        Intent(Intent.ACTION_VIEW, Uri.parse(url)).apply {
-            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-           context.startActivity(this)
+            navController.navigate(NavigationEnum.Messages.getRoute())
         }
     }
-}
+
 
 
 @Composable
@@ -62,7 +58,7 @@ private fun WhatSap(currentRoute: String?,rowScope: RowScope){
     val context = LocalContext.current
     DefaultButton(row = rowScope
         , name = "WhatSap"
-        , icon = painterResource(id = R.drawable.whatsap_7272)
+        , icon = painterResource(id = R.drawable.ic_action_whatsap)
         , currentRoute = currentRoute) {
         Intent(Intent.ACTION_VIEW, Uri.parse(urlAdminWhatsap + adminNumber.trim()+"/")).apply {
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -122,6 +118,7 @@ private fun DefaultButton(row: RowScope, name:String, icon: Painter, currentRout
         },alwaysShowLabel = false
         ,selected = currentRoute == name
         ,icon = { Icon(painter=icon,contentDescription = name)}
+
         ,onClick = {
             onClick.invoke()
         }

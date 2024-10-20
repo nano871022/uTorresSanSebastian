@@ -4,7 +4,11 @@ import android.app.Application
 import android.content.Context
 import co.com.japl.connect.gdrive.drive.GetFilesFromFolderShared
 import co.com.japl.connect.gdrive.firebase.realtime.Realtime
+import co.urtss.core.adapters.inbound.MessagePort
 import co.urtss.core.adapters.inbound.PqrsPort
+import co.urtss.core.adapters.outbound.MessageLocalPort
+import co.urtss.core.adapters.outbound.dbHelper.DbHelper
+import co.urtss.core.usercases.interfaces.IMessage
 import co.urtss.core.usercases.interfaces.IPqrs
 import com.google.firebase.database.FirebaseDatabase
 import dagger.Module
@@ -47,6 +51,20 @@ class ModuleProvide {
     @Provides
     fun provideFirebaseRealtime():FirebaseDatabase{
         return FirebaseDatabase.getInstance()
+    }
+
+    @Provides
+    fun provideMessagePort(svc:IMessage):MessagePort{
+        return MessagePort(svc)
+    }
+    @Provides
+    fun provideMessageLocalPort(dbH: DbHelper):MessageLocalPort{
+        return MessageLocalPort(dbH)
+    }
+
+    @Provides
+    fun provideDBHelper(context:Context):DbHelper{
+        return DbHelper(context)
     }
 
 }
