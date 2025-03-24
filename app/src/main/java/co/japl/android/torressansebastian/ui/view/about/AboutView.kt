@@ -8,7 +8,7 @@ import co.japl.android.torressansebastian.BuildConfig
 
 @Composable
 fun AboutView(){
-    About(BuildConfig.VERSION_NAME)
+    About(BuildConfig.VERSION_NAME,BuildConfig.APPLICATION_ID)
 }
 @Composable
 @Preview(showSystemUi = true, showBackground = true)
