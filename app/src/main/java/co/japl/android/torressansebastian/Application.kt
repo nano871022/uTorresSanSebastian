@@ -19,7 +19,6 @@ class Application : Application() {
             val channelName = "All Users Notifications"
             val channelDescription = "Channel for all user notifications"
             val importance = NotificationManager.IMPORTANCE_HIGH
-
             val channel = NotificationChannel(channelId, channelName, importance).apply {
                 description = channelDescription
             }
