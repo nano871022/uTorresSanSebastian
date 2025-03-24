@@ -20,7 +20,7 @@ import co.japl.android.torressansebastian.ui.settings.common.Title
 @Composable
 fun ScheduleView(){
     Title(title = stringResource(id = R.string.attention_schedule)
-        , icon = painterResource(id = R.drawable.ic_baseline_calendar_month_24)) {
+        , iconPainter = painterResource(id = R.drawable.ic_baseline_calendar_month_24)) {
         ScheduleBoard()
         Column(modifier = Modifier.fillMaxWidth()
         , horizontalAlignment = Alignment.CenterHorizontally) {

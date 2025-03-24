@@ -5,5 +5,6 @@
     <mapping directory="$PROJECT_DIR$/ScheduleModule" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/connect-gdrive" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/japl-android-about-module" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ui" vcs="Git" />
   </component>
 </project>

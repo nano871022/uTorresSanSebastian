@@ -1,0 +1,96 @@
+[versions]
+andoird-hilt-base = "1.2.0"
+hilt-android = "2.48"
+compose-materials = "1.7.3"
+android-navigation = "2.8.2"
+android-lifecycle = "2.8.6"
+android-core-ktx = "1.13.1"
+android-credentials = "1.3.0"
+android-core-splashscreen = "1.0.1"
+android-compose-compiler = "1.5.15"
+android-compose-bom = "2023.03.00"
+android-activity-compose = "1.9.2"
+android-work-runtime-ktx = "2.9.1"
+android-constraintlayout = "2.1.4"
+io-coil-compose = "2.5.0"
+google-maps = "2.11.4"
+google-gms = "19.0.0"
+google-play = "1.4.0"
+google-api = "2.0.0"
+google-firebase-bom = "33.4.0"
+junit = "4.13.2"
+android-test-junit = "1.2.1"
+android-test-espresso = "3.6.1"
+
+[libraries]
+
+hilt-android = { group = "com.google.dagger",name="hilt-android", version.ref = "hilt-android" }
+hilt-android-compiler = { group = "com.google.dagger",name="hilt-android-compiler", version.ref = "hilt-android" }
+hilt-compiler = { group = "com.google.dagger",name="hilt-compiler", version.ref = "hilt-android" }
+
+compose-material3 = { group = "androidx.compose.material3",name="material3" }
+compose-material = { group = "androidx.compose.material",name="material", version.ref = "compose-materials" }
+compose-material-icons = { group = "androidx.compose.material",name="material-icons-extended", version.ref = "compose-materials" }
+fundation-android = { group = "androidx.compose.foundation",name="foundation", version.ref = "compose-materials" }
+runtime-livedata = { group = "androidx.compose.runtime",name="runtime-livedata", version.ref = "compose-materials" }
+runtime-rxjava3 = { group = "androidx.compose.runtime",name="runtime-rxjava3", version.ref = "compose-materials" }
+
+android-lifecycle-runtime = { group = "androidx.lifecycle",name="lifecycle-runtime-ktx", version.ref = "android-lifecycle" }
+android-lifecycle-viewmodel = { group = "androidx.lifecycle",name="lifecycle-viewmodel-compose", version.ref = "android-lifecycle" }
+
+android-navigation-fragment = { group = "androidx.navigation",name="navigation-fragment-ktx", version.ref = "android-navigation" }
+android-navigation-ui = { group = "androidx.navigation",name="navigation-ui-ktx", version.ref = "android-navigation" }
+
+android-core-ktx = { group = "androidx.core",name="core-ktx", version.ref = "android-core-ktx" }
+
+android-credentials-play-services = { group = "androidx.credentials",name="credentials-play-services-auth", version.ref = "android-credentials" }
+android-credentials = { group = "androidx.credentials",name="credentials", version.ref = "android-credentials" }
+
+android-hilt-common = { group = "androidx.hilt",name="hilt-common", version.ref = "andoird-hilt-base" }
+android-hilt-navigation-compose = { group = "androidx.hilt",name="hilt-navigation-compose", version.ref = "andoird-hilt-base" }
+
+android-core-splashscreen = { group = "androidx.core",name="core-splashscreen", version.ref = "android-core-splashscreen" }
+
+android-compose-compiler = { group = "androidx.compose.compiler",name="compiler", version.ref = "android-compose-compiler" }
+android-compose-bom = { group = "androidx.compose" ,name="compose-bom", version.ref = "android-compose-bom" }
+android-activity-compose = { group = "androidx.activity",name="activity-compose", version.ref = "android-activity-compose" }
+io-coil-compose = { group = "io.coil-kt",name="coil-compose", version.ref = "io-coil-compose" }
+android-compose-ui = { group = "androidx.compose.ui",name="ui" }
+android-compose-ui-tooling = { group = "androidx.compose.ui",name="ui-tooling" }
+android-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview"}
+android-compose-ui-graphics = { group = "androidx.compose.ui",name="ui-graphics" }
+
+google-maps = { group = "com.google.maps.android",name="maps-compose", version.ref = "google-maps" }
+google-gms = { group = "com.google.android.gms",name="play-services-maps", version.ref = "google-gms" }
+google-play = { group = "com.google.android.play",name="integrity", version.ref = "google-play" }
+google-api = { group = "com.google.api-client",name="google-api-client-android", version.ref = "google-api" }
+
+android-work-runtime-ktx = { group = "androidx.work",name="work-runtime-ktx", version.ref = "android-work-runtime-ktx" }
+android-constraintlayout = { group = "androidx.constraintlayout",name="constraintlayout", version.ref = "android-constraintlayout" }
+
+google-firebase-bom = { group = "com.google.firebase",name="firebase-bom", version.ref = "google-firebase-bom" }
+google-firebase-messaging = { group = "com.google.firebase",name="firebase-messaging-ktx" }
+google-firebase-crashlytics = { group = "com.google.firebase",name="firebase-crashlytics-ktx" }
+google-firebase-analytics = { group = "com.google.firebase",name="firebase-analytics-ktx" }
+google-firebase-database = { group = "com.google.firebase",name="firebase-database-ktx" }
+
+junit = { group = "junit",name="junit", version.ref = "junit" }
+android-test-junit = { group = "androidx.test.ext",name="junit", version.ref = "android-test-junit" }
+android-test-espresso-core = { group = "androidx.test.espresso",name="espresso-core", version.ref = "android-test-espresso" }
+android-compose-ui-test = { group = "androidx.compose.ui",name="ui-test-junit4" }
+android-compose-ui-test-tooling = { group = "androidx.compose.ui",name="ui-tooling" }
+android-compose-ui-test-manifest = { group = "androidx.compose.ui",name="ui-test-manifest" }
+android-compose-test-bom = { group = "androidx.compose",name="compose-bom" }
+
+[bundles]
+android-hilt = ["android-hilt-common","android-hilt-navigation-compose"]
+android-credentials = ["android-credentials","android-credentials-play-services"]
+compose-materials = ["compose-material","compose-material-icons","fundation-android","runtime-livedata","runtime-rxjava3", "compose-material3"]
+android-lifecycle = ["android-lifecycle-runtime","android-lifecycle-viewmodel"]
+android-navigation = ["android-navigation-fragment","android-navigation-ui"]
+android-core = ["android-core-ktx","android-core-splashscreen"]
+android-compose = ["android-compose-compiler","android-activity-compose","io-coil-compose"]
+google-android = ["google-maps","google-gms","google-play","google-api"]
+android-compose-ui = ["android-compose-ui","android-compose-ui-tooling","android-compose-ui-tooling-preview","android-compose-ui-graphics"]
+google-firebase = ["google-firebase-messaging","google-firebase-crashlytics","google-firebase-analytics","google-firebase-database"]
+android-test = [ "android-test-junit","android-test-espresso-core","android-compose-ui-test","android-compose-ui-test-tooling","android-compose-ui-test-manifest"]

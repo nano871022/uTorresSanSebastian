@@ -20,7 +20,7 @@ import co.japl.android.torressansebastian.ui.settings.common.Title
 
 @Composable
 fun Parking(){
-    Title(title = stringResource(id = R.string.parking), icon = painterResource(id = R.drawable.ic_baseline_local_parking_24)) {
+    Title(title = stringResource(id = R.string.parking), iconPainter = painterResource(id = R.drawable.ic_baseline_local_parking_24)) {
         Column(modifier= Modifier.fillMaxWidth()){
             DataInfoParking()
 

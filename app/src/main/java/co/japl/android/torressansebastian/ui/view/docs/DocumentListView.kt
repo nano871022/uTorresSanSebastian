@@ -64,7 +64,7 @@ fun DocumentList(viewModel: DocumentListModelView = hiltViewModel()) {
         }
     }else{
         Title(title = stringResource(id = R.string.doc_files_title),
-            icon = painterResource(id = R.drawable.baseline_folder_24)
+            iconPainter = painterResource(id = R.drawable.baseline_folder_24)
         ) {
             Text(
                 text = stringResource(id = R.string.no_network_connection),
@@ -81,7 +81,7 @@ private fun Body(viewModel: DocumentListModelView){
     val context = LocalContext.current
 
     Title(title = stringResource(id = R.string.doc_files_title),
-        icon = painterResource(id = R.drawable.baseline_folder_24)
+        iconPainter = painterResource(id = R.drawable.baseline_folder_24)
     ) {
 
         Surface (modifier = Modifier.padding(Dimensions.PADDING_SHORT)

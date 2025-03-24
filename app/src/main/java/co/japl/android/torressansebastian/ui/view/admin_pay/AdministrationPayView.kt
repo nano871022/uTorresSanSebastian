@@ -29,7 +29,7 @@ import co.japl.android.torressansebastian.ui.settings.common.Title
 
 @Composable
 fun AdministrationPayView(){
-    Title(title = stringResource(id = R.string.administration_pay), icon = painterResource(id = R.drawable.ic_baseline_attach_money_24)) {
+    Title(title = stringResource(id = R.string.administration_pay), iconPainter = painterResource(id = R.drawable.ic_baseline_attach_money_24)) {
         Row(modifier = Modifier.fillMaxWidth()) {
             Datafono()
 

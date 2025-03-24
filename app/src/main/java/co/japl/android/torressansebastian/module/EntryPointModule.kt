@@ -1,6 +1,9 @@
 package co.japl.android.torressansebastian.module
 
 import co.urtss.core.adapters.inbound.CarouselPort
+import co.urtss.core.adapters.inbound.DocumentPort
+import co.urtss.core.adapters.inbound.MessagePort
+import co.urtss.core.adapters.inbound.PqrsPort
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
@@ -10,4 +13,9 @@ import dagger.hilt.components.SingletonComponent
 interface EntryPointModule{
     fun getCarouselPort(): CarouselPort
 
+    fun getIDocumentPort() : DocumentPort
+
+    fun getMessagePort(): MessagePort
+
+    fun getPQRSPort(): PqrsPort
 }

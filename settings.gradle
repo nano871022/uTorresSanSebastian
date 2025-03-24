@@ -16,7 +16,7 @@ dependencyResolutionManagement {
 rootProject.name = "TorresSanSebastian"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include ':app'
-include ':UI'
+include ':ui'
 include ':ScheduleModule'
 include ':japl-android-about-module'
 include ':urtss-android-core'

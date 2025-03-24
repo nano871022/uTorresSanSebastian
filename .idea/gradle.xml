@@ -10,11 +10,11 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/ScheduleModule" />
-            <option value="$PROJECT_DIR$/UI" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/connect-gdrive" />
             <option value="$PROJECT_DIR$/japl-android-about-module" />
             <option value="$PROJECT_DIR$/japl-android-graphs" />
+            <option value="$PROJECT_DIR$/ui" />
             <option value="$PROJECT_DIR$/urtss-android-core" />
           </set>
         </option>

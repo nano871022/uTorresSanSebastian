@@ -11,7 +11,7 @@ import co.japl.android.torressansebastian.ui.settings.common.Title
 @Composable
 fun Repair(){
     Title(title = stringResource(id = R.string.title_local_repair),
-        icon = painterResource(id = R.drawable.ic_baseline_home_repair_service_24)) {
+        iconPainter = painterResource(id = R.drawable.ic_baseline_home_repair_service_24)) {
         SimpleHtml(text = stringResource(id = R.string.info_local_repair))
     }
 }

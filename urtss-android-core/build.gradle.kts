@@ -1,3 +1,5 @@
+import com.android.build.api.dsl.Packaging
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -41,7 +43,7 @@ android {
         jvmTarget = "17"
     }
 
-    packagingOptions {
+    fun Packaging.() {
         resources.excludes.add("META-INF/DEPENDENCIES")
     }
 

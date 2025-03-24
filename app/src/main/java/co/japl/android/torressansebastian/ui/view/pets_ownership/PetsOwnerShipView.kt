@@ -24,7 +24,7 @@ fun PetsOwnerShip(){
     val tabIndex= remember { mutableIntStateOf(0) }
     val list = arrayListOf("Normas Unidad Residencial","Normas Código Nacional")
     Title(title = stringResource(id = R.string.pet_ownership)
-        , icon = painterResource(id = R.drawable.ic_baseline_pets_24)) {
+        , iconPainter = painterResource(id = R.drawable.ic_baseline_pets_24)) {
         TabRow(selectedTabIndex = tabIndex.intValue
             , backgroundColor = androidx.compose.material3.MaterialTheme.colorScheme.primary
             ,modifier=Modifier.padding(2.dp)) {

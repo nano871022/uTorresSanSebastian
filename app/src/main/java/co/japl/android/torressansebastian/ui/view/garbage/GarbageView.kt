@@ -10,7 +10,7 @@ import co.japl.android.torressansebastian.ui.settings.common.Title
 
 @Composable
 fun Garbage(){
-    Title(title = stringResource(id = R.string.title_garbage), icon = painterResource(id = R.drawable.ic_baseline_restore_from_trash_24)) {
+    Title(title = stringResource(id = R.string.title_garbage), iconPainter = painterResource(id = R.drawable.ic_baseline_restore_from_trash_24)) {
         SimpleHtml(text = stringResource(id = R.string.info_manage_gargage))
     }
 }

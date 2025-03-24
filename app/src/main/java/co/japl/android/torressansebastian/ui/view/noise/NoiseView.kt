@@ -12,7 +12,7 @@ import co.japl.android.torressansebastian.ui.settings.common.Title
 fun Noise(){
     val text = stringResource(id = R.string.info_noise)
     Title(title = stringResource(id = R.string.title_noise)
-        , icon = painterResource(id = R.drawable.ic_baseline_do_not_disturb_on_total_silence_24)) {
+        , iconPainter = painterResource(id = R.drawable.ic_baseline_do_not_disturb_on_total_silence_24)) {
         SimpleHtml(text = text)
     }
 }

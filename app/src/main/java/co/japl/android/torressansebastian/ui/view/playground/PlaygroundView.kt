@@ -10,7 +10,7 @@ import co.japl.android.torressansebastian.ui.settings.common.Title
 
 @Composable
 fun Playground(){
-    Title(title = stringResource(id = R.string.title_playground), icon = painterResource(id = R.drawable.ic_baseline_sports_soccer_24)) {
+    Title(title = stringResource(id = R.string.title_playground), iconPainter = painterResource(id = R.drawable.ic_baseline_sports_soccer_24)) {
 
         SimpleHtml(text = stringResource(id = R.string.info_playground))
 

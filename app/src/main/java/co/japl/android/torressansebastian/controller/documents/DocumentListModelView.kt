@@ -1,5 +1,6 @@
 package co.japl.android.torressansebastian.controller.documents
 
+import android.app.Application
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -7,16 +8,19 @@ import android.widget.Toast
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.AndroidViewModel
 import co.japl.android.torressansebastian.R
-import co.urtss.core.adapters.inbound.DocumentPort
+import co.japl.android.torressansebastian.module.EntryPointModule
+import co.urtss.core.adapters.interfacces.inbound.IDocumentPort
 import co.urtss.core.model.Document
+import dagger.hilt.EntryPoints
 import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 
 @dagger.hilt.android.lifecycle.HiltViewModel
-class DocumentListModelView @Inject constructor(var documentSvc:DocumentPort?): ViewModel() {
+class DocumentListModelView @Inject constructor(private val application:Application?): AndroidViewModel(application!!) {
 
+    private var documentSvc:IDocumentPort ?= EntryPoints.get(application, EntryPointModule::class.java).getIDocumentPort()
 
     private val _progress = mutableFloatStateOf(0f)
     private val _loader = mutableStateOf(true)
