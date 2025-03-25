@@ -17,8 +17,8 @@ android {
         applicationId "co.japl.android.torressansebastian"
         minSdk 26
         targetSdk 34
-        versionCode 1_02_3_33
-        versionName "V1.02.3 build 33 Ajustes visualizacionde menus y carga de imagenes en pantalla principal."
+        versionCode 1_02_4_34
+        versionName "V1.02.4 build 34 Ajustes e integracion con ui module y otros ajustes de actualización."
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         vectorDrawables{
