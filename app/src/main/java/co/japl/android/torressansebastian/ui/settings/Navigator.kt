@@ -24,6 +24,7 @@ import co.japl.android.torressansebastian.ui.view.pqr.PQRBilling
 import co.japl.android.torressansebastian.ui.view.pqr.PQRGeneral
 import co.japl.android.torressansebastian.ui.view.repair.Repair
 import co.japl.android.torressansebastian.ui.view.schedule.ScheduleView
+import co.japl.android.torressansebastian.ui.view.suggestion_box.SuggestionBox
 
 @RequiresApi(Build.VERSION_CODES.R)
 @Composable
@@ -75,7 +76,9 @@ fun Navigator(navController: NavHostController, modifier: Modifier, context: Con
         composable(NavigationEnum.PRQBilling.getRoute()) {
             PQRBilling()
         }
-
+        composable(NavigationEnum.SuggestionBox.getRoute()) {
+            SuggestionBox()
+        }
         composable(NavigationEnum.DocFiles.getRoute()) {
             DocumentList()
         }

@@ -1,14 +1,20 @@
 package co.japl.android.torressansebastian.ui.settings.bottombar
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
+import androidx.compose.material.DropdownMenu
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -68,36 +74,77 @@ private fun WhatSap(currentRoute: String?,rowScope: RowScope){
 }
 @Composable
 private fun Call(currentRoute: String?,rowScope: RowScope){
-    val number = stringResource(id = R.string.administration_number).trim()
-    val context = LocalContext.current
+    val callOptionsStatus = remember { mutableStateOf(false) }
     DefaultButton(row = rowScope
         , name = "Call"
         , icon = painterResource(id = R.drawable.ic_baseline_call_24)
-        , currentRoute = currentRoute) {
-           Intent(Intent.ACTION_DIAL, Uri.parse("tel:$number")).apply {
-               addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-               context.startActivity(this)
+        , currentRoute = currentRoute) {callOptionsStatus.value = true}
 
-           }
-        }
+    callDropMenu(state = callOptionsStatus)
+}
+
+@Composable
+private fun callDropMenu(state: MutableState<Boolean>){
+    val context = LocalContext.current
+    val administrationNum = stringResource(id = R.string.administration_number)
+    val adminNum = stringResource(id = R.string.phone_numbr)
+    val entranceNum = stringResource(id = R.string.administration_number)
+    DropdownMenu(expanded = state.value, onDismissRequest = { state.value = false }) {
+        DropdownMenuItem(text = { Text(text = stringResource(id = R.string.phone_number)) },
+            onClick = { callNumber(adminNum,context) })
+        DropdownMenuItem(text = { Text(text = stringResource(id = R.string.admin_number)) },
+            onClick = { callNumber(administrationNum,context) })
+        DropdownMenuItem(text = { Text(text = stringResource(id = R.string.entrance_nbr)) },
+            onClick = { callNumber(entranceNum,context) })
+        
+    }
+}
+
+private fun callNumber(number:String,context:Context){
+    Intent(Intent.ACTION_DIAL, Uri.parse("tel:$number")).apply {
+        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        context.startActivity(this)
+    }
 }
 
 @Composable
 private fun Email(currentRoute: String?,rowScope: RowScope){
-    val email = stringResource(id = R.string.administration_email)
-    val context = LocalContext.current
+    val emailOptionsStatus = remember { mutableStateOf(false) }
     DefaultButton(row = rowScope
         , name = "Email"
         , icon = painterResource(id = R.drawable.ic_baseline_email_24)
         , currentRoute = currentRoute) {
-        Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:$email")).apply {
-            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            putExtra(Intent.EXTRA_EMAIL,"Buenos Dias")
-            putExtra(Intent.EXTRA_CC,email)
-            putExtra(Intent.EXTRA_SUBJECT,"Asunto")
-            val intentEnd = Intent.createChooser(this,"Send Email Using:")
-            context.startActivity(intentEnd)
-        }
+        emailOptionsStatus.value = true
+    }
+    emailDropMenu(state = emailOptionsStatus)
+}
+
+@Composable
+private fun emailDropMenu(state: MutableState<Boolean>){
+    val context = LocalContext.current
+    val adminEmail = stringResource(id = R.string.administration_email)
+    val auxEmail = stringResource(id = R.string.auxiliar_email)
+    val counsilEmail = stringResource(id = R.string.consejo_email)
+
+    DropdownMenu(expanded = state.value, onDismissRequest = { state.value = false }) {
+        DropdownMenuItem(text = { Text(text = stringResource(id = R.string.admin_email)) },
+            onClick = { sentEmail(adminEmail,context) })
+        DropdownMenuItem(text = { Text(text = stringResource(id = R.string.aux_email)) },
+            onClick = { sentEmail(auxEmail,context) })
+        DropdownMenuItem(text = { Text(text = stringResource(id = R.string.consejo_email_label)) },
+            onClick = { sentEmail(counsilEmail,context) })
+
+    }
+}
+
+private fun sentEmail(email:String,context: Context){
+    Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:$email")).apply {
+        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        putExtra(Intent.EXTRA_EMAIL,"Buenos Dias")
+        putExtra(Intent.EXTRA_CC,email)
+        putExtra(Intent.EXTRA_SUBJECT,"Asunto")
+        val intentEnd = Intent.createChooser(this,"Send Email Using:")
+        context.startActivity(intentEnd)
     }
 }
 

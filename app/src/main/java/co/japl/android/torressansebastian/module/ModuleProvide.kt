@@ -5,11 +5,11 @@ import android.content.Context
 import co.com.japl.connect.gdrive.drive.GetFilesFromFolderShared
 import co.com.japl.connect.gdrive.firebase.realtime.Realtime
 import co.urtss.core.adapters.inbound.MessagePort
-import co.urtss.core.adapters.inbound.PqrsPort
+import co.urtss.core.adapters.inbound.URLLinksPort
 import co.urtss.core.adapters.outbound.MessageLocalPort
 import co.urtss.core.adapters.outbound.dbHelper.DbHelper
 import co.urtss.core.usercases.interfaces.IMessage
-import co.urtss.core.usercases.interfaces.IPqrs
+import co.urtss.core.usercases.interfaces.IURLLinks
 import com.google.firebase.database.FirebaseDatabase
 import dagger.Module
 import dagger.Provides
@@ -35,8 +35,8 @@ class ModuleProvide {
 
     @Singleton
     @Provides
-    fun provideInboundPqrsPort(svc:IPqrs):PqrsPort{
-        return PqrsPort(svc)
+    fun provideInboundPqrsPort(svc:IURLLinks):URLLinksPort{
+        return URLLinksPort(svc)
     }
     @Provides
     fun provideOutboundCarouselPort(context:Context,gDrive: GetFilesFromFolderShared,realtime:Realtime): co.urtss.core.adapters.outbound.CarouselPort{

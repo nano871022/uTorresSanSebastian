@@ -38,7 +38,7 @@
     <string name="admin_number">Número de Administración:</string>
     <string name="administration_number">305 333 13 94</string>
     <string name="url_whatsap">https://wa.me/+57</string>
-    <string name="phone_number">Teléfono</string>
+    <string name="phone_number">Número Administrador</string>
     <string name="phone_numbr">604 594 40 82</string>
     <string name="entrance_nbr">Número de Porteria:</string>
     <string name="entrance_number">310 581 55 57</string>
@@ -311,4 +311,5 @@ permisos respectivos.
     <string name="messages_title">Mensajes</string>
     <string name="admin_messages">Mensajes Enviado por Administración</string>
     <string name="empty_message">No hay mensajes</string>
+    <string name="suggestion_box_title">Buzon de Sugerencias</string>
 </resources>

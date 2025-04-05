@@ -1,4 +1,4 @@
-package co.japl.android.torressansebastian.controller.pqrs
+package co.japl.android.torressansebastian.controller.suggestionbox
 
 import android.app.Application
 import androidx.compose.runtime.mutableFloatStateOf
@@ -12,7 +12,7 @@ import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 
 @HiltViewModel
-class PQRGeneralViewModel @Inject constructor(private val application: Application?): AndroidViewModel(application!!)  {
+class SuggestionBoxViewModel @Inject constructor(private val application: Application?): AndroidViewModel(application!!)  {
     private val pqrPort: URLLinksPort ?= EntryPoints.get(application, EntryPointModule::class.java).getPQRSPort()
 
     private val _progress = mutableFloatStateOf(0f)
@@ -31,7 +31,7 @@ class PQRGeneralViewModel @Inject constructor(private val application: Applicati
 
     suspend fun execution() {
         _progress.floatValue = 0.2f
-        pqrPort?.getUrlGeneral()?.let {
+        pqrPort?.getUrlSuggestionBox()?.let {
             url.value = it
             _progress.floatValue = 0.7f
         }

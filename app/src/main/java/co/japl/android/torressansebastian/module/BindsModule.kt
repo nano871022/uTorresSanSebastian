@@ -1,14 +1,13 @@
 package co.japl.android.torressansebastian.module
 
-import co.urtss.core.adapters.inbound.MessagePort
 import co.urtss.core.usercases.impl.CarouselImpl
 import co.urtss.core.usercases.impl.DocumentImpl
 import co.urtss.core.usercases.impl.Message
-import co.urtss.core.usercases.impl.PqrsImpl
+import co.urtss.core.usercases.impl.URLLinksImpl
 import co.urtss.core.usercases.interfaces.ICarousel
 import co.urtss.core.usercases.interfaces.IDocument
 import co.urtss.core.usercases.interfaces.IMessage
-import co.urtss.core.usercases.interfaces.IPqrs
+import co.urtss.core.usercases.interfaces.IURLLinks
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -25,7 +24,7 @@ interface BindsModule {
     fun bindUserCaseDocument(document: DocumentImpl): IDocument
 
     @Binds
-    fun bindUserCasePqrs(pqrs: PqrsImpl): IPqrs
+    fun bindUserCasePqrs(pqrs: URLLinksImpl): IURLLinks
 
     @Binds
     fun bindInboundMessagePort(svc:Message):IMessage

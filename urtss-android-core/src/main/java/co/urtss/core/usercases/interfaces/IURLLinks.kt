@@ -1,8 +1,10 @@
 package co.urtss.core.usercases.interfaces
 
-interface IPqrs {
+interface IURLLinks {
 
     suspend fun getUrlBilling(): String?
 
     suspend fun getUrlGeneral(): String?
+
+    suspend fun getUrlSuggestionBox(): String?
 }

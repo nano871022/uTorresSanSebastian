@@ -138,7 +138,7 @@ private fun Item(doc:Document, onClick:(Document)->Unit){
             )
 
             Text(text = doc.name
-                , color=MaterialTheme.colorScheme.surface
+                , color=MaterialTheme.colorScheme.onSurface
                 , textAlign = TextAlign.Center
                 , modifier=Modifier.fillMaxWidth())
 

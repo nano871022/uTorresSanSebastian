@@ -14,7 +14,7 @@ import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(private val application:Application) : AndroidViewModel(application) {
+class HomeViewModel @Inject constructor(private val application:Application?) : AndroidViewModel(application!!) {
     private val _carousel:CarouselPort ?= EntryPoints.get(application,EntryPointModule::class.java).getCarouselPort()
 
     private var  _listDefaultDrawable = mutableStateListOf<Carousel>()

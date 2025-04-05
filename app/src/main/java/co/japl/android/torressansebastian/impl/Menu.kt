@@ -23,7 +23,7 @@ class MenuService (val context: Context): IMenuService {
 
 
     private fun loadMenuDrawer(){
-        NavigationEnum.values().filter { it.isInDrawer() }.forEach{
+        NavigationEnum.values().filter { it.isInDrawer() and it.isEnable() }.forEach{
             addMenu(
                 MenuItem(
                     it.getId()

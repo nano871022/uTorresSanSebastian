@@ -5,7 +5,7 @@ import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.AndroidViewModel
 import co.japl.android.torressansebastian.module.EntryPointModule
-import co.urtss.core.adapters.inbound.PqrsPort
+import co.urtss.core.adapters.inbound.URLLinksPort
 import dagger.hilt.EntryPoints
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.runBlocking
@@ -13,7 +13,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class PQRBillingViewModel @Inject constructor(private val application: Application?): AndroidViewModel(application!!) {
-    private val pqrPort: PqrsPort ?= EntryPoints.get(application, EntryPointModule::class.java).getPQRSPort()
+    private val pqrPort: URLLinksPort ?= EntryPoints.get(application, EntryPointModule::class.java).getPQRSPort()
 
     private val _progress = mutableFloatStateOf(0f)
     val progress get() = _progress.floatValue

@@ -4,7 +4,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import co.japl.android.torressansebastian.R
 
-enum class NavigationEnum(private val id:Int,@StringRes private val nameOf:Int,@DrawableRes private val icon:Int,private val inDrawer:Boolean=false) {
+enum class NavigationEnum(private val id:Int,@StringRes private val nameOf:Int,@DrawableRes private val icon:Int,private val inDrawer:Boolean=false, private val enable:Boolean=true) {
     AdministationPayment(9,R.string.menu_admin_pay, R.drawable.ic_baseline_attach_money_24),
     Garbage(5,R.string.menu_garbage,R.drawable.ic_baseline_restore_from_trash_24,true),
     Location(2,R.string.menu_location,R.drawable.ic_baseline_location_on_24,true),
@@ -17,8 +17,9 @@ enum class NavigationEnum(private val id:Int,@StringRes private val nameOf:Int,@
     ,Home(1,R.string.menu_home,R.drawable.baseline_home_24,true)
     ,ContactUs(11,R.string.menu_contact_us,R.drawable.ic_baseline_complains,false)
     ,AboutBy(12,R.string.about_by,R.drawable.ic_action_person,false)
-    , PRQGeneral(13,R.string.pqr_general_title, R.drawable.ic_baseline_message_24,true)
-    , PRQBilling(14,R.string.pqr_billing_title, R.drawable.ic_baseline_suggest,true)
+    , SuggestionBox(16,R.string.suggestion_box_title, R.drawable.ic_baseline_suggest,true)
+    , PRQGeneral(13,R.string.pqr_general_title, R.drawable.ic_baseline_message_24,true,false)
+    , PRQBilling(14,R.string.pqr_billing_title, R.drawable.ic_baseline_suggest,true,false)
     , DocFiles(14,R.string.doc_files_title, R.drawable.baseline_insert_drive_file_24,true)
     , Messages(15,R.string.messages_title, R.drawable.ic_baseline_message_24,false);
 
@@ -40,5 +41,7 @@ enum class NavigationEnum(private val id:Int,@StringRes private val nameOf:Int,@
     fun getRoute():String{
         return name
     }
+
+    fun isEnable():Boolean = enable
 
 }

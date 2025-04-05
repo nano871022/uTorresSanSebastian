@@ -3,7 +3,7 @@ package co.japl.android.torressansebastian.module
 import co.urtss.core.adapters.inbound.CarouselPort
 import co.urtss.core.adapters.inbound.DocumentPort
 import co.urtss.core.adapters.inbound.MessagePort
-import co.urtss.core.adapters.inbound.PqrsPort
+import co.urtss.core.adapters.inbound.URLLinksPort
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
@@ -17,5 +17,6 @@ interface EntryPointModule{
 
     fun getMessagePort(): MessagePort
 
-    fun getPQRSPort(): PqrsPort
+    fun getPQRSPort(): URLLinksPort
+
 }

@@ -103,7 +103,26 @@ private fun MoveCarousel(model: HomeModel){
 @Composable
 private fun Carousel(model: HomeModel){
     val list = remember {model.viewModel.list}
+    val popupState = remember {model.openState}
+
     Column {
+
+        if(popupState.value) {
+
+            ImageView(
+                name = model.openStateName.value,
+                imageSrcInt = model.openStateSrc.value,
+                openDialog = model.openState as MutableState<Boolean>
+            )
+
+            ImageView(
+                name = model.openStateName.value,
+                imageUrl = model.openStateUrl.value,
+                openDialog = model.openState as MutableState<Boolean>
+            )
+
+        }
+
         co.com.japl.ui.components.Carousel(list.size,modifier=Modifier.fillMaxHeight(0.7f)) {
             val image = list[it]
             if (image.url.isNotBlank()) {
@@ -118,16 +137,8 @@ private fun Carousel(model: HomeModel){
         DotImages(pageCount = model.viewModel.list.size, pagerState = model.state,
             modifier = Modifier.align(alignment = Alignment.CenterHorizontally))
 
-        ImageView(
-            name = model.openStateName.value,
-            imageSrcInt = model.openStateSrc.value,
-            openDialog = model.openState as MutableState<Boolean>
-        )
-        ImageView(
-            name = model.openStateName.value,
-            imageUrl = model.openStateUrl.value,
-            openDialog = model.openState as MutableState<Boolean>
-        )
+
+
     }
 }
 
