@@ -11,14 +11,14 @@ plugins {
 
 android {
     namespace "co.japl.android.torressansebastian"
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         applicationId "co.japl.android.torressansebastian"
         minSdk 26
         targetSdk 34
-        versionCode 1_02_5_36
-        versionName "V1.02.5 build 36 Ajustes e integracion con ui module y otros ajustes de actualización."
+        versionCode 1_02_5_37
+        versionName "V1.02.5 build 37 Ajustes e integracion con ui module y otros ajustes de actualización."
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         vectorDrawables{
@@ -33,6 +33,7 @@ android {
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField "String", "FMC_TOPIC", "\"allUsers\""
+            externalNativeBuild.cmake.arguments.add("-DCMAKE_BUILD_TYPE=RealWithDebInfo")
         }
         debug {
             shrinkResources false
