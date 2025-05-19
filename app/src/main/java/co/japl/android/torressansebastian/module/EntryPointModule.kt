@@ -17,6 +17,9 @@ interface EntryPointModule{
 
     fun getMessagePort(): MessagePort
 
+    @Deprecated("use EntryPointModule#getURLLinksPort() instead")
     fun getPQRSPort(): URLLinksPort
+
+    fun getURLLinksPort(): URLLinksPort
 
 }

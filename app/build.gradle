@@ -18,7 +18,7 @@ android {
         minSdk 26
         targetSdk 34
         versionCode 1_02_5_37
-        versionName "V1.02.5 build 37 Ajustes e integracion con ui module y otros ajustes de actualización."
+        versionName "V1.02.6 build 38 Se realiza ajuste del horario de la administración"
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         vectorDrawables{

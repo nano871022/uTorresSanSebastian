@@ -4,17 +4,21 @@ import co.urtss.core.adapters.outbound.URLLinksPort
 import co.urtss.core.usercases.interfaces.IURLLinks
 import javax.inject.Inject
 
-class URLLinksImpl @Inject constructor(private val pqrsSvc:URLLinksPort) : IURLLinks{
+class URLLinksImpl @Inject constructor(private val urlLinksSvc:URLLinksPort) : IURLLinks{
     override suspend fun getUrlBilling(): String? {
-        return pqrsSvc.getPqrsBilling()
+        return urlLinksSvc.getPqrsBilling()
     }
 
     override suspend fun getUrlGeneral(): String? {
-        return pqrsSvc.getPqrsGeneral()
+        return urlLinksSvc.getPqrsGeneral()
     }
 
     override suspend fun getUrlSuggestionBox(): String? {
-        return pqrsSvc.getPqrsSuggestionBox()
+        return urlLinksSvc.getPqrsSuggestionBox()
+    }
+
+    override suspend fun getUrlFAQAI(): String? {
+        return urlLinksSvc.getFAQAI()
     }
 
 }

@@ -1,4 +1,4 @@
-package co.japl.android.torressansebastian.controller.pqrs
+package co.japl.android.torressansebastian.controller.faqai
 
 import android.app.Application
 import androidx.compose.runtime.mutableFloatStateOf
@@ -12,8 +12,8 @@ import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 
 @HiltViewModel
-class PQRBillingViewModel @Inject constructor(private val application: Application?): AndroidViewModel(application!!) {
-    private val pqrPort: URLLinksPort ?= EntryPoints.get(application, EntryPointModule::class.java).getURLLinksPort()
+class FAQAIViewModel @Inject constructor(private val application: Application?): AndroidViewModel(application!!)  {
+    private val faqAIPort: URLLinksPort ?= EntryPoints.get(application, EntryPointModule::class.java).getURLLinksPort()
 
     private val _progress = mutableFloatStateOf(0f)
     val progress get() = _progress.floatValue
@@ -31,7 +31,7 @@ class PQRBillingViewModel @Inject constructor(private val application: Applicati
 
     suspend fun execution() {
         _progress.floatValue = 0.2f
-        pqrPort?.getUrlBilling()?.let {
+        faqAIPort?.getUrlFAQAI()?.let {
             url.value = it
             _progress.floatValue = 0.7f
         }

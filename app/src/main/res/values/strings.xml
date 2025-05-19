@@ -29,7 +29,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="contact_phones">Telefonos de Contacto</string>
     <string name="website">Página Web</string>
-
+    <string name="presindente_consejo_label">Presidente Consejo:</string>
     <string name="unitName">Torres de San Sebastian</string>
     <string name="neighborhood">Barrio Colon</string>
     <string name="city">Medellín - Antioquia</string>
@@ -47,13 +47,14 @@
     <string name="administration_email">direcciontorressansebastian@gmail.com</string>
     <string name="aux_email">Auxiliar:</string>
     <string name="auxiliar_email">auxiliarurtss@gmail.com</string>
+    <string name="presidente_consejo_email">presidenteconsejourtss@gmail.com</string>
     <string name="consejo_email_label">Consejo:</string>
-    <string name="consejo_email">concejotorressansebastian@gmail.com</string>
+    <string name="consejo_email">consejourtorressansebastian@gmail.com</string>
     <string name="country_whatsapp">+57</string>
     <string name="attention_schedule">Horario Atención</string>
-    <string name="schedule_time">Martes Y Jueves \n De 9:00 am a 1:00 pm</string>
-    <string name="note1_admin_attention">NOTA: En case que no pueda asistir en ese horario de igual forma cominicarse con la administración y se cordinara horario diferente</string>
-    <string name="note2_assistant_attention">El horario por parte de asistente de administración : No cambia</string>
+    <string name="schedule_time">El Horario de la administradora: Lunes Y Viernes \n De 8:00 am a 11:30 pm , Jueves de 8:00 am a 2:30 pm, El primer y tercer sabado de cada mes de 8:00 am a 11:00 pm</string>
+    <string name="note1_admin_attention">NOTA: En el casa que no pueda asistir en ese horario de igual forma cominicarse con la administración y se cordinara horario diferente</string>
+    <string name="note2_assistant_attention">El horario por parte de asistente de administración : Lunes a Viernes de 8:00 am a 01:00 pm y de 02:00pm a 5:00 pm, Sabados de 8:00 am a 11:00 am</string>
     <string name="schedule">Horario</string>
     <string name="parking">Parqueadero</string>
     <string name="schedule_parking">Lunes a Domingo de 7 A.M. a 10 P.M. </string>
@@ -155,6 +156,7 @@ El propietario de un perro potencialmente peligroso asume la posición de garant
     </string>
     <string name="normativity">Normatividad</string>
     <string name="inform_us">Informanos</string>
+    <string name="info_additional">Información Adicional</string>
     <string name="pets_UR_manual">
         <![CDATA[
         Si tenemos mascotas, es importante que éstas no molesten a los vecinos. Recordemos
@@ -312,4 +314,6 @@ permisos respectivos.
     <string name="admin_messages">Mensajes Enviado por Administración</string>
     <string name="empty_message">No hay mensajes</string>
     <string name="suggestion_box_title">Buzon de Sugerencias</string>
+    <string name="faq_ai">Preguntas Frecuentas</string>
+    <string name="subject_email">Asunto</string>
 </resources>

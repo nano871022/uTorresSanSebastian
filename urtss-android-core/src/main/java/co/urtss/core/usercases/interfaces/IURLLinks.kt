@@ -7,4 +7,6 @@ interface IURLLinks {
     suspend fun getUrlGeneral(): String?
 
     suspend fun getUrlSuggestionBox(): String?
+
+    suspend fun getUrlFAQAI(): String?
 }

@@ -13,8 +13,7 @@ class URLLinksPort @Inject constructor(private val context: Context, private val
         var url = context.getString(R.string.url_pqr_general)
         realtimeSvc.connect(RealtimeDBKeys.URL_PQR_GENERAL.toString().lowercase()).collect{
             it?.let {
-                Log.d("URLLinksPort", "==Get Value  $it")
-                url = it
+                url = it.also { Log.d("URLLinksPort", "==Get Value  $it") }
             }
         }
         return url
@@ -24,8 +23,7 @@ class URLLinksPort @Inject constructor(private val context: Context, private val
         var url =  context.getString(R.string.url_pqr_billing)
         realtimeSvc.connect(RealtimeDBKeys.URL_PQR_BILLING.toString().lowercase()).collect{
             it?.let {
-                Log.d("URLLinksPort", "==Get Value  $it")
-                url = it
+                url = it.also { Log.d("URLLinksPort", "==Get Value  $it") }
             }
         }
         return url
@@ -35,8 +33,17 @@ class URLLinksPort @Inject constructor(private val context: Context, private val
         var url =  context.getString(R.string.url_suggestion_box)
         realtimeSvc.connect(RealtimeDBKeys.URL_SUGGESTION_BOX.toString().lowercase()).collect{
             it?.let {
-                Log.d("URLLinksPort", "==Get Value  $it")
-                url = it
+               url = it.also { Log.d("URLLinksPort", "==Get Value  $it") }
+            }
+        }
+        return url
+    }
+
+    suspend fun getFAQAI():String{
+        var url = context.getString(R.string.url_faq_ai)
+        realtimeSvc.connect(RealtimeDBKeys.URL_FAQ_AI.toString().lowercase()).collect{
+            it?.let {
+                url = it.also{Log.d("URLLinksPort", "==Get Value  $it")}
             }
         }
         return url

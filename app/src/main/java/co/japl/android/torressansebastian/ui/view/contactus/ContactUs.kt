@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Divider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -35,77 +37,103 @@ fun ContactUs(){
     val context = LocalContext.current
     val greeting = stringResource(id = R.string.email_greeting)
     val urlWatsap = stringResource(id = R.string.url_whatsap)
+    val subjectEmail = stringResource(id = R.string.subject_email)
     Title(title = stringResource(id = R.string.title_contact_us)
-        , painterResource(id = R.drawable.ic_baseline_complains)){
+        , painterResource(id = R.drawable.ic_baseline_complains)) {
 
-        TitleSection(icon = R.drawable.ic_baseline_call_24, name = R.string.contact_phones, description = R.string.contact_phones)
+        Column( modifier = Modifier.verticalScroll(rememberScrollState()) ) {
 
-        RowLabelValue(label = R.string.admin_number
-            , text = R.string.administration_number
-            , icon = R.drawable.ic_baseline_call_24){
-            Intent(Intent.ACTION_DIAL, Uri.parse("tel:$it"))
-                .apply {
-                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                context.startActivity(this)
+            TitleSection(
+                icon = R.drawable.ic_baseline_call_24,
+                name = R.string.contact_phones,
+                description = R.string.contact_phones
+            )
+
+            RowLabelValue(
+                label = R.string.admin_number,
+                text = R.string.administration_number,
+                icon = R.drawable.ic_baseline_call_24
+            ) {
+                Intent(Intent.ACTION_DIAL, Uri.parse("tel:$it"))
+                    .apply {
+                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        context.startActivity(this)
+                    }
             }
-        }
 
-        RowLabelValue(label = R.string.entrance_nbr
-            , text = R.string.entrance_number
-            , icon = R.drawable.ic_baseline_call_24){
-            Intent(Intent.ACTION_DIAL, Uri.parse("tel:$it"))
-                .apply {
-                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                context.startActivity(this)
-                }
-        }
+            RowLabelValue(
+                label = R.string.entrance_nbr,
+                text = R.string.entrance_number,
+                icon = R.drawable.ic_baseline_call_24
+            ) {
+                Intent(Intent.ACTION_DIAL, Uri.parse("tel:$it"))
+                    .apply {
+                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        context.startActivity(this)
+                    }
+            }
 
-        RowLabelValue(label = R.string.phone_number
-            , text = R.string.phone_numbr
-            , icon = R.drawable.ic_baseline_call_24){
-            Intent(Intent.ACTION_DIAL, Uri.parse("tel:$it"))
-                .apply {
-                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                context.startActivity(this)
-                }
-        }
+            RowLabelValue(
+                label = R.string.phone_number,
+                text = R.string.phone_numbr,
+                icon = R.drawable.ic_baseline_call_24
+            ) {
+                Intent(Intent.ACTION_DIAL, Uri.parse("tel:$it"))
+                    .apply {
+                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        context.startActivity(this)
+                    }
+            }
 
-        RowLabelValue(label = R.string.whatsap, text = R.string.administration_number, icon = R.drawable.ic_action_whatsap){
-            Intent(Intent.ACTION_VIEW, Uri.parse("$urlWatsap$it"))
-                .apply {
-                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                context.startActivity(this)
-                }
-        }
+            RowLabelValue(
+                label = R.string.whatsap,
+                text = R.string.administration_number,
+                icon = R.drawable.ic_action_whatsap
+            ) {
+                Intent(Intent.ACTION_VIEW, Uri.parse("$urlWatsap$it"))
+                    .apply {
+                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        context.startActivity(this)
+                    }
+            }
 
-        TitleSection(icon = R.drawable.ic_baseline_email_24
-            , name = R.string.emails
-            , description = R.string.emails)
+            TitleSection(
+                icon = R.drawable.ic_baseline_email_24,
+                name = R.string.emails,
+                description = R.string.emails
+            )
 
-        RowLabelValue(label = R.string.admin_email
-            , text = R.string.administration_email
-            , icon = R.drawable.ic_baseline_email_24){
-            choseAppSentEmail(it,greeting,"Asunto",context)
-        }
+            RowLabelValue(
+                label = R.string.admin_email,
+                text = R.string.administration_email,
+                icon = R.drawable.ic_baseline_email_24
+            ) {
+                choseAppSentEmail(it, greeting, subjectEmail, context)
+            }
 
-        RowLabelValue(label = R.string.consejo_email_label
-            , text = R.string.consejo_email
-            , icon = R.drawable.ic_baseline_email_24){
-            choseAppSentEmail(it,greeting,"Asunto",context)
-        }
+            RowLabelValue(
+                label = R.string.consejo_email_label,
+                text = R.string.consejo_email,
+                icon = R.drawable.ic_baseline_email_24
+            ) {
+                choseAppSentEmail(it, greeting, subjectEmail, context)
+            }
 
-        RowLabelValue(label = R.string.aux_email
-            , text = R.string.auxiliar_email
-            , icon = R.drawable.ic_baseline_email_24){
-            choseAppSentEmail(it,greeting,"Asunto",context)
-        }
+            RowLabelValue(
+                label = R.string.aux_email,
+                text = R.string.auxiliar_email,
+                icon = R.drawable.ic_baseline_email_24
+            ) {
+                choseAppSentEmail(it, greeting, subjectEmail, context)
+            }
 
-        RowLabelValue(label = R.string.website, text = R.string.url_website, icon = R.drawable.ic_action_www){
-            Intent(Intent.ACTION_VIEW, Uri.parse(it))
-                .apply {
-                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                context.startActivity(this)
-                }
+            RowLabelValue(
+                label = R.string.presindente_consejo_label,
+                text = R.string.presidente_consejo_email,
+                icon = R.drawable.ic_baseline_email_24
+            ) {
+                choseAppSentEmail(it, greeting, subjectEmail, context)
+            }
         }
     }
 }

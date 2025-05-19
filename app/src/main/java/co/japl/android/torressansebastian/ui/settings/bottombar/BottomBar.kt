@@ -91,10 +91,13 @@ private fun callDropMenu(state: MutableState<Boolean>){
     val entranceNum = stringResource(id = R.string.administration_number)
     DropdownMenu(expanded = state.value, onDismissRequest = { state.value = false }) {
         DropdownMenuItem(text = { Text(text = stringResource(id = R.string.phone_number)) },
+            leadingIcon = { Icon(painter = painterResource(id = R.drawable.ic_baseline_call_24),contentDescription = "Call") },
             onClick = { callNumber(adminNum,context) })
         DropdownMenuItem(text = { Text(text = stringResource(id = R.string.admin_number)) },
+            leadingIcon = { Icon(painter = painterResource(id = R.drawable.ic_baseline_call_24),contentDescription = "Call") },
             onClick = { callNumber(administrationNum,context) })
         DropdownMenuItem(text = { Text(text = stringResource(id = R.string.entrance_nbr)) },
+            leadingIcon = { Icon(painter = painterResource(id = R.drawable.ic_baseline_call_24),contentDescription = "Call") },
             onClick = { callNumber(entranceNum,context) })
         
     }
@@ -127,11 +130,24 @@ private fun emailDropMenu(state: MutableState<Boolean>){
     val counsilEmail = stringResource(id = R.string.consejo_email)
 
     DropdownMenu(expanded = state.value, onDismissRequest = { state.value = false }) {
-        DropdownMenuItem(text = { Text(text = stringResource(id = R.string.admin_email)) },
+        DropdownMenuItem(
+            text = { Text(text = stringResource(id = R.string.admin_email)) },
+            leadingIcon = {Icon(painter = painterResource(id = R.drawable.ic_baseline_email_24),contentDescription = "Email")},
             onClick = { sentEmail(adminEmail,context) })
-        DropdownMenuItem(text = { Text(text = stringResource(id = R.string.aux_email)) },
+
+        DropdownMenuItem(
+            text = { Text(text = stringResource(id = R.string.aux_email)) },
+            leadingIcon = {Icon(painter = painterResource(id = R.drawable.ic_baseline_email_24),contentDescription = "Email")},
             onClick = { sentEmail(auxEmail,context) })
-        DropdownMenuItem(text = { Text(text = stringResource(id = R.string.consejo_email_label)) },
+
+        DropdownMenuItem(
+            text = { Text(text = stringResource(id = R.string.consejo_email_label)) },
+            leadingIcon = {Icon(painter = painterResource(id = R.drawable.ic_baseline_email_24),contentDescription = "Email")},
+            onClick = { sentEmail(counsilEmail,context) })
+
+        DropdownMenuItem(
+            text = { Text(text = stringResource(id = R.string.presindente_consejo_label)) },
+            leadingIcon = {Icon(painter = painterResource(id = R.drawable.ic_baseline_email_24),contentDescription = "Email")},
             onClick = { sentEmail(counsilEmail,context) })
 
     }
@@ -142,7 +158,7 @@ private fun sentEmail(email:String,context: Context){
         addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         putExtra(Intent.EXTRA_EMAIL,"Buenos Dias")
         putExtra(Intent.EXTRA_CC,email)
-        putExtra(Intent.EXTRA_SUBJECT,"Asunto")
+        putExtra(Intent.EXTRA_SUBJECT,context.getString(R.string.subject_email))
         val intentEnd = Intent.createChooser(this,"Send Email Using:")
         context.startActivity(intentEnd)
     }

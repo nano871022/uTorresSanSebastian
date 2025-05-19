@@ -25,7 +25,9 @@ import co.japl.android.torressansebastian.R
 fun Title(title:String,iconPainter:Painter,into:@Composable() (() -> Unit)){
     Column(modifier= Modifier
         .fillMaxSize()
-        .padding(top = 15.dp, start = 10.dp, end = 10.dp, bottom = 10.dp)){
+        .padding(top = 15.dp, start = 10.dp, end = 10.dp, bottom = 10.dp)
+    ) {
+
         Row(modifier= Modifier.fillMaxWidth()
         , verticalAlignment = Alignment.CenterVertically) {
 
@@ -40,7 +42,7 @@ fun Title(title:String,iconPainter:Painter,into:@Composable() (() -> Unit)){
 
         Divider(modifier=Modifier.padding(bottom = 15.dp))
 
-        into.invoke()
+         into.invoke()
     }
 }
 

@@ -5,5 +5,6 @@ enum class RealtimeDBKeys {
     FOLDER_IMG,
     URL_PQR_BILLING,
     URL_PQR_GENERAL,
-    URL_SUGGESTION_BOX;
+    URL_SUGGESTION_BOX,
+    URL_FAQ_AI;
 }
