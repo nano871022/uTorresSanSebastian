@@ -1,0 +1,19 @@
+name: Prepared project to Compilation Android
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  Prepared_code:
+    
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Get Code from repository
+        uses: actions/checkout@v4
+
+      - name: Check files in main Folder
+        run: ls 
+      
