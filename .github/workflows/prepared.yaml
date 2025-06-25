@@ -51,5 +51,15 @@ jobs:
       - name: link code to graphs folder
         run: ln -s ./japl-android-graphs ./finances/japl-android-graphs
 
+      - name: Install Java
+        uses: actions/setup-java@v4
+        with: 
+          distribution: 'temurin'
+          java-version: 17
+
+      - name: Graddle Validations
+        uses: gradle/actions/wrapper-validation@v4
+
+      
       - name: Check files in main Folder
         run: ls -hl
