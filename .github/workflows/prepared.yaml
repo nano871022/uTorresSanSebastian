@@ -2,6 +2,9 @@ name: Prepared project to Compilation Android
 
 on:
   workflow_dispatch:
+concurrency:
+  group: ${{ github_event }}.${{ hashFiles('./app/build.gradle') }}
+  cancel-in-progress: true
 
 jobs:
 
@@ -49,7 +52,7 @@ jobs:
           path: ./finances
 
       - name: link code to graphs folder
-        run: ln -s ./japl-android-graphs ./finances/japl-android-graphs
+        run: ln -s ./finances/japl-android-graphs ./japl-android-graphs 
 
       - name: Install Java
         uses: actions/setup-java@v4
