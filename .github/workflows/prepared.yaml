@@ -52,6 +52,12 @@ jobs:
           repository: ${{ github.actor }}/Finances
           path: ./finances
 
+      - name: Get japl-android-ui
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.actor }}/japl-android-ui
+          path: ./ui
+
       - name: link code to graphs folder
         run: ln -s ./finances/japl-android-graphs ./japl-android-graphs 
 
