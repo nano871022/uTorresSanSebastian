@@ -18,13 +18,38 @@ jobs:
         run: ls -hl
 
       - name: Remove android about module old folder link
-        run: rm -rf japl-android-about-module
+        run: |
+              rm -rf japl-android-about-module
+              rm -rf ScheduleModule
+              rm -rf connect-gdrive
+              rm -rf japl-android-graphs
 
       - name: Get japl-android-about-module
         uses: actions/checkout@v4
         with:
           repository: ${{ github.actor }}/japl-android-about-module
           path: ./japl-android-about-module
+
+      - name: Get japl-android-schedule-module
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.actor }}/japl-android-schedule-module
+          path: ./ScheduleModule
+
+      - name: Get japl-android-google-connect-module
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.actor }}/japl-android-google-connect-module
+          path: ./connect-gdrive
+
+      - name: Get Finances to get Graphs module
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.actor }}/Finances
+          path: ./finances
+
+      - name: link code to graphs folder
+        run: ln -s ./japl-android-graphs ./finances/japl-android-graphs
 
       - name: Check files in main Folder
         run: ls -hl
