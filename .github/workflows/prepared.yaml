@@ -3,7 +3,7 @@ name: Prepared project to Compilation Android
 on:
   workflow_dispatch:
 concurrency:
-  group: ${{ github.event }}.${{ hashFiles('./app/build.gradle') }}
+  group: ${{ github.workflow }}-${{ github.event }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
