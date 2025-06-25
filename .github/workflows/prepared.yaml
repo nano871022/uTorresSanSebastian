@@ -17,11 +17,14 @@ jobs:
       - name: Check files in main Folder
         run: ls 
 
+      - name: Remove android about module old folder link
+        run: rm -rf japl-android-about-module
+
       - name: Get japl-android-about-module
         uses: actions/checkout@v4
         with:
           repository: ${{ github.actor }}/japl-android-about-module
-          path: japl-android-about-module
+          path: ./japl-android-about-module
 
       - name: Check files in main Folder
         run: ls 
