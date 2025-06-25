@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Check files in main Folder
-        run: ls -hRl
+        run: ls -hl
 
       - name: Remove android about module old folder link
         run: rm -rf japl-android-about-module
@@ -27,4 +27,4 @@ jobs:
           path: ./japl-android-about-module
 
       - name: Check files in main Folder
-        run: ls -hRl
+        run: ls -hl
