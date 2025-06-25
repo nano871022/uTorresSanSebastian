@@ -66,4 +66,5 @@ jobs:
 
       
       - name: Check files in main Folder
+        if: always()
         run: ls -hl
