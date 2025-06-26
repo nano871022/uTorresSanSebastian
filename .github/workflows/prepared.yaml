@@ -139,7 +139,7 @@ jobs:
     steps:
     
        - name: settings
-         uses: ${{ github.actor }}/uTorresSanSebastian/.githun/workflows/prepare.yaml@feature/actions-setup
+         uses: ${{ github.actor }}/uTorresSanSebastian/.github/workflows/prepare.yaml@feature/actions-setup
 
        - name: report setting
          run: ./gradlew lintDebug
