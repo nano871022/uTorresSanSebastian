@@ -30,7 +30,7 @@ jobs:
       - name: Show version information
         run: |
              echo "Version Code: ${{ env.VersionCode }}"
-             echo "Version Name: ${{ end.VersionName }}"
+             echo "Version Name: ${{ env.VersionName }}"
       
       - name: added signing in gradle
         run: |
