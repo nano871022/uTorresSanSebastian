@@ -123,6 +123,6 @@ jobs:
               TAG_NAME="v${{ needs.Prepared_code.outputs.VersionCode }}"
               git config --local user.email "actions-urtss@japl.dev"
               git config --local user.name "Actions URTss"
-              git tag -a "$TAG_NAME -m "${{ needs.Prepared_code.outputs.VersionName }}"
+              git tag -a "$TAG_NAME" -m "${{ needs.Prepared_code.outputs.VersionName }}"
               git push origin "$TAG_NAME"
           
