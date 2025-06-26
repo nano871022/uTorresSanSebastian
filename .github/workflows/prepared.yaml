@@ -22,7 +22,7 @@ jobs:
 
       - name: get version code and name of app
         run: |
-              VERSION_CODE=$(grep -m 1 'versionCode' app/build.gradle | awk '{print $3}')
+              VERSION_CODE=$(grep -m 1 'versionCode' app/build.gradle | awk '{print $2}')
               VERSION_NAME=$(grep -m 1 'versionName' app/build.gradle | awk -F '"' '{print $2}')
               echo "VersionCode=$VERSION_CODE" >> $GITHUB_ENV
               echo "VersionName=$VERSION_NAME" >> $GITHUB_ENV
