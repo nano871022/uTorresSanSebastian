@@ -64,12 +64,12 @@ jobs:
           token: ${{ secrets.GH_PROPERTIES_CONNECT }}
       
       - name: Copy Values on project
-        run: cp ./japl-properties/torressansebastian/google_services.json ./app/src/
+        run: cp ./japl-properties/torressansebastian/google_services.json ./app/google-services.json
 
       - name: Check files in main Folder
         run: |
               ls -hl
-              ls -hl ./app/src
+              ls -hl ./app
 
       - name: Duplication Folder on upper case UI
         run: ln -s ./ui ./UI
