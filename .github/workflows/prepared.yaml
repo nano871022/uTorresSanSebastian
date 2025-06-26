@@ -70,6 +70,7 @@ jobs:
               mkdir ./connect-gdrive/src/main/res/raw
               cp ./japl-properties/alameda181/credentials.json ./connect-gdrive/src/main/res/raw/
               cp ./japl-properties/alameda181/cralameda181_34c486bb5b56.json ./connect-gdrive/src/main/res/raw/
+              cp ./japl-properties/torressansebastian/torressansebastian.jks ./
               rm -rf ./japl-properties
 
       - name: Duplication Folder on upper case UI
@@ -87,9 +88,30 @@ jobs:
       - name: Setup Graddle And Validations
         uses: gradle/actions/setup-gradle@v4
 
-      - name: build and scan
-        run: ./gradlew build #--scan --warning-mode all --stacktrace --info
+      - name: added signing in gradle
+        run: |
+              cat << EOF >> app/build.gradle
+              android {
+                signingConfigs {
+                  create("release") {
+                    storeFile = file("/home/runner/work/${{ github.actor }}/torressansebastian.jks")
+                    storePassword = "${{ secrets.SIGNING_STORE_PASSWORD }}"
+                    keyAlias = "${{ secrets.SIGNING_KEY_ALIAS }}"
+                    keyPassword = "${{ secrets.SIGNING_KEY_PASSWORD }}"
+                  }
+                }
 
+              buildTypes {
+                getByName("release") {
+                  signingConfig = signingConfigs.getByName("release")
+                }
+              }
+            }
+            EOF
+
+      - name: build and scan
+        run: ./gradlew bundleRelease --node-daemon --no-parallel --info # build --scan --warning-mode all --stacktrace --info
+      
       - name: Upload builds reports 
         uses: actions/upload-artifact@v4
         if: always()
@@ -103,3 +125,10 @@ jobs:
         with:
           name: build-reports
           path: '/home/runner/_temp/.gradle-actions/build-results/'
+
+      - name: Upload Artifact Bundle
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: release-bundle
+          path: './app/build/'
