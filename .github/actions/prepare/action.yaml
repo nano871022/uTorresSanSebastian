@@ -1,5 +1,9 @@
 name: Prepare project
 description: setting all project and prepare all files
+inputs:
+  secret-token:
+    description: token for private repository
+    required: true
 
 runs:
   using: "composite"
@@ -50,7 +54,7 @@ runs:
           repository: ${{ github.actor }}/japl-properties
           ref: main
           path: ./japl-properties
-          token: ${{ secrets.GH_PROPERTIES_CONNECT }}
+          token: ${{ inputs.secret-token }}
       
       - name: Copy Values on project
         run: |
