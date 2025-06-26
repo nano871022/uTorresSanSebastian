@@ -103,7 +103,7 @@ jobs:
         if: always()
         with:
           name: build-reports
-          path: '**/_temp/.gradle-actions/build-results/'
+          path: '/home/runner/_temp/.gradle-actions/build-results/'
 
       - name: Upload builds reports build actions 
         uses: actions/upload-artifact@v4
