@@ -58,6 +58,15 @@ jobs:
           repository: ${{ github.actor }}/japl-android-ui
           path: ./ui
 
+      - name: Get japl-android-ui
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.actor }}/japl-properties
+          path: ./japl-properties
+      
+      - name: Copy Values on project
+        run: cp ./japl-properties/torressansebastian/google_services.json ./app/src
+
       - name: Duplication Folder on upper case UI
         run: ln -s ./ui ./UI
 
