@@ -56,4 +56,6 @@ jobs:
 
   test-task:
    uses: ./.github/workflows/test-lint.yaml
+   secrets:
+     GH_PROPERTIES_CONNECT: ${{ secrets.GH_PROPERTIES_CONNECT }}
 
