@@ -32,7 +32,7 @@ jobs:
         with:
           repository: ${{ github.actor }}/japl-android-about-module
           path: ./japl-android-about-module
-          #ref: TorresSanSebastian
+          ref: feature/update-main
 
       - name: Get japl-android-schedule-module
         uses: actions/checkout@v4
