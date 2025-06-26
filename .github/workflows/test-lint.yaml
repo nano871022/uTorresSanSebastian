@@ -2,6 +2,10 @@ name: Execute Test with Lint gradle
 
 on: 
   workflow_call:
+    secrets:
+     GH_PROPERTIES_CONNECT:
+      required: true
+      description: Secret used for get private repo
 
 jobs:
 
