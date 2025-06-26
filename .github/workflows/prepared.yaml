@@ -90,7 +90,7 @@ jobs:
 
       - name: added signing in gradle
         run: |
-              cat << EOF >> app/build.gradle
+            cat << EOF >> app/build.gradle
               android {
                 signingConfigs {
                   create("release") {
