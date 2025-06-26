@@ -58,10 +58,11 @@ jobs:
           repository: ${{ github.actor }}/japl-android-ui
           path: ./ui
 
-      - name: Get japl-android-ui
+      - name: Get japl-properties
         uses: actions/checkout@v4
         with:
           repository: ${{ github.actor }}/japl-properties
+          ref: main
           path: ./japl-properties
       
       - name: Copy Values on project
