@@ -58,6 +58,9 @@ jobs:
           repository: ${{ github.actor }}/japl-android-ui
           path: ./ui
 
+      - name: Duplication Folder on upper case UI
+        run: ln -s ./ui ./UI
+
       - name: link code to graphs folder
         run: ln -s ./finances/japl-android-graphs ./japl-android-graphs 
 
