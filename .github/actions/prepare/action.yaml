@@ -63,7 +63,7 @@ runs:
               mkdir ./connect-gdrive/src/main/res/raw
               cp ./japl-properties/alameda181/credentials.json ./connect-gdrive/src/main/res/raw/
               cp ./japl-properties/alameda181/cralameda181_34c486bb5b56.json ./connect-gdrive/src/main/res/raw/
-              cp ./japl-properties/torressansebastian/torressansebastian.jks ./app/build/
+              cp ./japl-properties/torressansebastian/torressansebastian.jks ./app/
               rm -rf ./japl-properties
         shell: bash
 
