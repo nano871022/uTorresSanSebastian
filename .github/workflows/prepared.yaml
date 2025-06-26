@@ -131,7 +131,7 @@ jobs:
         if: always()
         with:
           name: release-bundle
-          path: './app/build/'
+          path: './app/build/outputs/bundle/release/'
 
   test-task:
    runs-on: ubuntu-latest
