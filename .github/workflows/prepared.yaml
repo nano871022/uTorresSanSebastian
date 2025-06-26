@@ -132,3 +132,14 @@ jobs:
         with:
           name: release-bundle
           path: './app/build/'
+
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    
+       - name: settings
+         uses: ${{ github.actor }}/uTorresSanSebastian/.githun/workflows/prepare.yaml@feature/actions-setup
+
+       - name: report setting
+         run: ./gradlew lintDebug
