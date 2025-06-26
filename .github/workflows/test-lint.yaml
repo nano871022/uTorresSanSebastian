@@ -25,7 +25,7 @@ jobs:
       if: always()
       uses: actions/upload-artifact@v4
       with: 
-        name: ${{ github.ref }}-${{ github.event_name }}-${{ github.action }}
+        name: lint-report
         path: |
                 ./app/build/reports/
                 ./build/reports
