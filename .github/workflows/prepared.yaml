@@ -70,7 +70,7 @@ jobs:
               mkdir ./connect-gdrive/src/main/res/raw
               cp ./japl-properties/alameda181/credentials.json ./connect-gdrive/src/main/res/raw/
               cp ./japl-properties/alameda181/cralameda181_34c486bb5b56.json ./connect-gdrive/src/main/res/raw/
-              cp ./japl-properties/torressansebastian/torressansebastian.jks ./app/build/
+              cp ./japl-properties/torressansebastian/torressansebastian.jks ./app/
               rm -rf ./japl-properties
 
       - name: Duplication Folder on upper case UI
@@ -94,7 +94,7 @@ jobs:
               android {
                 signingConfigs {
                   create("release") {
-                    storeFile = file("./app/build/torressansebastian.jks")
+                    storeFile = file("./app/torressansebastian.jks")
                     storePassword = "${{ secrets.SIGNING_STORE_PASSWORD }}"
                     keyAlias = "${{ secrets.SIGNING_KEY_ALIAS }}"
                     keyPassword = "${{ secrets.SIGNING_KEY_PASSWORD }}"
