@@ -24,10 +24,13 @@ jobs:
         run: |
               VERSION_CODE=$(grep -m 1 'versionCode' app/build.gradle | awk '{print $3}')
               VERSION_NAME=$(grep -m 1 'versionName' app/build.gradle | awk -F '"' '{print $2}')
+              echo "VersionCode=$VERSION_CODE" >> $GITHUB_ENV
+              echo "VersionName=$VERSION_NAME" >> $GITHUB_ENV
+              
       - name: Show version information
         run: |
-              echo "VersionCode: $VERSION_CODE"
-              echo "VersionName: $VERSION_NAME"
+             echo "Version Code: ${{ env.VersionCode }}"
+             echo "Version Name: ${{ end.VersionName }}"
       
       - name: added signing in gradle
         run: |
