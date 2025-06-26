@@ -11,6 +11,9 @@ jobs:
   Prepared_code:
     environment: PROD
     runs-on: ubuntu-latest
+    outputs:
+      VersionCode: ${{ steps.getVersion.outputs.VersionCode }} 
+      VersionName: ${{ steps.getVersion.outputs.VersionName }} 
 
     steps:
 
@@ -21,16 +24,17 @@ jobs:
           SECRET_TOKEN: ${{ secrets.GH_PROPERTIES_CONNECT }}
 
       - name: get version code and name of app
+        id: getVersion
         run: |
               VERSION_CODE=$(grep -m 1 'versionCode' app/build.gradle | awk '{print $2}')
               VERSION_NAME=$(grep -m 1 'versionName' app/build.gradle | awk -F '"' '{print $2}')
-              echo "VersionCode=$VERSION_CODE" >> $GITHUB_ENV
-              echo "VersionName=$VERSION_NAME" >> $GITHUB_ENV
+              echo "VersionCode=$VERSION_CODE" >> $GITHUB_OUTPUT
+              echo "VersionName=$VERSION_NAME" >> $GITHUB_OUTPUT
               
       - name: Show version information
         run: |
-             echo "Version Code: ${{ env.VersionCode }}"
-             echo "Version Name: ${{ env.VersionName }}"
+             echo "Version Code: ${{ steps.getVersion.outputs.VersionCode }}"
+             echo "Version Name: ${{ steps.getVersion.outputs.VersionName }}"
       
       - name: added signing in gradle
         run: |
@@ -106,7 +110,7 @@ jobs:
 
   Create_Tag:
     runs-on: ubuntu-latest
-    needs: Deploy_AppStore_Android
+    needs: [Deploy_AppStore_Android,Prepared_code]
     
     steps:
 
@@ -114,9 +118,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
-              TAG_NAME="v${{ env.VersionCode }}"
+              TAG_NAME="v${{ needs.Prepared_code.outputs.VersionCode }}"
               git config --local user.email "actions-urtss@japl.dev"
               git config --local user.name "Actions URTss"
-              git tag -a "$TAG_NAME -m "${{ env.VersionName }}"
+              git tag -a "$TAG_NAME -m "${{ needs.Prepared_code.outputs.VersionName }}"
               git push origin "$TAG_NAME"
           
