@@ -99,7 +99,7 @@ jobs:
         with:
           serviceAccountJson: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_KEY }}
           packageName: co.japl.android.torressansebastian
-          releaseFiles: ./app/build/outputs/bundle/release/app-release.aab
+          releaseFiles: ./app-release.aab
           track: internal
           inAppUpdatePriority: 0
           status: completed
