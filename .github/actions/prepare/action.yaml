@@ -5,9 +5,6 @@ runs:
   using: "composite"
   steps:
 
-    - name: Get Code from repository
-        uses: actions/checkout@v4
-
       - name: Remove android about module old folder link
         run: |
               rm -rf japl-android-about-module
