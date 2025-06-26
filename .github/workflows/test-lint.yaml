@@ -1,0 +1,15 @@
+name: Execute Test with Lint gradle
+
+on: 
+  workflow_dispatch:
+
+jobs:
+
+  config_repository:
+   runs-on: ubuntu-latest
+
+   steps:
+
+    - name: Get project settings
+      uses: ./.github/actions/prepare
+      

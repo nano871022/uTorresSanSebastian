@@ -1,21 +1,9 @@
-name: Prepared project to Compilation Android
+name: Prepare project
+description: setting all project and prepare all files
 
-on:
-  workflow_dispatch:
-concurrency:
-  group: ${{ github.workflow }}-${{ github.event }}-${{ github.ref }}
-  cancel-in-progress: true
-
-jobs:
-
-  Prepared_code:
-    environment: PROD
-    runs-on: ubuntu-latest
-
-    steps:
-
-      - name: Get Code from repository
-        uses: actions/checkout@v4
+runs:
+  using: "composite"
+  steps:
 
       - name: Remove android about module old folder link
         run: |
@@ -70,7 +58,7 @@ jobs:
               mkdir ./connect-gdrive/src/main/res/raw
               cp ./japl-properties/alameda181/credentials.json ./connect-gdrive/src/main/res/raw/
               cp ./japl-properties/alameda181/cralameda181_34c486bb5b56.json ./connect-gdrive/src/main/res/raw/
-              cp ./japl-properties/torressansebastian/torressansebastian.jks ./app/
+              cp ./japl-properties/torressansebastian/torressansebastian.jks ./app/build/
               rm -rf ./japl-properties
 
       - name: Duplication Folder on upper case UI
@@ -87,66 +75,3 @@ jobs:
 
       - name: Setup Graddle And Validations
         uses: gradle/actions/setup-gradle@v4
-
-      - name: added signing in gradle
-        run: |
-            cat << EOF >> app/build.gradle
-              android {
-                signingConfigs {
-                  create("release") {
-                    storeFile = file("./torressansebastian.jks")
-                    storePassword = "${{ secrets.SIGNING_STORE_PASSWORD }}"
-                    keyAlias = "${{ secrets.SIGNING_KEY_ALIAS }}"
-                    keyPassword = "${{ secrets.SIGNING_KEY_PASSWORD }}"
-                  }
-                }
-
-              buildTypes {
-                getByName("release") {
-                  signingConfig = signingConfigs.getByName("release")
-                }
-              }
-            }
-            EOF
-
-      - name: build and scan
-        run: ./gradlew bundleRelease --no-daemon --no-parallel --info # build --scan --warning-mode all --stacktrace --info
-      
-      - name: Upload builds reports 
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: build-reports
-          path: '**/build/reports/'
-
-      - name: Upload builds reports build actions 
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: build-reports
-          path: '/home/runner/_temp/.gradle-actions/build-results/'
-
-      - name: Upload Artifact Bundle
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: release-bundle
-          path: './app/build/outputs/bundle/release/'
-
-  test-task:
-   runs-on: ubuntu-latest
-   steps:
-
-     - uses: actions/checkout@v4
-     
-     - uses: ./.github/actions/prepare
-
-     - name: test execute
-       run: ./gradlew lintDebug
-
-     - name: Upload builds reports 
-       uses: actions/upload-artifact@v4
-       if: always()
-       with:
-          name: build-reports
-          path: '**/build/reports/'
