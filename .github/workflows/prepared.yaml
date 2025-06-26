@@ -69,6 +69,7 @@ jobs:
               rm -rf ./connect-gdrive/src/main/res/raw
               mkdir ./connect-gdrive/src/main/res/raw
               cp ./japl-properties/alameda181/credentials.json ./connect-gdrive/src/main/res/raw/
+              cp ./japl-properties/alameda181/cralameda181_34c486bb5b56.json ./connect-gdrive/src/main/res/raw/
               rm -rf ./japl-properties
 
       - name: Check files in main Folder
