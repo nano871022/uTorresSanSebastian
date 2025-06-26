@@ -64,7 +64,9 @@ jobs:
           token: ${{ secrets.GH_PROPERTIES_CONNECT }}
       
       - name: Copy Values on project
-        run: cp ./japl-properties/torressansebastian/google_services.json ./app/google-services.json
+        run: |
+              cp ./japl-properties/torressansebastian/google_services.json ./app/google-services.json
+              rm -rf ./japl-properties
 
       - name: Check files in main Folder
         run: |
@@ -87,7 +89,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: build and scan
-        run: ./gradlew build --scan --warning-mode all --stacktrace
+        run: ./gradlew build --scan --warning-mode all --stacktrace --info
 
       - name: Upload builds reports 
         uses: actions/upload-artifact@v4
@@ -102,6 +104,13 @@ jobs:
         with:
           name: build-reports
           path: '**/_temp/.gradle-actions/build-results/'
+
+      - name: Upload builds reports build actions 
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: build-reports
+          path: '../_temp/.gradle-actions/build-results/'
 
       
       - name: Check files in main Folder
