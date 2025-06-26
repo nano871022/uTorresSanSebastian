@@ -50,6 +50,7 @@ runs:
 
       - name: Check secrets shared
         run: echo "Secret:: ${{ inputs.secret-token }}"
+        shell: bash
 
       - name: Get japl-properties
         uses: actions/checkout@v4
