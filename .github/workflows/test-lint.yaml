@@ -29,7 +29,6 @@ jobs:
         path: |
                 ./app/build/reports/
                 ./build/reports
-                ./japl-android-about-module/build/intermediates
                 ./japl-android-graphs/build/reports
                 ./japl-android-about-module/build/reports
                 ./connect-gdrive/build/reports
