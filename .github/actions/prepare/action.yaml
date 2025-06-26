@@ -48,6 +48,9 @@ runs:
           repository: ${{ github.actor }}/japl-android-ui
           path: ./ui
 
+      - name: Check secrets shared
+        run: echo "Secret:: ${{ inputs.secret-token }}"
+
       - name: Get japl-properties
         uses: actions/checkout@v4
         with:
