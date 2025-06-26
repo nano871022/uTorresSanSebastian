@@ -72,11 +72,6 @@ jobs:
               cp ./japl-properties/alameda181/cralameda181_34c486bb5b56.json ./connect-gdrive/src/main/res/raw/
               rm -rf ./japl-properties
 
-      - name: Check files in main Folder
-        run: |
-              ls -hl
-              ls -hl ./app
-
       - name: Duplication Folder on upper case UI
         run: ln -s ./ui ./UI
 
@@ -93,7 +88,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: build and scan
-        run: ./gradlew build --scan --warning-mode all --stacktrace --info
+        run: ./gradlew build #--scan --warning-mode all --stacktrace --info
 
       - name: Upload builds reports 
         uses: actions/upload-artifact@v4
@@ -108,8 +103,3 @@ jobs:
         with:
           name: build-reports
           path: '/home/runner/_temp/.gradle-actions/build-results/'
-
-    
-      - name: Check files in main Folder
-        if: always()
-        run: ls -hl
