@@ -58,6 +58,7 @@ runs:
           token: ${{ inputs.secret-token }}
       
       - name: Copy Values on project
+        if: ${{ inputs.secret-token != '' }}
         run: |
               cp ./japl-properties/torressansebastian/google_services.json ./app/google-services.json
               rm -rf ./connect-gdrive/src/main/res/raw
