@@ -8,7 +8,6 @@ jobs:
   config_repository:
    runs-on: ubuntu-latest
    environment: PROD
-   if: ${{ secrets.GH_PROPERTIES_CONNECT != '' }}
 
    steps:
 
