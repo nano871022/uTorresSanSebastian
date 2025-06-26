@@ -139,7 +139,7 @@ jobs:
 
      - uses: actions/checkout@v4
      
-     - uses: ./.github/actions/action
+     - uses: ./.github/actions/prepare
 
      - name: test execute
        run: ./gradlew lintDebug
