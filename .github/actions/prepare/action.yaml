@@ -11,6 +11,7 @@ runs:
               rm -rf ScheduleModule
               rm -rf connect-gdrive
               rm -rf japl-android-graphs
+        shell: bash
 
       - name: Get japl-android-about-module
         uses: actions/checkout@v4
@@ -60,12 +61,15 @@ runs:
               cp ./japl-properties/alameda181/cralameda181_34c486bb5b56.json ./connect-gdrive/src/main/res/raw/
               cp ./japl-properties/torressansebastian/torressansebastian.jks ./app/build/
               rm -rf ./japl-properties
+        shell: bash
 
       - name: Duplication Folder on upper case UI
         run: ln -s ./ui ./UI
+        shell: bash
 
       - name: link code to graphs folder
         run: ln -s ./finances/japl-android-graphs ./japl-android-graphs 
+        shell: bash
 
       - name: Install Java
         uses: actions/setup-java@v4
