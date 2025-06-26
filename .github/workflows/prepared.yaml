@@ -94,7 +94,7 @@ jobs:
               android {
                 signingConfigs {
                   create("release") {
-                    storeFile = file("/home/runner/work/${{ github.actor }}/torressansebastian.jks")
+                    storeFile = file("/home/runner/work/uTorresSanSebastian/torressansebastian.jks")
                     storePassword = "${{ secrets.SIGNING_STORE_PASSWORD }}"
                     keyAlias = "${{ secrets.SIGNING_KEY_ALIAS }}"
                     keyPassword = "${{ secrets.SIGNING_KEY_PASSWORD }}"
