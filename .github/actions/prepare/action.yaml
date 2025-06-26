@@ -1,6 +1,11 @@
 name: Prepare project
 description: setting all project and prepare all files
 
+inputs:
+  SECRET_TOKEN:
+    description: token for private repository
+    required: true
+
 runs:
   using: "composite"
   steps:
@@ -11,6 +16,7 @@ runs:
               rm -rf ScheduleModule
               rm -rf connect-gdrive
               rm -rf japl-android-graphs
+        shell: bash
 
       - name: Get japl-android-about-module
         uses: actions/checkout@v4
@@ -49,7 +55,7 @@ runs:
           repository: ${{ github.actor }}/japl-properties
           ref: main
           path: ./japl-properties
-          token: ${{ secrets.GH_PROPERTIES_CONNECT }}
+          token: ${{ inputs.SECRET_TOKEN }}
       
       - name: Copy Values on project
         run: |
@@ -58,14 +64,17 @@ runs:
               mkdir ./connect-gdrive/src/main/res/raw
               cp ./japl-properties/alameda181/credentials.json ./connect-gdrive/src/main/res/raw/
               cp ./japl-properties/alameda181/cralameda181_34c486bb5b56.json ./connect-gdrive/src/main/res/raw/
-              cp ./japl-properties/torressansebastian/torressansebastian.jks ./app/build/
+              cp ./japl-properties/torressansebastian/torressansebastian.jks ./app/
               rm -rf ./japl-properties
+        shell: bash
 
       - name: Duplication Folder on upper case UI
         run: ln -s ./ui ./UI
+        shell: bash
 
       - name: link code to graphs folder
         run: ln -s ./finances/japl-android-graphs ./japl-android-graphs 
+        shell: bash
 
       - name: Install Java
         uses: actions/setup-java@v4
