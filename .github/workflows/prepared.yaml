@@ -142,7 +142,7 @@ jobs:
      - uses: ./.github/actions/action
 
      - name: test execute
-       run: ./gradlew lingtDebug
+       run: ./gradlew lintDebug
 
      - name: Upload builds reports 
        uses: actions/upload-artifact@v4
