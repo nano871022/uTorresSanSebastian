@@ -23,7 +23,6 @@ jobs:
               rm -rf ScheduleModule
               rm -rf connect-gdrive
               rm -rf japl-android-graphs
-              rm -rf ./connect-gdrive/src/main/res/raw
 
       - name: Get japl-android-about-module
         uses: actions/checkout@v4
@@ -67,6 +66,7 @@ jobs:
       - name: Copy Values on project
         run: |
               cp ./japl-properties/torressansebastian/google_services.json ./app/google-services.json
+              rm -rf ./connect-gdrive/src/main/res/raw
               mkdir ./connect-gdrive/src/main/res/raw
               cp ./japl-properties/alameda181/credentials.json ./connect-gdrive/src/main/res/raw/
               rm -rf ./japl-properties
