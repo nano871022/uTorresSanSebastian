@@ -91,12 +91,15 @@ jobs:
           path: ./
           name: build-release
 
+      - name: Check files
+        run: ls -lnR
+
       - name: Deploy to Google Play
         uses: r0adkll/upload-google-play@v1.1.0
         with:
           serviceAccountJson: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_KEY }}
           packageName: co.japl.android.torressansebastian
-          releaseFile: ./app/build/outputs/bundle/release/app-release.aab
+          releaseFiles: ./app/build/outputs/bundle/release/app-release.aab
           track: internal
           inAppUpdatePriority: 0
           status: completed
