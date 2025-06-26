@@ -1,5 +1,6 @@
 name: Prepare project
 description: setting all project and prepare all files
+
 inputs:
   SECRET_TOKEN:
     description: token for private repository

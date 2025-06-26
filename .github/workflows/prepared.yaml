@@ -125,4 +125,3 @@ jobs:
               git config --local user.name "Actions URTss"
               git tag -a "$TAG_NAME" -m "${{ needs.Prepared_code.outputs.VersionName }}"
               git push origin "$TAG_NAME"
-          
