@@ -114,6 +114,8 @@ jobs:
     
     steps:
 
+      - uses: actions/checkout@v4
+      
       - name: Create Git Tag
         env:
           GITHUB_TOKEN: ${{ github.token }}
