@@ -10,6 +10,8 @@ jobs:
 
    steps:
 
+    - uses: actions/checkout@v4
+    
     - name: Get project settings
       uses: ./.github/actions/prepare
       
