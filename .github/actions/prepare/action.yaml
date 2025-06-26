@@ -49,7 +49,6 @@ runs:
           path: ./ui
 
       - name: Get japl-properties
-        if: ${{ inputs.SECRET_TOKEN != '' }}
         uses: actions/checkout@v4
         with:
           repository: ${{ github.actor }}/japl-properties
@@ -58,7 +57,6 @@ runs:
           token: ${{ inputs.SECRET_TOKEN }}
       
       - name: Copy Values on project
-        if: ${{ inputs.secret-token != '' }}
         run: |
               cp ./japl-properties/torressansebastian/google_services.json ./app/google-services.json
               rm -rf ./connect-gdrive/src/main/res/raw
