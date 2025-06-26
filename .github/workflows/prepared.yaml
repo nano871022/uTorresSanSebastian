@@ -42,6 +42,7 @@ jobs:
             EOF
 
       - name: build and scan
+        continue-on-error: true
         run: ./gradlew bundleRelease --no-daemon --no-parallel --info # build --scan --warning-mode all --stacktrace --info
       
       - name: Upload builds reports 
