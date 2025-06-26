@@ -15,5 +15,5 @@ jobs:
     - name: Get project settings
       uses: ./.github/actions/prepare
       with:
-        secret-token: ${{ secrets.GH_PROPERTIES_CONNECT }}
+        SECRET_TOKEN: ${{ secrets.GH_PROPERTIES_CONNECT }}
       
