@@ -1,7 +1,7 @@
 name: Execute Test with Lint gradle
 
 on: 
-  workflow_dispatch:
+  workflow_call:
 
 jobs:
 
