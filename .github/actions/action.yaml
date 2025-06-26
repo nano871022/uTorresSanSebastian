@@ -1,17 +1,11 @@
-name: Prepare project 
+name: Prepare project
+description: setting all project and prepare all files
 
-on:
-  workflow_call:
+runs:
+  using: "composite"
+  steps:
 
-jobs:
-
-  Prepared_code:
-    environment: PROD
-    runs-on: ubuntu-latest
-
-    steps:
-
-      - name: Get Code from repository
+    - name: Get Code from repository
         uses: actions/checkout@v4
 
       - name: Remove android about module old folder link
