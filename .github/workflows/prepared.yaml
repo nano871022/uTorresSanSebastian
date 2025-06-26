@@ -110,7 +110,7 @@ jobs:
             EOF
 
       - name: build and scan
-        run: ./gradlew bundleRelease --node-daemon --no-parallel --info # build --scan --warning-mode all --stacktrace --info
+        run: ./gradlew bundleRelease --no-daemon --no-parallel --info # build --scan --warning-mode all --stacktrace --info
       
       - name: Upload builds reports 
         uses: actions/upload-artifact@v4
