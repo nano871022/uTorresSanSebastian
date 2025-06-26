@@ -9,7 +9,7 @@ concurrency:
 jobs:
 
   Prepared_code:
-    
+    environment: PROD
     runs-on: ubuntu-latest
 
     steps:
@@ -64,6 +64,7 @@ jobs:
           repository: ${{ github.actor }}/japl-properties
           ref: main
           path: ./japl-properties
+          token: ${{ secrets.GH_PROPERTIES_CONNECT }}
       
       - name: Copy Values on project
         run: cp ./japl-properties/torressansebastian/google_services.json ./app/src
