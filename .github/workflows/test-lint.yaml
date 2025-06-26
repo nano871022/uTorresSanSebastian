@@ -8,13 +8,13 @@ jobs:
   config_repository:
    runs-on: ubuntu-latest
    environment: PROD
+   if: ${{ secrets.GH_PROPERTIES_CONNECT != '' }}
 
    steps:
 
     - uses: actions/checkout@v4
     
     - name: Get project settings
-      if: ${{ secrets.GH_PROPERTIES_CONNECT != '' }}
       uses: ./.github/actions/prepare
       with:
         SECRET_TOKEN: ${{ secrets.GH_PROPERTIES_CONNECT }}
