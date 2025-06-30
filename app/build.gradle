@@ -17,8 +17,8 @@ android {
         applicationId "co.japl.android.torressansebastian"
         minSdk 26
         targetSdk 34
-        versionCode 1_02_7_41
-        versionName "V1.02.7 build 41 Despliegue desde github actions automaticamente"
+        versionCode 1_02_8_42
+        versionName "V1.02.8 build 42 Despliegue desde github actions automaticamente"
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         vectorDrawables{
