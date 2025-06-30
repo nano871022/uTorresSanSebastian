@@ -30,6 +30,7 @@ runs:
         with:
           repository: ${{ github.actor }}/japl-android-schedule-module
           path: ./ScheduleModule
+          ref: japl-torressansebastian
 
       - name: Get japl-android-google-connect-module
         uses: actions/checkout@v4
