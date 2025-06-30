@@ -4,7 +4,6 @@ import android.util.Log
 import co.com.japl.connect.gdrive.drive.GetFilesFromFolderShared
 import co.com.japl.connect.gdrive.firebase.realtime.Realtime
 import co.urtss.core.BuildConfig
-import co.urtss.core.R
 import co.urtss.core.enums.RealtimeDBKeys
 import co.urtss.core.model.Document
 import java.io.File
@@ -36,7 +35,7 @@ class GDrivePort @Inject constructor(private val getFilesFromFolderShared:GetFil
     }
 
     fun downloadFile(idFile:String): File?{
-        return getFilesFromFolderShared.downloadFile(idFile, co.com.japl.connect.gdrive.R.raw.cralameda181_34c486bb5b56)
+        return getFilesFromFolderShared.downloadFile(idFile, co.com.japl.connect.gdrive.R.raw.torressansebastian_bf1036b1e939)
 
     }
 
