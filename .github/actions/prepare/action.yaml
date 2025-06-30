@@ -23,7 +23,6 @@ runs:
         with:
           repository: ${{ github.actor }}/japl-android-about-module
           path: ./japl-android-about-module
-          ref: Finances
 
       - name: Get japl-android-schedule-module
         uses: actions/checkout@v4
