@@ -23,13 +23,13 @@ runs:
         with:
           repository: ${{ github.actor }}/japl-android-about-module
           path: ./japl-android-about-module
-          ref: Finances
 
       - name: Get japl-android-schedule-module
         uses: actions/checkout@v4
         with:
           repository: ${{ github.actor }}/japl-android-schedule-module
           path: ./ScheduleModule
+          ref: japl-torressansebastian
 
       - name: Get japl-android-google-connect-module
         uses: actions/checkout@v4
@@ -63,7 +63,7 @@ runs:
               rm -rf ./connect-gdrive/src/main/res/raw
               mkdir ./connect-gdrive/src/main/res/raw
               cp ./japl-properties/alameda181/credentials.json ./connect-gdrive/src/main/res/raw/
-              cp ./japl-properties/alameda181/cralameda181_34c486bb5b56.json ./connect-gdrive/src/main/res/raw/
+              cp ./japl-properties/torressansebastian/torressansebastian_bf1036b1e939.json ./connect-gdrive/src/main/res/raw/
               cp ./japl-properties/torressansebastian/torressansebastian.jks ./app/
               rm -rf ./japl-properties
         shell: bash
