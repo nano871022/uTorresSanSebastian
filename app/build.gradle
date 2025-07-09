@@ -16,9 +16,9 @@ android {
     defaultConfig {
         applicationId "co.japl.android.torressansebastian"
         minSdk 26
-        targetSdk 34
-        versionCode 1_02_8_42
-        versionName "V1.02.8 build 42 Despliegue desde github actions automaticamente"
+        targetSdk 35
+        versionCode 1_02_8_43
+        versionName "V1.02.8 build 43 Actualización a SDK 35 y despliegue desde github actions automaticamente"
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         vectorDrawables{
