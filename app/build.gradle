@@ -11,14 +11,14 @@ plugins {
 
 android {
     namespace "co.japl.android.torressansebastian"
-    compileSdk 35
+    compileSdk 36
 
     defaultConfig {
         applicationId "co.japl.android.torressansebastian"
         minSdk 26
-        targetSdk 35
-        versionCode 1_02_8_43
-        versionName "V1.02.8 build 43 Actualización a SDK 35 y despliegue desde github actions automaticamente"
+        targetSdk 36
+        versionCode 1_02_8_44
+        versionName "V1.02.8 build 44 Actualización a SDK 36 y despliegue desde github actions automaticamente"
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         vectorDrawables{
