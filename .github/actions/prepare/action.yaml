@@ -81,6 +81,7 @@ runs:
         run: |
            sed -i 's/JavaVersion.VERSION_21/JavaVersion.VERSION_17/g' ./japl-android-graphs/build.gradle.kts 
            sed -i 's/jvmTarget = "21"/jvmTarget = "17"/g' ./japl-android-graphs/build.gradle.kts
+        shell: bash
 
       - name: Install Java
         uses: actions/setup-java@v4
