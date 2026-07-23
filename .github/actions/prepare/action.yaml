@@ -77,6 +77,11 @@ runs:
         run: ln -s ./finances/japl-android-graphs ./japl-android-graphs 
         shell: bash
 
+      - name: Fix JDK target version in japl-android-graphs
+        run: |
+           sed -i 's/JavaVersion.VERSION_21/JavaVersion.VERSION_17/g' ./japl-android-graphs/build.gradle.kts 
+           sed -i 's/jvmTarget = "21"/jvmTarget = "17"/g' ./japl-android-graphs/build.gradle.kts
+
       - name: Install Java
         uses: actions/setup-java@v4
         with: 
