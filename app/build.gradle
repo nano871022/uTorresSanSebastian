@@ -43,6 +43,8 @@ android {
         }
     }
     compileOptions {
+        isCoreLibraryDesugaringEnabled = true
+        
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
@@ -88,6 +90,8 @@ dependencies {
     implementation(project(":urtss-android-core"))
     implementation(project(":connect-gdrive"))
 
+    coreLibraryDesugaring('com.android.tools:desugar_jdk_libs:2.0.4')
+    
     implementation libs.android.core.ktx
     implementation libs.bundles.android.credentials
     implementation libs.bundles.android.compose.ui
